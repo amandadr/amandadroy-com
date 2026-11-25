@@ -1,0 +1,102 @@
+/**
+ * Manny Roy Consulting — brand design system
+ * From docs/colurs.md: WCAG AA–aligned palette and tokens
+ */
+
+:root {
+  /* Neutrals */
+  --mrc-bg: #F0E8E0;
+  --mrc-surface: #FAF6F0;
+  --mrc-text: #2A261A;
+  --mrc-text-muted: #4A4322;
+  /* Never remapped on dark grounds — mustard pills and cream cards need ink. */
+  --mrc-ink: #2A261A;
+  --mrc-ink-muted: #4A4322;
+
+  /* Brand accents */
+  --mrc-mustard: #E8C868;
+  --mrc-mustard-on-dark: #F8EBC0; /* 4.75:1 on olive — mustard itself is 3.47:1 */
+  --mrc-olive: #706830;
+  --mrc-maroon: #804050;
+
+  /* Map to theme vars used elsewhere (so existing components pick up brand) */
+  --brand-color: var(--mrc-maroon);
+  --primary-text-color: var(--mrc-text);
+  --secondary-text-color: var(--mrc-text-muted);
+  --white-color: var(--mrc-surface);
+  --lighter-gray-color: var(--mrc-bg);
+  --light-gray-color: #e8e0d8;
+  --mid-gray-color: #8a8578;
+  --dark-gray-color: var(--mrc-text-muted);
+  --darker-gray-color: var(--mrc-text);
+  --black-color: var(--mrc-text);
+
+  /* Interactive */
+  --mrc-link: var(--mrc-maroon);
+  --mrc-link-hover: var(--mrc-text);
+  --mrc-focus: var(--mrc-maroon); /* focus ring colour; Paper on Olive/Maroon sections */
+
+  /* Tone-dependent text roles — components reference these instead of hard-coding
+     a colour, so the same component reads correctly on any section ground. */
+  --mrc-text-soft: var(--mrc-text-muted); /* secondary / intro copy */
+  --mrc-eyebrow: var(--mrc-text-muted);   /* small uppercase labels; olive fails AA at 14px */
+
+  --color-primary-text: var(--mrc-text);
+  --color-secondary-text: var(--mrc-text-muted);
+}
+
+/* Strong sections (footer, CTA): dark backgrounds need a Paper focus ring,
+   since the default maroon ring is invisible against olive and maroon. */
+.section-dark,
+.section-cta,
+.mrc-foot,
+.mrc-head {
+  --mrc-focus: var(--mrc-surface);
+  --mrc-text: var(--mrc-surface);
+  --mrc-text-muted: var(--mrc-mustard-on-dark);
+  --mrc-text-soft: var(--mrc-surface);
+  --mrc-eyebrow: var(--mrc-mustard-on-dark);
+  --mrc-link: var(--mrc-surface);
+  --mrc-link-hover: var(--mrc-mustard);
+}
+
+/* Typography: IBM Plex Serif headlines, IBM Plex Sans body (docs/fonts.md) */
+:root {
+  --font-sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-serif: "IBM Plex Serif", Georgia, "Times New Roman", serif;
+  --font-mono: Menlo, Consolas, Monaco, "Liberation Mono", "Lucida Console", monospace;
+}
+
+/* Base overrides for brand — color/contrast only; typography in typography.css */
+body {
+  background-color: var(--mrc-bg);
+  color: var(--mrc-text);
+}
+
+/* Align Ghost accent with brand so .gh-content a (content.css) uses maroon */
+.gh-content {
+  --ghost-accent-color: var(--mrc-maroon);
+}
+
+/* Links: maroon for contrast on cream/paper (WCAG AA), re-pointed to Paper on the
+   dark tones above. Buttons are excluded — they own their own foreground, and the
+   maroon override was fighting every button variant. `:where()` keeps this at 0,0,1
+   so a component rule can still take the colour back. */
+a:where(:not(.button)),
+.gh-content a {
+  color: var(--mrc-link) !important;
+}
+
+a:where(:not(.button)):hover,
+.gh-content a:hover {
+  color: var(--mrc-link-hover) !important;
+}
+
+a:focus-visible {
+  outline: var(--focus-ring-width, 2px) var(--focus-ring-style, solid) var(--mrc-focus);
+  outline-offset: var(--focus-ring-offset, 2px);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--mrc-text);
+}

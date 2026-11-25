@@ -1,0 +1,354 @@
+/**
+ * Homepage — below first paint: principles, work preview, CTA, footer, contact extras.
+ * Loaded with full screen.css after screen-home.css on the home route only.
+ */
+
+/* ---------- How I work: Olive, Cream text, Mustard dividers, more vertical spacing ---------- */
+.mrc-principles-section {
+  background-color: var(--mrc-olive);
+  color: var(--mrc-surface);
+}
+
+.mrc-principles-section .mrc-section-header {
+  color: var(--mrc-surface);
+  margin-bottom: var(--space-7);
+}
+
+/* .mrc-principles uses .mrc-grid .mrc-grid--auto (composition) */
+.mrc-principles {
+  --mrc-grid-min: 260px;
+  --mrc-grid-gap: var(--space-8);
+}
+
+/* Force 2x2 from tablet up to desktop; avoid 3+1 or misaligned stacking */
+@media (min-width: 480px) and (max-width: 1100px) {
+  .mrc-principles {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1101px) {
+  .mrc-principles {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.mrc-principles-section .mrc-principle {
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid var(--mrc-mustard);
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+.mrc-principles-section .mrc-principle-title {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--mrc-surface);
+  margin: 0 0 var(--space-2);
+}
+
+.mrc-principles-section .mrc-principle-body {
+  font-size: 1rem;
+  color: var(--mrc-surface);
+  opacity: 0.95;
+  margin: 0;
+  line-height: 1.55;
+}
+
+/* ---------- Selected work: Cream, no heavy cards ---------- */
+.mrc-work-preview {
+  padding-block: var(--mrc-section-padding-block);
+  background-color: var(--mrc-bg);
+}
+
+.mrc-work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-6);
+  margin-top: 0;
+}
+
+.mrc-project-card {
+  padding: var(--space-5) 0;
+  background: transparent;
+  border-radius: 0;
+  border-bottom: 1px solid var(--light-gray-color);
+}
+
+.mrc-project-card:last-child {
+  border-bottom: 0;
+}
+
+.mrc-project-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0 0 var(--space-2);
+}
+
+.mrc-project-card-title a {
+  color: var(--mrc-text);
+}
+
+.mrc-project-card-title a:hover {
+  color: var(--mrc-maroon);
+}
+
+.mrc-project-card-excerpt {
+  font-size: 1rem;
+  color: var(--mrc-text-muted);
+  margin: 0 0 var(--space-3);
+  line-height: 1.55;
+}
+
+.mrc-project-card-link {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--mrc-maroon);
+}
+
+.mrc-work-more {
+  margin: var(--space-7) 0 0;
+  text-align: center;
+}
+
+.mrc-work-more a {
+  font-weight: 600;
+  color: var(--mrc-maroon);
+}
+
+/* ---------- Final CTA: Maroon (or inherited bg), Cream text, Mustard button + Ink ---------- */
+.mrc-cta-section {
+  padding-block: var(--mrc-section-padding-block);
+  color: var(--mrc-surface);
+}
+
+.mrc-cta-section .mrc-cta-headline,
+.mrc-cta-section .mrc-cta-subtext {
+  color: var(--mrc-surface);
+}
+
+.mrc-cta-inner {
+  text-align: center;
+  max-width: min(var(--mrc-content-width), 100%);
+  margin: 0 auto;
+}
+
+.mrc-cta-headline {
+  font-family: var(--font-serif);
+  font-size: var(--mrc-h2-size);
+  font-weight: 600;
+  margin: 0 0 var(--space-5);
+}
+
+/* When subtext is present (Services, Home), use smaller headline margin; subtext provides the gap to the button */
+.mrc-cta-inner:has(.mrc-cta-subtext) .mrc-cta-headline {
+  margin-bottom: var(--space-2);
+}
+
+.mrc-cta-subtext {
+  margin: 0 0 var(--space-5);
+  opacity: 0.95;
+}
+
+.mrc-cta-section .mrc-cta-btn {
+  background-color: var(--mrc-mustard);
+  color: var(--mrc-text);
+  border: var(--border-width-thick) var(--border-style) var(--mrc-mustard);
+}
+
+.mrc-cta-section .mrc-cta-btn:hover {
+  opacity: 0.95;
+}
+
+.mrc-cta-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+/* brand.css sets `a { color: var(--mrc-link) !important }`, and --mrc-link is
+   maroon — the same colour as the CTA band. Must win or the link is invisible. */
+.mrc-cta-secondary {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--mrc-surface) !important;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  opacity: 0.95;
+}
+
+.mrc-cta-secondary:hover {
+  color: var(--mrc-mustard-on-dark) !important;
+  opacity: 1;
+  text-decoration-thickness: 2px;
+}
+
+/* ---------- Footer (olive) ---------- */
+.mrc-foot {
+  background-color: var(--mrc-olive);
+  color: var(--mrc-surface);
+  padding-block: var(--space-8) var(--space-6);
+}
+
+.mrc-foot-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.mrc-foot-bio {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0 0 var(--space-7);
+  max-width: 42ch;
+}
+
+.mrc-foot-navs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-7) var(--space-8);
+  padding-top: var(--space-6);
+  margin-bottom: var(--space-7);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.mrc-foot-col + .mrc-foot-col {
+  padding-left: var(--space-6);
+  border-left: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.mrc-foot-heading {
+  display: inline-block;
+  width: fit-content;
+  margin: 0 0 var(--space-5);
+  padding: 0.08em 0.22em;
+  font-family: var(--font-sans);
+  font-size: var(--mrc-small-size);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.45;
+  color: var(--mrc-ink);
+  background-color: var(--mrc-mustard);
+}
+
+.mrc-foot-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.mrc-foot-list a {
+  color: var(--mrc-surface);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.mrc-foot-list a:hover {
+  text-decoration: underline;
+}
+
+.mrc-foot-list a:focus-visible {
+  outline: var(--focus-ring-width) var(--focus-ring-style) var(--mrc-surface);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.mrc-foot-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+  padding-top: var(--space-6);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 14px;
+}
+
+.mrc-foot-copy {
+  opacity: 0.9;
+}
+
+@media (max-width: 991px) {
+  .mrc-foot-navs {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-7);
+  }
+
+  .mrc-foot-col + .mrc-foot-col {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .mrc-foot-col:nth-child(even) {
+    padding-left: var(--space-6);
+    border-left: 1px solid rgba(255, 255, 255, 0.18);
+  }
+}
+
+@media (max-width: 767px) {
+  .mrc-foot {
+    padding-block: var(--space-7) var(--space-5);
+  }
+
+  .mrc-foot-inner {
+    padding: 0;
+  }
+
+  .mrc-foot-bio {
+    max-width: none;
+    margin-bottom: var(--space-6);
+  }
+
+  .mrc-foot-navs {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    padding-top: var(--space-6);
+    margin-bottom: var(--space-6);
+  }
+
+  .mrc-foot-col + .mrc-foot-col,
+  .mrc-foot-col:nth-child(even) {
+    padding-left: 0;
+    border-left: 0;
+    padding-top: var(--space-5);
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  .mrc-foot-list {
+    gap: var(--space-3);
+  }
+
+  .mrc-foot-bottom {
+    padding-top: var(--space-5);
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.mrc-foot-ghost {
+  color: var(--mrc-surface);
+  opacity: 0.8;
+}
+
+.mrc-foot-ghost:hover {
+  opacity: 1;
+}
+
+/* ---------- Contact page extra ---------- */
+.mrc-contact-extra {
+  padding-top: 0;
+  margin-top: var(--space-4);
+  font-size: 1rem;
+  color: var(--mrc-text-muted);
+}
+
+.mrc-contact-extra a {
+  color: var(--mrc-maroon);
+}

@@ -1,0 +1,325 @@
+/**
+ * Typography implementation guidelines — sitewide
+ * Body 17px/1.72, headings Serif/600, scale, 72ch, links underlined, small ≥14px
+ */
+
+/* Override shared theme: it sets html { font-size: 62.5% } (10px root), so 1rem = 10px
+   and any rem-based font ends up tiny. Use 100% so 1rem = 16px and our body size applies. */
+html {
+  font-size: 100%;
+}
+
+:root {
+  /* Base */
+  --mrc-body-size: 16px;
+  --mrc-body-line: 1.72;
+  --mrc-body-weight: 400;
+
+  /* Reading width */
+  --mrc-content-width: 72ch;
+  --mrc-feature-width: calc(var(--mrc-content-width) * 1.22);
+
+  /* Type scale — fluid (clamp for mobile → desktop) */
+  --mrc-h1-size: clamp(1.85rem, 4vw + 1rem, 2.75rem);
+  --mrc-h2-size: clamp(1.75rem, 2.8vw + 0.9rem, 2.5rem);
+  --mrc-h3-size: clamp(1.2rem, 1.5vw + 0.5rem, 1.35rem);
+  --mrc-lede-size: 1.125rem;
+  --mrc-small-size: 0.875rem;  /* 14px — SOP floor for small / meta text */
+
+  /* Spacing scale — SOP: 4, 8, 12, 16, 24, 32, 48, 64, 96 (no arbitrary values) */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;     /* 8px */
+  --space-3: 0.75rem;    /* 12px */
+  --space-4: 1rem;       /* 16px */
+  --space-5: 1.5rem;     /* 24px */
+  --space-6: 2rem;       /* 32px */
+  --space-7: 3rem;       /* 48px */
+  --space-8: 4rem;       /* 64px */
+  --space-9: 6rem;       /* 96px */
+  --mrc-space-xs: var(--space-1);
+  --mrc-space-s: var(--space-2);
+  --mrc-space-m: var(--space-4);
+  --mrc-space-l: var(--space-5);
+  --mrc-space-xl: var(--space-6);
+  --mrc-space-2xl: var(--space-8);
+
+  /* Section padding (block only — horizontal from .gh-outer) — SOP: small 48px, standard 64px, hero 96px */
+  --mrc-section-padding-block: var(--space-8);
+  --mrc-section-padding-tight-block: var(--space-7);
+  --mrc-section-padding-hero-block: var(--space-9);
+
+  /* Typography spacing — SOP: space above H2 > space below; paragraph rhythm predictable */
+  --mrc-heading-margin-below: var(--space-4);
+  --mrc-paragraph-margin: 1.35em;
+
+  /* Breakpoints (content-driven; sm 480, md 768, lg 1024, xl 1280) */
+  --bp-sm: 480px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1280px;
+
+  /* Borders — widths, radii, and semantic colours */
+  --radius-s: 3px;
+  --radius-m: 5px;
+  --radius-l: 8px;
+  --radius-full: 999px;                              /* pills, avatars, circular chips */
+  --border-width: 1px;
+  --border-width-thick: 2px;
+  --border-width-accent: 4px;                        /* left-rail / callout accent */
+  --border-style: solid;
+  --border-color: var(--light-gray-color);           /* default UI borders / inputs */
+  --border-color-strong: var(--mid-gray-color);      /* emphasis / hover borders */
+  --border-color-subtle: rgb(42 38 26 / 14%);        /* soft card / divider edges on cream */
+  --border-color-on-dark: rgb(250 246 240 / 18%);    /* edges on Olive / Maroon surfaces */
+  --border-color-accent: var(--mrc-olive);           /* brand accent rule / left rail */
+
+  /* Media aspect ratios */
+  --aspect-square: 1 / 1;
+  --aspect-photo: 4 / 3;
+  --aspect-landscape: 16 / 9;
+  --aspect-portrait: 3 / 4;
+  --aspect-wide: 2 / 1;
+
+  /* Motion — durations + shared easing (basics.css also sets --animation-base) */
+  --duration-fast: 150ms;   /* hover colour / border / opacity */
+  --duration-base: 200ms;   /* transforms, menu, default UI */
+  --duration-slow: 300ms;   /* entrances / exits */
+  --ease-standard: ease-in-out;
+
+  /* Focus ring (colour via --mrc-focus in brand.css; override on dark sections) */
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 2px;
+  --focus-ring-style: solid;
+
+  /* Z-index layers */
+  --z-base: 0;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-modal: 300;
+
+  /* Containers & gutters (SOP: fluid, generous) */
+  --mrc-container-width: 72ch;                         /* alias of content/prose width */
+  --mrc-container-wide: 1100px;                        /* page / layout max width */
+  --mrc-page-gutter: clamp(1.75rem, 5vw, 2.5rem);
+
+}
+
+/* Standard hero block: same min height and padding across Home, About, Services, Contact */
+.mrc-hero,
+.mrc-about-hero,
+.mrc-services-hero,
+.mrc-contact-hero {
+  padding-block: var(--mrc-section-padding-hero-block);
+  min-height: 18rem;
+  box-sizing: border-box;
+}
+
+/* Body: 17px default, never below 16px on small screens */
+body {
+  font-family: var(--font-sans);
+  font-size: var(--mrc-body-size);
+  font-weight: var(--mrc-body-weight);
+  line-height: var(--mrc-body-line);
+}
+
+@media (max-width: 767px) {
+  body {
+    font-size: max(16px, var(--mrc-body-size));
+  }
+
+  /* SOP 7.1: scale down section padding moderately on mobile */
+  :root {
+    --mrc-section-padding-block: var(--space-7);
+    --mrc-section-padding-tight-block: var(--space-6);
+    --mrc-section-padding-hero-block: var(--space-7);
+  }
+}
+
+/* Headings: IBM Plex Serif, weight 600, tight line-height */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h1 { font-size: var(--mrc-h1-size); }
+h2 { font-size: var(--mrc-h2-size); }
+h3 { font-size: var(--mrc-h3-size); }
+h4, h5, h6 { font-size: 1.1rem; }
+
+/* Paragraph spacing — SOP: consistent bottom margin, predictable rhythm */
+p {
+  margin: 0 0 var(--mrc-paragraph-margin);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* Links: underline for accessibility, not color alone */
+a {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* Buttons and header nav: no underline (rely on background/border / hover state) */
+a.button,
+.gh-btn a,
+a.gh-head-btn,
+.gh-head-logo,
+.gh-head-menu a {
+  text-decoration: none;
+}
+
+a.button:hover,
+.gh-btn a:hover {
+  text-decoration: none;
+}
+
+/* Emphasis: 600 instead of 700 */
+strong, b {
+  font-weight: 600;
+}
+
+/* Content wrapper — long-form reading width, never overflow viewport; match global body size */
+.gh-content,
+.mrc-content-width {
+  max-width: min(var(--mrc-content-width), 100%);
+  font-size: var(--mrc-body-size);
+  margin-top: var(--space-3);
+}
+
+.gh-content p,
+.mrc-content-width p {
+  max-width: min(var(--mrc-content-width), 100%);
+  margin-block-start: var(--space-4);
+}
+
+hr {
+  border-color: var(--mrc-olive);
+  border-width: 0.5px;
+  border-style: solid;
+  margin-top: var(--space-6) !important;
+  margin-bottom: var(--space-3) !important;
+}
+
+/* Figures: increase the (shared) extra spacing above */
+.gh-content > figure {
+  margin-block-start: var(--space-5) !important;
+}
+
+/* Blockquotes: reduce the (shared) extra spacing above by ~50% */
+.gh-content > blockquote {
+  margin-block-start: var(--space-4);
+  margin-block-end: var(--space-2);
+}
+
+.gh-content blockquote,
+.gh-content blockquote.kg-blockquote-alt {
+  color: var(--mrc-maroon);
+}
+
+/* Content spacing: tighten default stack spacing from shared content.css */
+.gh-content > [id]:not(:first-child) {
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-2);
+}
+
+/* Table spacing: tighten default stack spacing from shared content.css */
+.gh-content :not(.kg-card):not(table):not([id])+:is(.kg-card,table) {
+  margin-top: var(--space-4);
+}
+
+/* Tables: ensure opaque background + legible header (override shared content.css) */
+.gh-content table:not(.gist table) {
+  /* Ghost sets a gradient via `background:` — override with a solid fill */
+  background: var(--mrc-surface);
+  background-image: none !important;
+  /* Prevent right overflow caused by shared content.css defaults */
+  display: table;
+  width: 100%;
+  max-width: 100%;
+  white-space: normal;
+  overflow-x: visible;
+}
+
+.gh-content table:not(.gist table) th,
+.gh-content table:not(.gist table) td {
+  background: var(--mrc-surface);
+  background-image: none !important;
+}
+
+.gh-content table:not(.gist table) tbody td {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.gh-content table:not(.gist table) thead th {
+  background: var(--mrc-olive);
+  color: var(--mrc-surface);
+  font-size: 1rem;
+}
+
+.gh-content table:not(.gist table) thead th a {
+  color: inherit;
+}
+
+/* Lede — intro paragraph slightly larger */
+.mrc-lede {
+  font-size: var(--mrc-lede-size);
+  line-height: var(--mrc-body-line);
+}
+
+/* Section heading — consistent style. Section-level H2, so it takes the same
+   space below as .mrc-engagement-title / .mrc-process-title, not the tighter
+   --mrc-heading-margin-below used for headings that sit directly on body copy. */
+.mrc-section-heading {
+  font-family: var(--font-serif);
+  font-size: var(--mrc-h2-size);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--mrc-text);
+  margin: 0 0 var(--space-6);
+}
+
+/* Inline code — shared theme sets an absolute `code { font-size: 15px }`, which
+   outsizes any small/meta sentence it sits in. Size and pad relative to context
+   so a code chip always matches the text around it. */
+code {
+  font-size: 0.9em;
+}
+
+:not(pre) > code {
+  padding: 0.15em 0.35em;
+}
+
+/* Small / meta text */
+.mrc-meta,
+small,
+.gh-content figcaption,
+.single-media figcaption {
+  font-size: var(--mrc-small-size);
+  line-height: 1;
+  margin-top: var(--space-2);
+}
+
+/* Form inputs: 16px minimum to prevent mobile zoom */
+input,
+select,
+textarea,
+button {
+  font-size: 16px;
+}
+
+@media (min-width: 768px) {
+  input,
+  select,
+  textarea {
+    font-size: var(--mrc-body-size);
+  }
+}

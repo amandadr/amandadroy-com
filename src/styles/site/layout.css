@@ -1,0 +1,122 @@
+/* Prevent horizontal scroll from any overflowing content */
+html {
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.site {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.site-content {
+    flex-grow: 1;
+    padding: var(--space-8) 0;
+}
+
+/* Skip link — first focusable control; visible on keyboard focus only */
+.mrc-skip-link {
+    position: absolute;
+    left: var(--space-4);
+    top: var(--space-4);
+    z-index: 10000;
+    padding: var(--space-3) var(--space-4);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--mrc-surface);
+    text-decoration: none;
+    background-color: var(--mrc-maroon);
+    border-radius: var(--radius-s);
+    transform: translateY(-200%);
+}
+
+.mrc-skip-link:focus,
+.mrc-skip-link:focus-visible {
+    outline: var(--focus-ring-width) var(--focus-ring-style) var(--mrc-focus);
+    outline-offset: var(--focus-ring-offset);
+    transform: translateY(0);
+}
+
+/* Global container + gutters: keep content inset from viewport edges */
+.gh-outer {
+    padding-left: max(var(--mrc-page-gutter), var(--space-4));
+    padding-right: max(var(--mrc-page-gutter), var(--space-4));
+    box-sizing: border-box;
+}
+
+/* Inner container: center content and cap width; prevent overflow */
+.gh-inner {
+    width: 100%;
+    max-width: min(var(--mrc-container-wide, 1100px), 100%);
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+/* Homepage: no bottom padding so CTA meets footer (avoids cream strip) */
+.site-content:has(.mrc-home) {
+    padding-bottom: 0;
+}
+
+.page-template .site-content {
+    padding-block: 0;
+}
+
+/* Posts: drop bottom padding so the article CTA band meets the footer */
+.post-template .site-content {
+    padding-bottom: 0;
+}
+
+/* Glossary terms have no CTA band — don't stretch an empty cream gap above the footer */
+.post-template:has(.single--glossary-term) .site-content {
+    flex-grow: 0;
+    padding-bottom: var(--space-7);
+}
+
+/* Custom MRC routes (collections, who-i-help, etc.) are not .page-template */
+.site-content:has(.mrc-page) {
+    padding-block: 0;
+}
+
+/* Small screens: more horizontal padding so content doesn’t bump the edges */
+@media (max-width: 991px) {
+    :root {
+        --mrc-page-gutter: var(--space-6);
+    }
+}
+
+@media (max-width: 767px) {
+    :root {
+        --gap: var(--space-6);
+    }
+
+    .site-content {
+        padding: var(--space-7) 0;
+    }
+}
+
+/* Very narrow screens (e.g. 430px): generous gutter so content never feels cramped */
+@media (max-width: 480px) {
+    :root {
+        --mrc-page-gutter: var(--space-7);
+    }
+}
+
+/* Center blog content (index, single post, tag, author) on the page */
+.site-main .gh-canvas,
+.site-main #blog-archive .gh-feed-heading {
+    max-width: min(var(--mrc-container-wide, 1100px), 100%);
+    margin-inline: auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.site-main #blog-archive .gh-feed-heading {
+    text-align: center;
+}

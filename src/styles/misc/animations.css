@@ -1,0 +1,23 @@
+/**
+ * prefers-reduced-motion
+ * - Disable non-essential animation/transition motion sitewide
+ * - Keep instantaneous state changes (opacity/colour still apply; no tween)
+ * - Restore auto scroll-behavior (theme may set smooth elsewhere)
+ *
+ * Unused Animate.css keyframes (bounceIn / zoomOut) were removed — no
+ * templates referenced them, and shared-theme JS does not either.
+ */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
