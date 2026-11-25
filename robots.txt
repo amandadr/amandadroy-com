@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: https://amandadroy.com
+Sitemap: https://amandadroy.com/sitemap.xml
