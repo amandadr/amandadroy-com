@@ -2,7 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/JsonLd";
-import { categoryLabels, getProject, projects } from "@/data/projects";
+import { Prose } from "@/components/Prose";
+import { TechList } from "@/components/TechList";
+import {
+  categoryLabels,
+  getProject,
+  getProjectCode,
+  projects,
+} from "@/data/projects";
 import { SITE_NAME, SITE_URL } from "@/data/site";
 
 type PageProps = {
@@ -42,6 +49,8 @@ export default function ProjectPage({ params }: PageProps) {
   const project = getProject(params.slug);
   if (!project) notFound();
 
+  const code = getProjectCode(project);
+
   const creativeWork = {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
@@ -58,11 +67,22 @@ export default function ProjectPage({ params }: PageProps) {
       <JsonLd data={creativeWork} />
       <article className="mrc-section section-light gh-outer">
         <div className="gh-inner mrc-prose">
+          <p className="mrc-project-id">{code}</p>
           <p className="mrc-eyebrow">
             {project.eyebrow ?? categoryLabels[project.category]}
           </p>
           <h1 className="mrc-hero-headline">{project.title}</h1>
           <p className="mrc-lede">{project.summary}</p>
+
+          {project.overview ? <Prose text={project.overview} /> : null}
+
+          {project.outcomes?.length ? (
+            <ul className="mrc-outcome-list">
+              {project.outcomes.map((outcome) => (
+                <li key={outcome}>{outcome}</li>
+              ))}
+            </ul>
+          ) : null}
 
           <dl className="mrc-project-meta">
             <div>
@@ -83,11 +103,7 @@ export default function ProjectPage({ params }: PageProps) {
             </div>
           </dl>
 
-          <ul className="mrc-tech-list" aria-label="Technologies">
-            {project.technologies.map((tech) => (
-              <li key={tech}>{tech}</li>
-            ))}
-          </ul>
+          <TechList technologies={project.technologies} />
 
           <div className="mrc-link-row">
             {project.repository ? (
@@ -112,26 +128,33 @@ export default function ProjectPage({ params }: PageProps) {
           </div>
 
           {project.caseStudy ? (
-            <div className="mrc-stack mrc-stack--xl" style={{ marginTop: "3rem" }}>
+            <div className="mrc-stack mrc-stack--l" style={{ marginTop: "2rem" }}>
               {(
                 Object.keys(CASE_LABELS) as (keyof typeof CASE_LABELS)[]
               ).map((key) => (
                 <section key={key} className="mrc-case-section">
                   <h2>{CASE_LABELS[key]}</h2>
-                  <p>{project.caseStudy?.[key]}</p>
+                  <Prose text={project.caseStudy?.[key] ?? ""} />
                 </section>
               ))}
             </div>
           ) : null}
 
+          {project.sections?.map((section) => (
+            <section key={section.heading} className="mrc-case-section">
+              <h2>{section.heading}</h2>
+              <Prose text={section.body} />
+            </section>
+          ))}
+
           {project.decisionNote ? (
-            <section className="mrc-case-section" style={{ marginTop: "3rem" }}>
+            <section className="mrc-case-section">
               <h2>Decision note</h2>
-              <p>{project.decisionNote}</p>
+              <Prose text={project.decisionNote} />
             </section>
           ) : null}
 
-          <p style={{ marginTop: "3rem" }}>
+          <p style={{ marginTop: "2.5rem" }}>
             <Link href="/work/">← All work</Link>
           </p>
         </div>

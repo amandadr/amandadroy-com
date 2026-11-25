@@ -1,0 +1,164 @@
+/**
+ * Portfolio semantic theme — same primitives as MRC, different assignments.
+ * From docs/design-mrc.md: paper canvas, sans-led hierarchy, mono labels,
+ * denser editorial rhythm. Shared design-system extraction stays a later goal.
+ */
+
+:root,
+[data-theme="portfolio"] {
+  /* Semantic colour roles for the technical journal */
+  --colour-cream: #f0e8e0;
+  --colour-paper: #faf6f0;
+  --colour-ink: #2a261a;
+  --colour-olive: #706830;
+  --colour-maroon: #804050;
+  --colour-mustard: #e8c868;
+
+  --colour-bg: var(--colour-paper);
+  --colour-surface: var(--colour-cream);
+  --colour-action: var(--colour-ink);
+  --colour-eyebrow: var(--colour-maroon);
+  --colour-accent-soft: var(--colour-mustard);
+  --colour-rule: rgb(42 38 26 / 16%);
+
+  /* Remap MRC tokens so existing components pick up portfolio semantics */
+  --mrc-bg: var(--colour-bg);
+  --mrc-surface: var(--colour-surface);
+  --mrc-text: var(--colour-ink);
+  --mrc-text-muted: #4a4322;
+  --mrc-ink: var(--colour-ink);
+  --mrc-ink-muted: #4a4322;
+  --mrc-mustard: var(--colour-mustard);
+  --mrc-olive: var(--colour-olive);
+  --mrc-maroon: var(--colour-maroon);
+  --mrc-link: var(--colour-maroon);
+  --mrc-link-hover: var(--colour-ink);
+  --mrc-focus: var(--colour-maroon);
+  --mrc-text-soft: var(--mrc-text-muted);
+  --mrc-eyebrow: var(--colour-eyebrow);
+
+  --white-color: var(--colour-paper);
+  --lighter-gray-color: var(--colour-cream);
+  --light-gray-color: #e8e0d8;
+  --brand-color: var(--colour-maroon);
+
+  /* Sans-led headings; mono for technical labels */
+  --font-sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Helvetica, Arial, sans-serif;
+  --font-serif: "IBM Plex Serif", Georgia, "Times New Roman", serif;
+  --font-mono: "IBM Plex Mono", Menlo, Consolas, Monaco, "Liberation Mono",
+    monospace;
+  --font-heading: var(--font-sans);
+  --font-label: var(--font-mono);
+
+  /* Denser portfolio spacing defaults */
+  --mrc-section-padding-block: var(--space-7); /* 48px */
+  --mrc-section-padding-tight-block: var(--space-6); /* 32px */
+  --mrc-section-padding-hero-block: var(--space-8); /* 64px */
+  --mrc-content-width: 70ch;
+  --portfolio-list-gap: var(--space-5); /* 24px */
+  --portfolio-meta-gap: var(--space-2); /* 8px */
+}
+
+@media (max-width: 767px) {
+  [data-theme="portfolio"] {
+    --mrc-section-padding-block: var(--space-6);
+    --mrc-section-padding-tight-block: var(--space-5);
+    --mrc-section-padding-hero-block: var(--space-7);
+  }
+}
+
+/* Headings: sans-led for the journal; serif reserved for selective emphasis */
+[data-theme="portfolio"] h1,
+[data-theme="portfolio"] h2,
+[data-theme="portfolio"] h3,
+[data-theme="portfolio"] h4,
+[data-theme="portfolio"] .mrc-hero-headline,
+[data-theme="portfolio"] .mrc-section-header__title,
+[data-theme="portfolio"] .mrc-case-row__title,
+[data-theme="portfolio"] .mrc-section-heading {
+  font-family: var(--font-heading);
+}
+
+[data-theme="portfolio"] .mrc-eyebrow,
+[data-theme="portfolio"] .mrc-case-row__tag,
+[data-theme="portfolio"] .mrc-project-meta dt,
+[data-theme="portfolio"] .mrc-experience-item__meta,
+[data-theme="portfolio"] .mrc-project-id,
+[data-theme="portfolio"] .mrc-tech-list li,
+[data-theme="portfolio"] .mrc-capability-tools li {
+  font-family: var(--font-label);
+}
+
+/* Continuous paper canvas — cream panels are secondary, not the default page */
+[data-theme="portfolio"] body {
+  background-color: var(--colour-bg);
+  color: var(--mrc-text);
+}
+
+[data-theme="portfolio"] .section-light {
+  background-color: var(--colour-bg);
+  color: var(--mrc-text);
+}
+
+[data-theme="portfolio"] .section-surface {
+  background-color: var(--colour-surface);
+  color: var(--mrc-text);
+}
+
+/* Olive remains brand cohesion in chrome; not a marketing chapter band */
+[data-theme="portfolio"] .mrc-head {
+  background-color: var(--mrc-olive);
+  border-bottom: 1px solid var(--mrc-mustard);
+}
+
+[data-theme="portfolio"] .mrc-foot {
+  background-color: var(--mrc-olive);
+}
+
+/* Strong actions: ink on paper (precise), not commercial maroon fills */
+[data-theme="portfolio"] a.button.mrc-btn-primary,
+[data-theme="portfolio"] .button.mrc-btn-primary {
+  background-color: var(--colour-action);
+  color: var(--colour-paper) !important;
+  border-color: var(--colour-action);
+}
+
+[data-theme="portfolio"] a.button.mrc-btn-primary:hover,
+[data-theme="portfolio"] .button.mrc-btn-primary:hover {
+  opacity: 0.92;
+  color: var(--colour-paper) !important;
+}
+
+[data-theme="portfolio"] a.button.mrc-btn-secondary,
+[data-theme="portfolio"] .button.mrc-btn-secondary {
+  color: var(--colour-ink);
+  border-color: var(--colour-olive);
+}
+
+/* Hero: editorial, left-aligned, compact */
+[data-theme="portfolio"] .mrc-hero {
+  background-color: var(--colour-bg);
+  padding-block: var(--mrc-section-padding-hero-block);
+  min-height: 0;
+}
+
+[data-theme="portfolio"] .mrc-hero-inner {
+  text-align: left;
+  margin-inline: 0;
+  max-width: min(42rem, 100%);
+}
+
+[data-theme="portfolio"] .mrc-hero-cta {
+  justify-content: flex-start;
+}
+
+[data-theme="portfolio"] .mrc-hero-headline {
+  font-size: clamp(1.85rem, 3.5vw + 0.75rem, 2.45rem);
+  letter-spacing: -0.02em;
+}
+
+[data-theme="portfolio"] .mrc-hero-subtext {
+  font-size: 1.05rem;
+  max-width: 40rem;
+}

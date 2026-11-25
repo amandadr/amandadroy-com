@@ -1,4 +1,4 @@
-/* Portfolio-specific blocks on top of ghost-custom foundations */
+/* Portfolio-specific blocks — engineering journal, not agency marketing */
 
 .site-content {
   padding-block: 0;
@@ -77,21 +77,117 @@
   }
 }
 
-.mrc-project-meta {
+/* Editorial rules instead of heavy section banding */
+.mrc-rule {
+  border: 0;
+  border-top: var(--border-width) var(--border-style) var(--colour-rule, rgb(42 38 26 / 16%));
+  margin: var(--space-6) 0;
+}
+
+.mrc-metrics {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: var(--space-5);
+  padding-block: var(--space-5);
+}
+
+.mrc-metric__value {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--mrc-ink);
+}
+
+.mrc-metric__label {
+  margin: var(--space-2) 0 0;
+  font-family: var(--font-label);
+  font-size: var(--mrc-small-size);
+  letter-spacing: 0.03em;
+  color: var(--mrc-text-muted);
+}
+
+.mrc-outcome-list {
+  margin: var(--space-5) 0;
+  padding-left: 1.15rem;
+}
+
+.mrc-outcome-list li {
+  margin-bottom: var(--space-2);
+}
+
+.mrc-profile-row {
+  padding-block: var(--space-4);
+  border-top: var(--border-width) var(--border-style) var(--colour-rule, rgb(42 38 26 / 16%));
+  border-bottom: var(--border-width) var(--border-style) var(--colour-rule, rgb(42 38 26 / 16%));
+}
+
+.mrc-profile-row a {
+  font-family: var(--font-label);
+  font-size: var(--mrc-small-size);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+.mrc-profile-row a:hover {
+  text-decoration: underline;
+}
+
+/* Project identifiers — TOOL / 001 */
+.mrc-project-id {
+  display: inline-block;
+  margin: 0 0 var(--space-2);
+  font-size: var(--mrc-small-size);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--mrc-eyebrow);
+}
+
+.mrc-case-list {
+  gap: var(--portfolio-list-gap, var(--space-5));
+}
+
+.mrc-case-row {
   gap: var(--space-4);
-  margin: var(--space-6) 0 var(--space-7);
-  padding: var(--space-5);
-  background: var(--mrc-surface);
-  border: var(--border-width) var(--border-style) var(--border-color-subtle);
-  border-radius: var(--radius-m);
+  padding-block-start: var(--space-4);
+  border-top-width: var(--border-width);
+  border-top-color: var(--colour-rule, rgb(42 38 26 / 16%));
+}
+
+.mrc-case-row__tag {
+  letter-spacing: 0.06em;
+  margin-bottom: var(--portfolio-meta-gap, var(--space-2));
+}
+
+.mrc-case-row__tech {
+  font-family: var(--font-label);
+  font-size: var(--mrc-small-size);
+  letter-spacing: 0.02em;
+  color: var(--mrc-text-muted);
+  margin: var(--space-2) 0 0;
+}
+
+.mrc-project-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: var(--space-3) var(--space-4);
+  margin: var(--space-5) 0 var(--space-6);
+  padding: var(--space-4) 0;
+  background: transparent;
+  border: 0;
+  border-top: var(--border-width) var(--border-style) var(--colour-rule, rgb(42 38 26 / 16%));
+  border-bottom: var(--border-width) var(--border-style) var(--colour-rule, rgb(42 38 26 / 16%));
+  border-radius: 0;
 }
 
 .mrc-project-meta dt {
-  font-size: var(--mrc-small-size);
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--mrc-eyebrow);
   margin: 0 0 var(--space-1);
@@ -100,14 +196,19 @@
 .mrc-project-meta dd {
   margin: 0;
   font-weight: 600;
+  font-size: 0.95rem;
 }
 
 .mrc-case-section {
-  margin-bottom: var(--space-6);
+  margin-bottom: var(--space-5);
+  padding-top: var(--space-5);
+  border-top: var(--border-width) var(--border-style) var(--colour-rule, rgb(42 38 26 / 16%));
 }
 
 .mrc-case-section h2 {
-  font-size: var(--mrc-h3-size);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
   margin: 0 0 var(--space-3);
 }
 
@@ -123,18 +224,35 @@
 
 .mrc-tech-list li,
 .mrc-capability-tools li {
-  font-family: var(--font-mono);
-  font-size: var(--mrc-small-size);
-  padding: 0.2em 0.55em;
-  background: var(--mrc-mustard);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  padding: 0.25em 0.5em;
+  background: transparent;
   color: var(--mrc-ink);
+  border: var(--border-width) var(--border-style) var(--colour-rule, rgb(42 38 26 / 22%));
   border-radius: var(--radius-s);
 }
 
+.mrc-tech-icon {
+  display: block;
+  flex-shrink: 0;
+  width: 0.95em;
+  height: 0.95em;
+  color: currentColor;
+}
+
+.mrc-case-row__tech-list {
+  margin-top: var(--space-3);
+}
+
 .mrc-capability {
-  padding: var(--space-5);
-  background: var(--mrc-surface);
-  border-top: var(--border-width-thick) var(--border-style) var(--border-color-accent);
+  padding: var(--space-5) 0 0;
+  background: transparent;
+  border-top: var(--border-width) var(--border-style) var(--border-color-accent);
 }
 
 .mrc-capability h3 {
@@ -149,7 +267,7 @@
 
 .mrc-experience-item {
   padding-block-start: var(--space-5);
-  border-top: var(--border-width-thick) var(--border-style) var(--border-color-accent);
+  border-top: var(--border-width) var(--border-style) var(--colour-rule, rgb(42 38 26 / 16%));
 }
 
 .mrc-experience-item h3 {
@@ -157,20 +275,41 @@
   font-size: var(--mrc-h3-size);
 }
 
+.mrc-experience-item__org {
+  font-family: var(--font-sans);
+  font-weight: 400;
+}
+
+.mrc-experience-item__org a {
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
 .mrc-experience-item__meta {
-  font-size: var(--mrc-small-size);
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--mrc-eyebrow);
   margin: 0 0 var(--space-3);
+}
+
+.mrc-experience-item strong {
+  font-weight: 700;
+  color: var(--mrc-ink);
+}
+
+.mrc-experience-item li a {
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
 }
 
 .mrc-link-row {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-3) var(--space-5);
-  margin-top: var(--space-5);
+  margin-top: var(--space-4);
 }
 
 .mrc-link-row a {
@@ -179,6 +318,11 @@
 
 .mrc-prose {
   max-width: min(var(--mrc-content-width), 100%);
+}
+
+.mrc-closing {
+  padding-block: var(--mrc-section-padding-block);
+  border-top: var(--border-width-thick) var(--border-style) var(--mrc-olive);
 }
 
 .mrc-foot-navs--portfolio {

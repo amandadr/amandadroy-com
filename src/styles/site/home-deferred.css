@@ -198,11 +198,33 @@
   margin: 0 auto;
 }
 
+.mrc-foot-lede {
+  margin: 0 0 var(--space-7);
+  max-width: 42ch;
+}
+
 .mrc-foot-bio {
   font-size: 1.05rem;
   line-height: 1.6;
-  margin: 0 0 var(--space-7);
-  max-width: 42ch;
+  margin: 0;
+}
+
+.mrc-foot-consult {
+  margin: var(--space-3) 0 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: rgb(255 255 255 / 78%);
+}
+
+.mrc-foot-consult a {
+  color: var(--mrc-surface);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.14em;
+}
+
+.mrc-foot-consult a:hover {
+  color: var(--mrc-mustard);
 }
 
 .mrc-foot-navs {

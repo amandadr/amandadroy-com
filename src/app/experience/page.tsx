@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Hero } from "@/components/Hero";
+import { HighlightText } from "@/components/HighlightText";
 import { SectionHeader } from "@/components/SectionHeader";
 import { education, experience } from "@/data/experience";
 import { RESUME_PATH } from "@/data/site";
@@ -8,7 +9,7 @@ import { RESUME_PATH } from "@/data/site";
 export const metadata: Metadata = {
   title: "Experience",
   description:
-    "Career history, education, and a downloadable technical résumé for Manny Roy.",
+    "Career history, education, and a downloadable technical résumé for Manny Roy—agency SEO, consulting, applied AI training and development.",
   alternates: { canonical: "/experience/" },
 };
 
@@ -17,8 +18,8 @@ export default function ExperiencePage() {
     <>
       <Hero
         eyebrow="Experience"
-        headline="Responsibilities and outcomes"
-        subtext="A readable career history—not a technology badge wall. Download one general technical résumé rather than employer-specific public versions."
+        headline="Agency SEO, consulting and applied AI"
+        subtext="Roles and outcomes across MacMillan Search, Manny Roy Consulting and professional AI training. Download the résumé when you need it for an application."
         primaryHref={RESUME_PATH}
         primaryText="Download résumé"
         secondaryHref="/work/"
@@ -30,7 +31,12 @@ export default function ExperiencePage() {
         aria-labelledby="career"
       >
         <div className="gh-inner mrc-stack mrc-stack--xl">
-          <SectionHeader heading="Career" headingId="career" spacing="tight" />
+          <SectionHeader
+            heading="Career"
+            headingId="career"
+            intro="What I owned in each role, and which projects show the work in more detail. Engagement names without public showcase consent are described by sector instead of brand."
+            spacing="tight"
+          />
           {experience.map((item) => (
             <article
               key={`${item.company}-${item.title}`}
@@ -39,8 +45,18 @@ export default function ExperiencePage() {
               <h3>
                 {item.title}
                 <br />
-                <span style={{ fontFamily: "var(--font-sans)", fontWeight: 400 }}>
-                  {item.company}
+                <span className="mrc-experience-item__org">
+                  {item.companyUrl ? (
+                    <a
+                      href={item.companyUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {item.company}
+                    </a>
+                  ) : (
+                    item.company
+                  )}
                 </span>
               </h3>
               <p className="mrc-experience-item__meta">{item.years}</p>
@@ -48,7 +64,12 @@ export default function ExperiencePage() {
               {item.highlights?.length ? (
                 <ul>
                   {item.highlights.map((highlight) => (
-                    <li key={highlight}>{highlight}</li>
+                    <li key={highlight.text}>
+                      <HighlightText
+                        text={highlight.text}
+                        href={highlight.href}
+                      />
+                    </li>
                   ))}
                 </ul>
               ) : null}
@@ -74,7 +95,7 @@ export default function ExperiencePage() {
           <SectionHeader
             heading="Education"
             headingId="education"
-            intro="Formal education sits here—not in the employment timeline."
+            intro="Full-stack web development and an English degree that still shapes how I write requirements, documentation and content architecture."
             spacing="tight"
           />
           {education.map((item) => (
@@ -85,8 +106,18 @@ export default function ExperiencePage() {
               <h3>
                 {item.title}
                 <br />
-                <span style={{ fontFamily: "var(--font-sans)", fontWeight: 400 }}>
-                  {item.company}
+                <span className="mrc-experience-item__org">
+                  {item.companyUrl ? (
+                    <a
+                      href={item.companyUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {item.company}
+                    </a>
+                  ) : (
+                    item.company
+                  )}
                 </span>
               </h3>
               <p className="mrc-experience-item__meta">{item.years}</p>

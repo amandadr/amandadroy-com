@@ -66,7 +66,7 @@ export default function RootLayout({
     name: SITE_NAME,
     alternateName: ALTERNATE_NAME,
     url: SITE_URL,
-    email: "amandadroy@gmail.com",
+    email: "manny@mannyroy.com",
     jobTitle: "Technical SEO Specialist and Software Developer",
     address: {
       "@type": "PostalAddress",
@@ -86,7 +86,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en-CA">
+    <html lang="en-CA" data-theme="portfolio">
       <body>
         <a className="mrc-skip-link" href="#main">
           Skip to content

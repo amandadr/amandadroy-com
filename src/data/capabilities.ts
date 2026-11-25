@@ -3,30 +3,30 @@ import type { Capability } from "@/lib/types";
 export const capabilities: Capability[] = [
   {
     id: "technical-search",
-    title: "Technical search",
+    title: "Technical SEO & indexation",
     description:
-      "Crawlability, rendering, indexing, migrations, structured data, and scalable search architecture.",
-    tools: ["GSC", "Screaming Frog", "Ahrefs"],
+      "Technical audits, crawlability and indexation, crawl budget, JavaScript SEO, canonicalization, sitemaps, robots.txt, structured data, hreflang, Core Web Vitals and site migrations.",
+    tools: ["GSC", "Screaming Frog", "Ahrefs", "GA4"],
     projectSlugs: [
       "seo-rankings-report",
-      "wordpress-venue-management",
       "macmillan-search-practice",
+      "wordpress-venue-management",
     ],
   },
   {
     id: "web-engineering",
-    title: "Web engineering",
+    title: "Web development & infrastructure",
     description:
-      "Maintainable frontend architecture, CMS integrations, reusable components, and custom functionality.",
-    tools: ["Next.js", "React", "TypeScript", "PHP"],
-    projectSlugs: ["eastward", "good-robot-brewing", "organized-chaos-arts"],
+      "Full-stack development with React and Next.js, rendering strategies, dynamic routing, headless CMS, WordPress, DNS, CDN and caching—built to stay maintainable after handoff.",
+    tools: ["Next.js", "React", "TypeScript", "WordPress"],
+    projectSlugs: ["good-robot-brewing", "organized-chaos-arts", "eastward"],
   },
   {
     id: "data-automation",
-    title: "Data & automation",
+    title: "Search analytics & automation",
     description:
-      "Repeatable analytical workflows, API integrations, reporting tools, and decision-ready dashboards.",
-    tools: ["Python", "SQL", "Tableau"],
+      "Repeatable analytical workflows with Google Search Console, GA4, Python, SQL and BigQuery—API integrations, automated reporting and performance monitoring.",
+    tools: ["Python", "SQL", "BigQuery", "GSC API"],
     projectSlugs: [
       "seo-rankings-report",
       "pcp-economic-dashboard",
@@ -35,10 +35,10 @@ export const capabilities: Capability[] = [
   },
   {
     id: "applied-ai-geo",
-    title: "Applied AI & GEO",
+    title: "GEO, AEO & applied AI",
     description:
-      "LLM evaluation, structured content systems, AI-assisted workflows, and search visibility research.",
-    tools: ["LLM APIs", "Evaluation", "Semantic architecture"],
-    projectSlugs: ["rfp-finder", "manny-roy-consulting", "hyrule-merchant"],
+      "AI-search discoverability research, LLM evaluation, prompt engineering, source verification and structured content systems that support semantic discoverability.",
+    tools: ["LLM APIs", "Evaluation", "Entity architecture"],
+    projectSlugs: ["manny-roy-consulting", "rfp-finder", "macmillan-search-practice"],
   },
 ];

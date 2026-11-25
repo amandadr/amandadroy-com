@@ -7,11 +7,16 @@ export function Footer() {
   return (
     <footer className="gh-foot mrc-foot gh-outer">
       <div className="mrc-foot-inner gh-inner">
-        <p className="mrc-foot-bio">
-          Technical SEO, software development, and automation. Prince Edward
-          Island. Consulting lives at{" "}
-          <a href={SOCIAL.mrc}>mannyroy.com</a>.
-        </p>
+        <div className="mrc-foot-lede">
+          <p className="mrc-foot-bio">
+            Technical SEO, software development and search automation from
+            Souris, PEI.
+          </p>
+          <p className="mrc-foot-consult">
+            Consulting inquiries →{" "}
+            <a href={SOCIAL.mrc}>mannyroy.com</a>
+          </p>
+        </div>
         <div className="mrc-foot-navs mrc-foot-navs--portfolio">
           <nav className="mrc-foot-col" aria-labelledby="foot-explore">
             <h2 id="foot-explore" className="mrc-foot-heading">

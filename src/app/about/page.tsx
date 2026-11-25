@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Hero } from "@/components/Hero";
 import { SectionHeader } from "@/components/SectionHeader";
-import { EMAIL, SOCIAL } from "@/data/site";
+import { EMAIL, LOCATION, SITE_INTRO, SOCIAL } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Professional philosophy and background for Manny Roy—technical SEO, software development, and systems that stay maintainable.",
+    "Manny Roy (Amanda Roy)—technical SEO specialist and full-stack developer in Souris, PEI. How to get in touch for professional conversation or consulting.",
   alternates: { canonical: "/about/" },
 };
 
@@ -16,24 +16,25 @@ export default function AboutPage() {
     <>
       <Hero
         eyebrow="About"
-        headline="How I think, build and solve problems"
-        subtext="This site is the technical counterpart to mannyroy.com. MRC speaks to businesses. Here, hiring managers, engineers, and collaborators can see decisions, systems and outcomes."
+        headline="Technical SEO, software development and systems that stay useful"
+        subtext={SITE_INTRO}
       />
 
-      <section className="mrc-section section-light gh-outer" aria-labelledby="philosophy">
+      <section className="mrc-section section-light gh-outer" aria-labelledby="background">
         <div className="gh-inner mrc-prose mrc-stack mrc-stack--l">
-          <SectionHeader heading="Philosophy" headingId="philosophy" spacing="tight" />
+          <SectionHeader heading="Background" headingId="background" spacing="tight" />
           <p>
-            Useful systems over bloated ones. Clarity in communication. Technology
-            that does not require constant intervention. The portfolio itself should
-            demonstrate that: static HTML for primary content, shareable case studies,
-            accessible navigation, and the same design system that powers my consulting
-            site—without copying its sitemap.
+            Based in {LOCATION}. I translate technical findings into prioritized
+            implementation requirements, work with developers and content teams, and
+            validate improvements through testing, QA and performance analysis.
           </p>
           <p>
-            I am based in Prince Edward Island and work across technical SEO, web
-            engineering, automation, and applied AI. You may also know me as Amanda Roy;
-            Manny is the professional name I use across this work.
+            Professionally I go by Manny Roy; you may also see Amanda Roy on older
+            profiles and publications. If you need services, business case studies or
+            a project inquiry, start at{" "}
+            <a href={SOCIAL.mrc}>mannyroy.com</a>. For hiring or technical
+            collaboration, the work and experience pages here are the better place
+            to dig in.
           </p>
         </div>
       </section>
@@ -43,11 +44,11 @@ export default function AboutPage() {
           <SectionHeader
             heading="Contact"
             headingId="contact"
-            intro="For professional conversation, email is best. For consulting inquiries, use mannyroy.com."
+            intro="Email for hiring conversations and collaborations. Use the consulting site when you have a client project."
           />
           <div className="mrc-cluster">
             <a className="button mrc-btn-primary" href={`mailto:${EMAIL}`}>
-              Email me
+              {EMAIL}
             </a>
             <a className="button mrc-btn-secondary" href={SOCIAL.mrc}>
               Manny Roy Consulting

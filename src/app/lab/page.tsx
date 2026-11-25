@@ -7,7 +7,7 @@ import { getLabProjects } from "@/data/projects";
 export const metadata: Metadata = {
   title: "Lab",
   description:
-    "Experiments, prototypes, and technical explorations—clearly labelled, with shareable project URLs.",
+    "Experiments and prototypes by Manny Roy—Astro demos, theme research, local detection pipelines and other technical explorations.",
   alternates: { canonical: "/lab/" },
 };
 
@@ -18,8 +18,8 @@ export default function LabPage() {
     <>
       <Hero
         eyebrow="Lab"
-        headline="Experiments without pretending they are finished products"
-        subtext="A home for curiosity: Astro demos, theme playgrounds, local detection pipelines, and other explorations. Each item still has a /work URL."
+        headline="Prototypes, demos and research builds"
+        subtext="Astro experiments, theme research and local detection pipelines—labelled by status so you know what was production work and what was exploration."
       />
       <section className="mrc-section section-light gh-outer" aria-labelledby="lab-list">
         <div className="gh-inner">
@@ -30,7 +30,7 @@ export default function LabPage() {
           />
           <div className="mrc-case-list">
             {lab.map((project) => (
-              <CaseRow key={project.slug} project={project} showCategory={false} />
+              <CaseRow key={project.slug} project={project} />
             ))}
           </div>
         </div>

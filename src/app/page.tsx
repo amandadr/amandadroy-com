@@ -5,7 +5,14 @@ import { JsonLd } from "@/components/JsonLd";
 import { SectionHeader } from "@/components/SectionHeader";
 import { capabilities } from "@/data/capabilities";
 import { getFeaturedProjects, getProject } from "@/data/projects";
-import { RESUME_PATH, SITE_NAME, SITE_URL, SOCIAL } from "@/data/site";
+import {
+  RESUME_PATH,
+  SITE_INTRO,
+  SITE_METRICS,
+  SITE_NAME,
+  SITE_URL,
+  SOCIAL,
+} from "@/data/site";
 
 export default function HomePage() {
   const featured = getFeaturedProjects();
@@ -29,24 +36,37 @@ export default function HomePage() {
       <Hero
         eyebrow="Technical SEO · Software development · Automation"
         headline="Building systems that are easier to find, use and maintain."
-        subtext="I'm Manny Roy, a technical SEO specialist and full-stack developer based in Prince Edward Island, Canada. I work at the intersection of search, website architecture, data and automation."
+        subtext={SITE_INTRO}
         primaryHref="/work/"
         primaryText="Explore selected work"
         secondaryHref={RESUME_PATH}
         secondaryText="View résumé"
       />
 
-      <section className="mrc-section section-surface gh-outer" aria-label="Profiles">
-        <div className="gh-inner mrc-cluster mrc-cluster--center">
-          <a href={SOCIAL.github} target="_blank" rel="noopener noreferrer">
-            GitHub
-          </a>
-          <a href={SOCIAL.linkedin} target="_blank" rel="noopener noreferrer">
-            LinkedIn
-          </a>
-          <a href={SOCIAL.mrc} target="_blank" rel="noopener noreferrer">
-            Manny Roy Consulting
-          </a>
+      <section
+        className="section-light gh-outer"
+        aria-label="Selected outcomes"
+      >
+        <div className="gh-inner">
+          <div className="mrc-metrics">
+            {SITE_METRICS.map((metric) => (
+              <div key={metric.label} className="mrc-metric">
+                <p className="mrc-metric__value">{metric.value}</p>
+                <p className="mrc-metric__label">{metric.label}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mrc-profile-row mrc-cluster">
+            <a href={SOCIAL.github} target="_blank" rel="noopener noreferrer">
+              GitHub
+            </a>
+            <a href={SOCIAL.linkedin} target="_blank" rel="noopener noreferrer">
+              LinkedIn
+            </a>
+            <a href={SOCIAL.mrc} target="_blank" rel="noopener noreferrer">
+              Manny Roy Consulting
+            </a>
+          </div>
         </div>
       </section>
 
@@ -58,10 +78,11 @@ export default function HomePage() {
           <SectionHeader
             heading="Selected work"
             headingId="featured-work"
-            intro="Six projects that show how I approach search, engineering, data and content systems. Descriptions are on the page—no modals."
+            intro="Search automation, commerce architecture, programmatic publishing, geographic content systems and consulting infrastructure—open a project for decisions, constraints and results."
             layout="split"
             linkHref="/work/"
             linkText="All work"
+            spacing="tight"
           />
           <div className="mrc-case-list">
             {featured.map((project) => (
@@ -77,10 +98,11 @@ export default function HomePage() {
       >
         <div className="gh-inner">
           <SectionHeader
-            heading="Capabilities"
+            heading="Where I can help"
             headingId="capabilities"
-            intro="Organized around what I can accomplish, not a wall of logos."
+            intro="Technical SEO and indexation, web engineering, search analytics and automation, and GEO/AEO research—each area links to projects that demonstrate it."
             width="wide"
+            spacing="tight"
           />
           <div className="mrc-grid mrc-grid--auto mrc-grid--gap-m">
             {capabilities.map((capability) => (
@@ -109,12 +131,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mrc-section section-cta gh-outer" aria-labelledby="home-cta">
+      <section
+        className="mrc-closing section-light gh-outer"
+        aria-labelledby="home-cta"
+      >
         <div className="gh-inner mrc-stack mrc-stack--l">
           <SectionHeader
             heading="Next step"
             headingId="home-cta"
-            intro="Looking for consulting outcomes? That’s mannyroy.com. Looking for how I think and build? You’re in the right place."
+            intro="See the career timeline and résumé, or go to mannyroy.com when you have a consulting project."
+            spacing="tight"
           />
           <div className="mrc-cluster">
             <Link className="button mrc-btn-primary" href="/experience/">

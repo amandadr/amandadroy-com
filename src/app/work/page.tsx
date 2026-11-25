@@ -12,7 +12,7 @@ import type { Project } from "@/lib/types";
 export const metadata: Metadata = {
   title: "Work",
   description:
-    "Technical projects across professional engagements, tools, independent builds, and archived early work.",
+    "Technical projects across professional engagements, tools, independent builds and earlier development work by Manny Roy.",
   alternates: { canonical: "/work/" },
 };
 
@@ -28,8 +28,8 @@ export default function WorkIndexPage() {
     <>
       <Hero
         eyebrow="Work"
-        headline="A curated body of technical work"
-        subtext="Professional delivery, tools and infrastructure, independent builds, and an archive of earlier projects. Lab experiments live separately."
+        headline="Search systems, commerce builds and publishing tools"
+        subtext="Professional engagements, search and publishing tools, independent builds and earlier applications—each with the problem, constraints, ownership and outcomes."
       />
 
       {WORK_CATEGORIES.map((category) => {
@@ -49,7 +49,7 @@ export default function WorkIndexPage() {
               />
               <div className="mrc-case-list">
                 {items.map((project) => (
-                  <CaseRow key={project.slug} project={project} showCategory={false} />
+                  <CaseRow key={project.slug} project={project} />
                 ))}
               </div>
             </div>
@@ -62,7 +62,7 @@ export default function WorkIndexPage() {
           <SectionHeader
             heading="Lab"
             headingId="lab-note"
-            intro={`${getLabProjects().length} experiments and prototypes with shareable URLs.`}
+            intro={`${getLabProjects().length} experiments and prototypes—useful when you want to see how I explore ideas before they become production work.`}
             layout="split"
             linkHref="/lab/"
             linkText="Visit the lab"

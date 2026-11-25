@@ -27,14 +27,18 @@ Projects live in [`src/data/projects.ts`](src/data/projects.ts). Experience and 
 
 ## Design
 
-Styles under `src/styles/` are adapted from the MRC Ghost theme (`ghost-custom`):
+Shared MRC primitives, portfolio semantic theme (`data-theme="portfolio"`). See [`docs/design-mrc.md`](docs/design-mrc.md).
 
-- Tokens: cream `#F0E8E0`, paper `#FAF6F0`, ink, mustard, olive, maroon
-- Fonts: self-hosted IBM Plex Sans / Serif
-- Layout: `gh-outer` / `gh-inner`, stack / cluster / grid
-- Blocks: hero, section header, case-study row, footer
+| Shared | Portfolio expression |
+| --- | --- |
+| Cream / paper / ink / olive / maroon / mustard | Paper reading canvas; cream secondary panels |
+| IBM Plex Sans / Serif | Sans-led headings; IBM Plex Mono for labels & project IDs |
+| Spacing scale | Denser defaults (48px sections, 64px hero) |
+| Stack / cluster / grid / case rows | Editorial rules, compact project index, journal IDs (`TOOL / 001`) |
 
-Replace `public/resume/manny-roy-technical.pdf` with your current general technical résumé before cutover.
+Olive header/footer keep brand cohesion with mannyroy.com. Marketing-style maroon CTA bands and serif-led heroes stay on MRC.
+
+Replace `public/resume/manny-roy-technical.pdf` with your current general technical résumé before treating the site as final.
 
 ## Analytics
 

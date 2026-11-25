@@ -1,32 +1,31 @@
 import Link from "next/link";
-import { categoryLabels } from "@/data/projects";
+import { TechList } from "@/components/TechList";
+import { getProjectCode } from "@/data/projects";
 import type { Project } from "@/lib/types";
 
 type CaseRowProps = {
   project: Project;
-  showCategory?: boolean;
 };
 
-export function CaseRow({ project, showCategory = true }: CaseRowProps) {
-  const tag = showCategory
-    ? categoryLabels[project.category]
-    : project.status;
+export function CaseRow({ project }: CaseRowProps) {
+  const code = getProjectCode(project);
 
   return (
     <article className="mrc-case-row">
       <div className="mrc-case-row__body">
+        <p className="mrc-project-id">{code}</p>
         <p className="mrc-case-row__tag">
-          {tag} · {project.year}
+          {project.status} · {project.year}
         </p>
         <h3 className="mrc-case-row__title">
           <Link href={`/work/${project.slug}/`}>{project.title}</Link>
         </h3>
         <p className="mrc-case-row__excerpt">{project.summary}</p>
-        <p className="mrc-case-row__excerpt">
-          <span>{project.role}</span>
-          {" · "}
-          <span>{project.technologies.slice(0, 4).join(" · ")}</span>
-        </p>
+        <TechList
+          technologies={project.technologies}
+          limit={4}
+          className="mrc-case-row__tech-list"
+        />
       </div>
     </article>
   );
