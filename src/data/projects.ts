@@ -12,7 +12,7 @@ const catalog: Project[] = [
     summary:
       "Configurable Python reporting that turns Google Search Console data into repeatable page- and query-level organic performance comparisons.",
     overview:
-      "At MacMillan Search, recurring performance reviews for SaaS clients meant rebuilding the same GSC comparisons by hand. This tool automated those comparisons so analysts could spend time on interpretation—winners, losers, anomalies and re-optimization opportunities—instead of data assembly.\n\nIt was developed alongside organic growth work documented separately as B2B SaaS organic growth, where search-driven content optimization produced a 226% average click increase across 18 pages over six months.",
+      "At MacMillan Search, recurring performance reviews for SaaS clients meant rebuilding the same GSC comparisons by hand. This tool automated those comparisons so analysts could spend time on interpretation—winners, losers, anomalies and re-optimization opportunities—instead of data assembly.\n\nIt ran alongside organic growth work for a Canadian HR/payroll SaaS platform, where search-driven content optimization produced a 226% average click increase across 18 pages over six months.",
     category: "tools",
     depth: "case-study",
     role: "Developer / SEO Specialist",
@@ -54,7 +54,7 @@ const catalog: Project[] = [
       implementation:
         "Integrates the Search Console API, caches responses, validates inputs and generates comparisons that highlight relative movement. Property-specific rules stay in configuration so the core logic remains reusable across accounts.",
       outcome:
-        "A reusable agency workflow that identifies organic search winners and losers and informs optimization priorities. Public source code documents the approach; client property data stays out of the repository.",
+        "A reusable agency workflow that identifies organic search winners and losers and informs optimization priorities. Source code is public; client property data stays out of the repository.",
     },
   },
   {
@@ -97,7 +97,7 @@ const catalog: Project[] = [
       problem:
         "The brewery needed a maintainable commerce and content platform that could absorb product, location, events and marketing complexity without becoming a fragile one-off stack—or a shallow theme swap that left search and fulfillment problems untouched.",
       constraints:
-        "Existing brand and operational requirements, multiple fulfillment paths, migration risk, third-party integrations and a site the client could operate after launch. Business outcomes and client storytelling belong on mannyroy.com; this page focuses on engineering ownership.",
+        "Existing brand and operational requirements, multiple fulfillment paths, migration risk, third-party integrations and a site the client could operate after launch.",
       responsibility:
         "Led SEO-driven IA, URL migration strategy, events management overhaul, UI/UX improvements with A/B testing, custom WordPress plugins, third-party integrations, data mapping, DNS/CDN, payment processing coordination and technical QA through launch.",
       alternatives:
@@ -107,14 +107,8 @@ const catalog: Project[] = [
       implementation:
         "Managed technical dependencies across two WordPress origins, more than forty products and three fulfillment paths. Coordinated data mapping, DNS/CDN infrastructure, payment processing, stakeholder requirements and QA through implementation and launch, including experimentation around UI/UX changes.",
       outcome:
-        "A launched commercial platform with clearer ownership boundaries between content, commerce and fulfillment. For the business narrative and client perspective, see the consulting case study on mannyroy.com.",
+        "A launched commercial platform with clearer ownership boundaries between content, commerce and fulfillment.",
     },
-    sections: [
-      {
-        heading: "What this page is for",
-        body: "Hiring managers and engineers evaluating technical ownership: architecture, integrations, migration and QA. Prospective clients looking for commercial outcomes should start on mannyroy.com.",
-      },
-    ],
   },
   {
     slug: "wordpress-venue-management",
@@ -165,7 +159,7 @@ const catalog: Project[] = [
     summary:
       "Next.js guide to Eastern Prince Edward Island: communities, places and trip planning structured for discovery. Portfolio build—the inquiry form does not send mail.",
     overview:
-      "Location-driven content is easy to flatten into undifferentiated lists. Eastward treats communities and places as first-class routes so visitors can move from region to place without marketing fiction.\n\nIt is explicitly a portfolio demonstration: the site says so, and the inquiry form does not submit anywhere.",
+      "Location-driven content is easy to flatten into undifferentiated lists. Eastward treats communities and places as first-class routes so visitors can move from region to place without marketing fiction.\n\nThe inquiry form is presentational and does not send mail—kept deliberately scoped as a frontend and content-architecture demonstration.",
     category: "independent",
     depth: "case-study",
     role: "Developer",
@@ -180,13 +174,13 @@ const catalog: Project[] = [
     outcomes: [
       "Typed geographic content model with community and place routes",
       "Contemporary App Router frontend suitable for indexable location content",
-      "Honest scope labelling for portfolio evaluation",
+      "Clear scope labelling on the live demonstration site",
     ],
     caseStudy: {
       problem:
         "Eastern PEI needed a structure that helps people move from region to place. Flat list pages and brochure templates erase the geography that makes the content useful.",
       constraints:
-        "Personal portfolio scope, static-friendly Next.js architecture, and clear labelling that this is not an operating tourism business.",
+        "Static-friendly Next.js architecture and clear labelling that this is a demonstration, not an operating tourism business.",
       responsibility:
         "Full public site: information architecture, TypeScript models, pages and copy that state the project’s nature.",
       alternatives:
@@ -196,7 +190,7 @@ const catalog: Project[] = [
       implementation:
         "App Router pages, TypeScript content structures and Tailwind UI. The inquiry form is presentational and does not send mail.",
       outcome:
-        "A live demonstration of contemporary frontend work and location-driven content architecture that hiring managers can click through without ambiguity about scope.",
+        "A live demonstration of contemporary frontend work and location-driven content architecture.",
     },
   },
   {
@@ -207,12 +201,12 @@ const catalog: Project[] = [
     summary:
       "Investor-facing Tableau dashboard translating public census, housing, economic and climate data into regional insights—with documented sourcing, update workflows and handoff for long-term ownership.",
     overview:
-      "Regional partners needed a clearer view of economic indicators drawn from uneven public data—without losing methodological honesty or creating a dashboard nobody could maintain after handoff.\n\nTwo analytical constraints shaped the work: outdated census inputs and building a regional aggregate that did not map cleanly to an official Statistics Canada geography. The business narrative is on mannyroy.com; this page focuses on method and ownership.",
+      "Regional partners needed a clearer view of economic indicators drawn from uneven public data—without losing methodological honesty or creating a dashboard nobody could maintain after handoff.\n\nTwo analytical constraints shaped the work: outdated census inputs and building a regional aggregate that did not map cleanly to an official Statistics Canada geography.",
     category: "professional",
     depth: "case-study",
     role: "Analyst / technical consultant",
     context: "Manny Roy Consulting",
-    status: "Published case study on MRC",
+    status: "Delivered",
     technologies: [
       "Tableau",
       "Census & public datasets",
@@ -245,7 +239,7 @@ const catalog: Project[] = [
       implementation:
         "Structured census, housing, economic and climate inputs; validated joins and calculations; documented update workflows; and oriented the dashboard narrative to partnership questions rather than decorative charts.",
       outcome:
-        "A usable economic dashboard with ownership built for the client. Business storytelling lives on mannyroy.com; analytical decisions are documented here.",
+        "A usable economic dashboard with documented sourcing, update workflows and ownership built for the client.",
     },
   },
   {
@@ -284,7 +278,7 @@ const catalog: Project[] = [
       problem:
         "Consulting needed a site that could hold services, case studies, glossary and research without becoming a generic brochure—or an unmaintainable custom CMS.",
       constraints:
-        "Editorial workflow, accessibility and performance expectations, and a design system that stays coherent as content grows. Commercial messaging lives on the consulting site; the engineering and IA decisions are what matter for technical evaluation.",
+        "Editorial workflow, accessibility and performance expectations, and a design system that stays coherent as content grows.",
       responsibility:
         "Theme architecture, design tokens, information architecture, SEO plumbing and publishing patterns for glossary collections and case studies. Ongoing GEO/AEO research published through the knowledge base.",
       alternatives:
@@ -371,7 +365,7 @@ const catalog: Project[] = [
     technologies: ["TypeScript", "Google Sheets", "Command journal"],
     capabilities: ["data-automation", "web-engineering"],
     decisionNote:
-      "Staff auth, environment configuration and operational internals stay private; this page only describes the problem boundary with the public site.",
+      "Staff auth, environment configuration and operational internals remain private; the public description covers the problem boundary with the marketing site.",
   },
   {
     slug: "macmillan-search-practice",
@@ -381,7 +375,7 @@ const catalog: Project[] = [
     summary:
       "Technical SEO, automation and organic growth across B2B SaaS, marketplace, AI and enterprise accounts—including audits, migrations and content architecture.",
     overview:
-      "At MacMillan Search I was promoted from Automation Engineer to SEO Specialist. The work combined technical audits, search performance analysis, client collaboration and internal tooling across accounts that ranged from thousands to tens of thousands of URLs.\n\nThis page is the agency practice overview. Individually shareable engagements live as their own case studies.",
+      "At MacMillan Search I was promoted from Automation Engineer to SEO Specialist. The work combined technical audits, search performance analysis, client collaboration and internal tooling across accounts that ranged from thousands to tens of thousands of URLs.",
     category: "professional",
     depth: "case-study",
     role: "SEO Specialist (promoted from Automation Engineer)",
@@ -434,14 +428,8 @@ const catalog: Project[] = [
       implementation:
         "Audits covering crawlability, rendering, indexation and performance; Python reporting against GSC; migration URL mapping and post-launch crawling; and content frameworks that connect search intent to site architecture.",
       outcome:
-        "Prioritized recommendations across diverse architectures, measurable SaaS organic growth, clean migration QA evidence and reusable tooling—detailed in the related engagement case studies.",
+        "Prioritized recommendations across diverse architectures, measurable SaaS organic growth, clean migration QA evidence and reusable tooling.",
     },
-    sections: [
-      {
-        heading: "Related engagement case studies",
-        body: "Marketplace rendering architecture, B2B SaaS organic growth, enterprise migration QA, AI SaaS content architecture and human-reviewed editorial automation each have their own shareable URLs. Use those pages for engagement-level evidence; keep this page for the practice-level story.",
-      },
-    ],
   },
   {
     slug: "woo-trexity",
@@ -488,7 +476,7 @@ const catalog: Project[] = [
     summary:
       "Statically generated Next.js site with shareable case studies, structured project metadata and technical SEO acceptance criteria built into the build.",
     overview:
-      "You should be able to open a specific project URL, read the constraints and decisions, and share that link from a résumé. The site is statically exported so each case study is indexable HTML with stable paths.",
+      "Statically exported Next.js site with unique project URLs, structured metadata and case-study pages that stay readable as plain HTML. Design tokens stay shared with consulting work; the sitemap stays focused on technical projects.",
     category: "independent",
     depth: "project",
     role: "Developer",
@@ -498,7 +486,7 @@ const catalog: Project[] = [
     capabilities: ["web-engineering", "technical-search"],
     liveUrl: "https://amandadroy.com/",
     decisionNote:
-      "Static export and unique project URLs make individual case studies easy to cite; the design system stays shared with consulting work while the information architecture stays evaluation-first.",
+      "Static export and unique project URLs keep case studies indexable and easy to share; the design system stays shared with consulting work.",
   },
   {
     slug: "hyrule-merchant",
@@ -528,7 +516,7 @@ const catalog: Project[] = [
     summary:
       "Image-led Next.js theme experiment exploring heavy media layouts and performance trade-offs.",
     overview:
-      "A place to try image-forward composition and Tailwind-driven layout without tying those choices to production evaluation pages.",
+      "A place to try image-forward composition and Tailwind-driven layout without tying those choices to production project pages.",
     category: "lab",
     depth: "project",
     role: "Developer",
@@ -539,7 +527,7 @@ const catalog: Project[] = [
     lab: true,
     repository: "https://github.com/amandadr/newfie-portfolio",
     decisionNote:
-      "Separating theme experiments from evaluation pages keeps media experiments from shaping how case studies are read.",
+      "Theme experiments stay separate so heavy media layouts do not reshape how case studies are presented.",
   },
   {
     slug: "home-camera-pipeline",
@@ -548,7 +536,7 @@ const catalog: Project[] = [
     summary:
       "Local bird-feeder detection pipeline with Frigate-oriented recording and an Apple Silicon detector path.",
     overview:
-      "A home lab for on-device detection and recording without cloud subscriptions. Public write-ups omit hostnames, camera addresses and access details.",
+      "A home lab for on-device detection and recording without cloud subscriptions—described without hostnames, camera addresses or access details.",
     category: "lab",
     depth: "project",
     role: "Developer",

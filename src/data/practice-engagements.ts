@@ -1,25 +1,22 @@
 import type { Project } from "@/lib/types";
 
-/**
- * Under-documented résumé themes, expanded only where October 2026 materials
- * support public-safe method + contribution claims (no invented client metrics).
- */
+/** Cross-account practice and applied-AI work presented as shareable projects. */
 export const practiceEngagements: Project[] = [
   {
     slug: "technical-audit-methodology",
     title: "Technical audit methodology",
     year: "2024–2025",
     code: "WORK / 022",
-    eyebrow: "Practice · Prioritization · Delivery",
+    eyebrow: "Technical SEO · Prioritization · Delivery",
     summary:
-      "How 50+ technical SEO audits were structured in practice—crawlability, rendering, indexation and performance findings carried into prioritized recommendations, IA opportunities and stakeholder reporting.",
+      "How technical SEO audits were structured across agency and consulting work—crawlability, rendering, indexation and performance findings carried into prioritized recommendations, IA opportunities and stakeholder reporting.",
     overview:
-      "Audit volume alone is not a method. Across agency and consulting work, audits were treated as the start of a loop: investigate, prioritize, recommend, support implementation where possible and validate with measurement.\n\nThis page documents the practice pattern behind the aggregate **50+** audits metric. It is not a single-client case study and does not attach the total to one property.",
+      "An audit is useful when it starts a loop: investigate, prioritize, recommend, support implementation where possible and validate with measurement. Across agency and consulting engagements, crawlability, rendering, indexation and performance findings routinely fed content opportunities, information architecture and web strategy—not only bug lists.\n\nMore than fifty audits followed this pattern across diverse website architectures.",
     category: "professional",
     depth: "case-study",
     role: "SEO Specialist",
     context: "Agency & consulting practice",
-    status: "Practice documentation",
+    status: "Delivered across engagements",
     technologies: [
       "Screaming Frog",
       "Sitebulb",
@@ -40,24 +37,24 @@ export const practiceEngagements: Project[] = [
     ],
     outcomes: [
       "Repeatable audit → recommendation → reporting loop across diverse architectures",
-      "Findings routinely translated into content, IA and web-strategy opportunities",
-      "Supports the aggregate 50+ audits outcome without single-client attribution",
+      "Findings carried into content, IA and web-strategy opportunities",
+      "50+ technical SEO audits delivered across agency and consulting work",
     ],
     caseStudy: {
       problem:
         "Stakeholders often receive crawl dumps without a clear sense of what to fix first—or how audit findings relate to content and architecture decisions.",
       constraints:
-        "Concurrent accounts, mixed stacks, limited engineering time and the need for explainable priorities.",
+        "Concurrent accounts, mixed stacks and limited engineering time.",
       responsibility:
         "Structure technical audits so crawlability, rendering, indexation and performance findings become ranked implementation recommendations and stakeholder-ready reporting.",
       alternatives:
         "Tool exports without narrative; checklist SEO disconnected from IA; or endless discovery with no delivery.",
       choice:
-        "Audit-first delivery that explicitly carries findings into content opportunities, information architecture and web strategy—not only bug lists.",
+        "Audit-first delivery that carries findings into content opportunities, information architecture and web strategy.",
       implementation:
         "Combined Screaming Frog/Sitebulb crawls, Lighthouse/PSI signals and Search Console evidence with written priorities suited to developers and marketers.",
       outcome:
-        "A documented methodology behind the 50+ audit body of work. Sanitized example deliverables remain a future artifact opportunity.",
+        "A durable audit method used across more than fifty engagements, with findings that could move into implementation planning.",
     },
   },
   {
@@ -69,12 +66,12 @@ export const practiceEngagements: Project[] = [
     summary:
       "Contributed to tracking and revenue attribution initiatives—analyzing paid versus organic channel performance to inform lead acquisition strategies across B2B SaaS, AI, data and enterprise accounts.",
     overview:
-      "Résumé materials document contribution to tracking and revenue attribution work, including paid-versus-organic performance analysis for lead acquisition—not ownership of a named client’s full measurement stack.\n\nPublic detail stays at the method and contribution level: GA4, Search Console, Looker Studio/Tableau-oriented reporting, validation habits and stakeholder communication. Exact tracking implementations and client numbers stay private.",
+      "Organic priorities are clearer when paid and organic acquisition can be read together. Across concurrent B2B SaaS, AI, data and enterprise accounts, I contributed to tracking and revenue attribution work and analyzed paid-versus-organic performance for lead acquisition conversations.\n\nDay-to-day tools included GA4, Search Console and Looker Studio/Tableau-oriented reporting, with attention to what the data could and could not support before using it to prioritize content or technical work.",
     category: "professional",
     depth: "case-study",
     role: "SEO Specialist",
     context: "Agency engagement · Anonymized",
-    status: "Contribution documented",
+    status: "Delivered",
     technologies: [
       "GA4",
       "Google Search Console",
@@ -102,7 +99,7 @@ export const practiceEngagements: Project[] = [
       problem:
         "Organic work is hard to prioritize when paid and organic acquisition are reported in isolation—or when tracking cannot support the questions stakeholders actually ask.",
       constraints:
-        "Shared agency access, anonymized public writing and incomplete public documentation of individual property setups.",
+        "Shared agency access and varied maturity of client measurement stacks.",
       responsibility:
         "Contribute to tracking/attribution initiatives and analyze paid versus organic channel performance for lead acquisition conversations.",
       alternatives:
@@ -110,9 +107,9 @@ export const practiceEngagements: Project[] = [
       choice:
         "Treat attribution questions as part of SEO delivery—validate what the data can support before using it to prioritize content or technical work.",
       implementation:
-        "Worked with GA4, Search Console and BI-style reporting surfaces (Looker Studio/Tableau) while collaborating with clients and internal stakeholders on acquisition interpretation.",
+        "Worked with GA4, Search Console and BI-style reporting surfaces while collaborating with clients and internal stakeholders on acquisition interpretation.",
       outcome:
-        "Documented practice contribution. Deeper public methodology samples require sanitized tracking diagrams you still approve for release.",
+        "Clearer lead-acquisition conversations that connected organic work to channel performance, not rankings alone.",
     },
   },
   {
@@ -124,12 +121,12 @@ export const practiceEngagements: Project[] = [
     summary:
       "Evaluated LLM outputs for reasoning, factual accuracy, instruction adherence and response quality—refining prompts and evaluation approaches for complex coding tasks at Data Annotation Tech.",
     overview:
-      "Judging model answers is a skill with direct carry-over into GEO/AEO, editorial automation and RAG design. At Data Annotation Tech (2023–2025), work focused on evaluating outputs for reasoning, factuality, instruction adherence and quality, including complex coding tasks.\n\nNo client-confidential evaluation sets are published here. The transferable practice is how evaluation criteria and prompt refinement interact.",
+      "Fluent model answers can still fail on reasoning, factuality or instruction adherence. At Data Annotation Tech (2023–2025), I evaluated LLM outputs against those criteria—including complex coding tasks—and refined prompts and evaluation approaches when responses missed the mark.\n\nThat judgment carried into later curriculum work, human-reviewed editorial automation and retrieval-assisted workflows.",
     category: "professional",
     depth: "case-study",
     role: "Machine Learning Developer",
     context: "Data Annotation Tech",
-    status: "Completed tenure",
+    status: "Completed",
     technologies: [
       "LLM evaluation",
       "Prompt refinement",
@@ -150,13 +147,13 @@ export const practiceEngagements: Project[] = [
     outcomes: [
       "Multi-year LLM output evaluation across reasoning and coding tasks",
       "Prompt and evaluation-approach refinement for accuracy-sensitive judgments",
-      "Foundation for later human-reviewed AI workflows and RAG quality instincts",
+      "Foundation for later human-reviewed AI workflows and retrieval quality instincts",
     ],
     caseStudy: {
       problem:
         "LLM outputs can look fluent while failing on reasoning, factuality or instruction adherence—especially on technical coding tasks.",
       constraints:
-        "Vendor evaluation protocols, confidential task material and no public release of proprietary datasets.",
+        "Vendor evaluation protocols and confidential task material.",
       responsibility:
         "Evaluate outputs against quality criteria and refine prompts/evaluation approaches for complex coding work.",
       alternatives:
@@ -166,7 +163,7 @@ export const practiceEngagements: Project[] = [
       implementation:
         "Reviewed model responses for reasoning reliability, factual accuracy, instruction adherence and overall quality while iterating prompts and rubrics.",
       outcome:
-        "Evaluation experience that later informed curriculum work and human-in-the-loop editorial automation—without publishing proprietary examples.",
+        "Stronger instincts for when AI assistance is trustworthy—later applied in curriculum design and editorial automation with human review.",
     },
   },
   {
@@ -176,14 +173,14 @@ export const practiceEngagements: Project[] = [
     code: "WORK / 025",
     eyebrow: "Retrieval · Source quality · Automation",
     summary:
-      "Built cloud-based RAG tools and AI-assisted workflows where automation handled repetitive work—emphasizing structure and source quality as the difference between useful retrieval and fluent noise.",
+      "Cloud-based RAG tools and AI-assisted workflows where automation handled repetitive work—emphasizing structure and source quality as the difference between useful retrieval and fluent noise.",
     overview:
-      "Cover letters and expertise lists in the October 2026 résumé archive describe building cloud-based RAG tools after LLM evaluation work, with a clear lesson: structure and source quality determine whether retrieval helps.\n\nThis page stays honest about public evidence: architecture diagrams, proprietary corpora and benchmark tables are not published here. What is documented is the practice stance and how it connects to evaluation and editorial automation.",
+      "After evaluating LLM outputs for accuracy and reasoning, I built cloud-based RAG tools and AI-assisted workflows so automation could handle repetitive research steps without inventing answers.\n\nThe practical lesson is structural: retrieval only helps when source material is well organized and quality is visible. Python and APIs made routine evaluation and preparation repeatable.",
     category: "lab",
     depth: "case-study",
     role: "Developer",
     context: "Independent / applied AI practice",
-    status: "Practice documentation",
+    status: "Prototype / practice",
     technologies: [
       "RAG",
       "LLM APIs",
@@ -203,15 +200,15 @@ export const practiceEngagements: Project[] = [
       "editorial-workflow-automation",
     ],
     outcomes: [
-      "Cloud RAG tooling built for repetitive research/automation workflows",
-      "Practice emphasis on document structure and source quality",
+      "Cloud RAG tooling for repetitive research and automation workflows",
+      "Emphasis on document structure and source quality",
       "Connected evaluation judgment to retrieval design",
     ],
     caseStudy: {
       problem:
         "LLM assistants without retrieval invent confidently; retrieval without structure still returns the wrong passages.",
       constraints:
-        "Limited public artifacts, evolving tooling and the need to avoid overselling unverified productized RAG systems.",
+        "Evolving tooling and the need to keep source grounding inspectable.",
       responsibility:
         "Build cloud-based RAG tools and AI-assisted workflows that keep source grounding visible while automating repetitive steps.",
       alternatives:
@@ -221,7 +218,7 @@ export const practiceEngagements: Project[] = [
       implementation:
         "Used Python/API-centered automation around retrieval-assisted tasks, informed by earlier output-evaluation practice.",
       outcome:
-        "A documented RAG practice note. Lab experiments with public or synthetic corpora can deepen this further without client data.",
+        "Working RAG-assisted workflows where structure and source quality stayed first-class, not afterthoughts.",
     },
   },
   {
@@ -231,9 +228,9 @@ export const practiceEngagements: Project[] = [
     code: "WORK / 026",
     eyebrow: "CMS preparation · Editorial ops",
     summary:
-      "AI-assisted, human-reviewed publishing for accuracy-sensitive articles that landed on a Squarespace site—roughly tripling content output while keeping factual review before CMS preparation.",
+      "AI-assisted, human-reviewed publishing for accuracy-sensitive articles prepared for Squarespace—roughly tripling content output while keeping factual review before CMS handoff.",
     overview:
-      "The editorial automation engagement produced accuracy-sensitive financial-services articles and prepared them for the client’s Squarespace property. Résumé language describes roughly tripling content output with human factual review in the loop.\n\nThis page focuses on the CMS/publishing edge of that workflow. The full pipeline narrative lives on Human-reviewed AI editorial automation.",
+      "Accuracy-sensitive financial-services articles needed a path from expert podcast material to a Squarespace publishing surface without skipping factual review. Upstream automation covered transcription, structuring and drafting; people stayed responsible for verification; CMS preparation made the work publish-ready.\n\nThe measured workflow roughly tripled content-production capacity.",
     category: "professional",
     depth: "case-study",
     role: "Automation / SEO Specialist",
@@ -256,13 +253,13 @@ export const practiceEngagements: Project[] = [
     outcomes: [
       "CMS preparation path into Squarespace for accuracy-sensitive articles",
       "Human factual review retained before publish-ready handoff",
-      "Productivity gains framed as ~3× for the measured editorial workflow",
+      "~3× capacity for the measured editorial workflow",
     ],
     caseStudy: {
       problem:
         "Podcast-sourced expert material needed a path to a Squarespace publishing surface without skipping factual review.",
       constraints:
-        "Accuracy-sensitive vertical, CMS conventions and anonymized public documentation.",
+        "Accuracy-sensitive vertical and CMS publishing conventions.",
       responsibility:
         "Connect transcription/structuring/drafting automation to human review and CMS preparation for Squarespace publication.",
       alternatives:
@@ -270,9 +267,9 @@ export const practiceEngagements: Project[] = [
       choice:
         "Automate preparation up to the CMS edge while keeping people responsible for factual approval.",
       implementation:
-        "Used Python with Whisper/AssemblyAI, SurferSEO and OpenAI-assisted drafting upstream of human review and Squarespace-oriented CMS preparation (see related editorial case study for the full pipeline).",
+        "Used Python with Whisper/AssemblyAI, SurferSEO and OpenAI-assisted drafting upstream of human review and Squarespace-oriented CMS preparation.",
       outcome:
-        "A publishable workflow edge that supported the ~3× capacity outcome without claiming unattended Squarespace posting.",
+        "A publishable handoff that supported roughly triple production capacity without unattended Squarespace posting.",
     },
   },
   {
@@ -282,14 +279,14 @@ export const practiceEngagements: Project[] = [
     code: "WORK / 027",
     eyebrow: "Experimentation · Conversion · Architecture",
     summary:
-      "UX experimentation as part of website modernization—A/B testing, conversion-path thinking and template/layout optimization alongside SEO-driven architecture on a multi-location commerce engagement.",
+      "UX experimentation inside a website modernization—A/B testing, conversion-path thinking and template/layout optimization alongside SEO-driven architecture on a multi-location commerce engagement.",
     overview:
-      "On Good Robot Brewing (with Differo), what began as ecommerce work expanded into modernization that explicitly included UX experimentation, events overhaul, custom development and SEO-driven architecture.\n\nThis practice note separates the experimentation stance from the full commerce case study. Specific test matrices and lift tables are not published here; hypothesis-led UI/UX work is.",
+      "On Good Robot Brewing (with Differo), ecommerce work expanded into modernization that included UX experimentation, an events overhaul, custom development and SEO-driven architecture.\n\nExperimentation sat next to information architecture and WordPress implementation—not as a separate cosmetic track after launch.",
     category: "professional",
     depth: "case-study",
     role: "Technical lead",
     context: "Manny Roy Consulting · with Differo",
-    status: "Delivered with related launch",
+    status: "Delivered",
     technologies: [
       "A/B testing",
       "UI/UX",
@@ -306,14 +303,14 @@ export const practiceEngagements: Project[] = [
     relatedProjectSlugs: ["good-robot-brewing", "webflow-platform-optimization"],
     outcomes: [
       "UX experimentation included in a live commerce modernization scope",
-      "Experimentation paired with SEO-driven IA rather than treated as decoration",
-      "Detailed lift tables reserved until sanitized results are approved for release",
+      "Experimentation paired with SEO-driven IA",
+      "Hypothesis-led UI/UX work coordinated through launch",
     ],
     caseStudy: {
       problem:
         "Architecture and SEO changes can still fail commercially if usability and conversion paths are left untested.",
       constraints:
-        "Multi-stakeholder agency/client delivery, live commerce risk and incomplete public test documentation.",
+        "Multi-stakeholder agency/client delivery and live commerce risk.",
       responsibility:
         "Include UX experimentation and UI/UX improvements alongside SEO-driven architecture, custom development and launch QA.",
       alternatives:
@@ -321,9 +318,9 @@ export const practiceEngagements: Project[] = [
       choice:
         "Treat experimentation as part of modernization—templates, journeys and SEO constraints in the same conversation.",
       implementation:
-        "Coordinated A/B-oriented UI/UX work with information architecture and WordPress implementation during the Good Robot engagement (see related case study for commerce scope).",
+        "Coordinated A/B-oriented UI/UX work with information architecture and WordPress implementation during the Good Robot engagement.",
       outcome:
-        "A practice record of hypothesis-led UX work inside a real launch. Publishable experiment results remain a follow-up artifact.",
+        "Hypothesis-led UX work shipped inside a real commerce launch alongside SEO and platform modernization.",
     },
   },
 ];

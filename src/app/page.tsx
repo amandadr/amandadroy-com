@@ -180,7 +180,7 @@ export default function HomePage() {
           <SectionHeader
             heading="Let's talk about good technical work"
             headingId="home-cta"
-            intro="Email, LinkedIn or GitHub for hiring conversations. Visit mannyroy.com when you have a consulting project. Recruiters and reps: request a CV by email rather than looking for a public PDF."
+            intro="Email, LinkedIn or GitHub for hiring conversations. Visit mannyroy.com when you have a consulting project."
             spacing="tight"
           />
           <div className="mrc-cluster">

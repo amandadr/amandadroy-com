@@ -77,4 +77,4 @@ export const SITE_METRICS: SiteMetric[] = [
 ];
 
 export const ANONYMIZED_DISCLOSURE =
-  "This engagement is presented in anonymized form to respect client confidentiality. The technical approach and personal contribution are described accurately; illustrative artifacts use synthetic or generalized data where needed.";
+  "Client details are anonymized. Methods and outcomes describe the work as delivered.";

@@ -20,7 +20,7 @@ export default function ExperiencePage() {
       <Hero
         eyebrow="Experience"
         headline="Professional experience & education"
-        subtext="Roles and outcomes across MacMillan Search, Manny Roy Consulting and professional AI training. For applications, email me for the current CV—there is no public résumé PDF on this site."
+        subtext="Roles and outcomes across MacMillan Search, Manny Roy Consulting and professional AI training. Email me when you need a current CV for an application."
         primaryHref={CV_REQUEST_MAILTO}
         primaryText="Request CV by email"
         secondaryHref="/work/"
@@ -35,7 +35,7 @@ export default function ExperiencePage() {
           <SectionHeader
             heading="Career"
             headingId="career"
-            intro="What I owned in each role, and which projects show the work in more detail. Engagement names without public showcase consent are described by sector instead of brand."
+            intro="What I owned in each role, with links to projects that show the work in more detail."
             spacing="tight"
           />
           {experience.map((item) => (

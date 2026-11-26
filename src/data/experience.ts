@@ -1,7 +1,7 @@
 import type { ExperienceItem } from "@/lib/types";
 import { SOCIAL } from "@/data/site";
 
-/** Aligned to manny-roy-technical.pdf; engagement names anonymized on this site. */
+/** Career history; some agency engagements described by sector. */
 export const experience: ExperienceItem[] = [
   {
     kind: "work",

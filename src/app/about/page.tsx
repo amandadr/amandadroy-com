@@ -87,7 +87,7 @@ export default function AboutPage() {
           <SectionHeader
             heading="Contact"
             headingId="contact"
-            intro="Email for hiring conversations and collaborations. Use the consulting site when you have a client project. Recruiters and reps can request a current CV by email—there is no public résumé download on this site."
+            intro="Email for hiring conversations and collaborations. Use the consulting site when you have a client project."
           />
           <div className="mrc-cluster">
             <a className="button mrc-btn-primary" href={`mailto:${EMAIL}`}>

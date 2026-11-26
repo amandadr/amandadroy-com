@@ -11,7 +11,7 @@ export const agencyEngagements: Project[] = [
     summary:
       "Investigated JavaScript SEO and rendering for a React secondhand marketplace with thousands of product URLs, with recommendations toward Next.js for scalable organic discoverability.",
     overview:
-      "A React marketplace with a large product inventory needed a clearer path from client-side rendering constraints to organic discovery. The work focused on technical investigation, architectural trade-offs and communicating implementation priorities to stakeholders.\n\nStatus: technical recommendation. This page does not claim that a migration was implemented or that organic growth was measured afterward.",
+      "A React marketplace with a large product inventory needed a clearer path from client-side rendering constraints to organic discovery. The work centered on technical investigation, architectural trade-offs and communicating implementation priorities to stakeholders—delivered as a recommendation package for a transition toward Next.js.",
     category: "professional",
     depth: "case-study",
     role: "Technical SEO",
@@ -35,7 +35,7 @@ export const agencyEngagements: Project[] = [
       problem:
         "Thousands of product URLs in a React application raised crawl, rendering and indexation questions that a conventional page-by-page SEO checklist could not answer.",
       constraints:
-        "Agency timelines, existing React architecture, stakeholder buy-in requirements and the need to avoid confidential client infrastructure detail in public writing.",
+        "Agency timelines, existing React architecture and stakeholder buy-in requirements.",
       responsibility:
         "Technical investigation of JavaScript SEO and rendering implications; recommendations for a transition path toward Next.js; communication of priorities and ROI framing to stakeholders.",
       alternatives:
@@ -45,7 +45,7 @@ export const agencyEngagements: Project[] = [
       implementation:
         "Reviewed how product discovery interacted with rendering strategy, documented architectural considerations and produced a prioritized recommendation set for stakeholders.",
       outcome:
-        "A clear recommendation package establishing buy-in for architectural change. Public case study stays anonymized; no migration completion or post-migration growth is claimed.",
+        "A clear recommendation package establishing buy-in for architectural change, with prioritized implementation steps developers could schedule.",
     },
   },
   {
@@ -57,7 +57,7 @@ export const agencyEngagements: Project[] = [
     summary:
       "Recurring organic optimization for a Canadian HR/payroll SaaS platform—content, internal linking and measurement that produced a 226% average click increase across 18 pages over six months.",
     overview:
-      "This is the authoritative case study for the 226% measured-set metric. Work combined search performance data, competitive research, internal linking and editorial improvements across eighteen written or refreshed pages over six months.\n\nThe average is influenced by high-performing pages in the measured set. It is not median growth, sitewide growth or a guaranteed result.",
+      "Recurring organic optimization for a Canadian HR and payroll SaaS platform. Search performance data, competitive research, internal linking and editorial improvements across eighteen written or refreshed pages produced a 226% average organic click increase over six months.\n\nThat average reflects the measured set of pages—including strong performers—not median growth, sitewide growth or a guaranteed result.",
     category: "professional",
     depth: "case-study",
     role: "SEO Specialist",
@@ -75,13 +75,13 @@ export const agencyEngagements: Project[] = [
     outcomes: [
       "226% average organic click growth across 18 written or refreshed SaaS pages over six months",
       "Recurring measurement loop connecting winners, losers and re-optimization opportunities",
-      "Supporting infrastructure documented separately as SEO Rankings Report",
+      "Supporting GSC comparison tooling later open-sourced as SEO Rankings Report",
     ],
     caseStudy: {
       problem:
         "SaaS organic growth required more than one-off content production: pages needed selection rationale, internal linking and a measurement loop that could survive monthly reporting cycles.",
       constraints:
-        "Agency delivery cadence, shared tooling, anonymized public reporting and the need to keep client property data out of public repositories.",
+        "Agency delivery cadence, shared tooling and the need to keep client property data out of shared repositories.",
       responsibility:
         "Opportunity identification, search intent mapping, page selection and refresh, internal linking guidance and recurring performance analysis.",
       alternatives:
@@ -89,9 +89,9 @@ export const agencyEngagements: Project[] = [
       choice:
         "Pair editorial work with repeatable GSC-based comparisons so optimization priorities stayed evidence-led.",
       implementation:
-        "Wrote or refreshed 18 pages over six months while using GSC, Ahrefs, Screaming Frog and DataForSEO. The Python reporting workflow that supported comparisons is documented as SEO Rankings Report.",
+        "Wrote or refreshed 18 pages over six months while using GSC, Ahrefs, Screaming Frog and DataForSEO. A Python reporting workflow supported page- and query-level comparisons (see SEO Rankings Report).",
       outcome:
-        "226% average organic click increase across the measured set. Use this page for the growth story; use SEO Rankings Report for the tooling story.",
+        "226% average organic click increase across the measured set of eighteen pages over six months.",
     },
   },
   {
@@ -103,7 +103,7 @@ export const agencyEngagements: Project[] = [
     summary:
       "SEO support for an enterprise migration: URL mapping, launch support, post-launch crawling and technical reporting—with QA across 224 internal URLs and documented remediations.",
     overview:
-      "Migration SEO is as much about validation criteria as redirects. QA across 224 internal URLs found no 4xx or 5xx errors, redirect chains or loops, while remaining redirect, sitemap and hreflang issues were documented for remediation.\n\nThis is not framed as an entirely error-free migration; the distinction between clean measured results and outstanding follow-up is part of the evidence.",
+      "Migration SEO is as much about validation criteria as redirects. QA across 224 internal URLs found no 4xx or 5xx errors, redirect chains or loops, while remaining redirect, sitemap and hreflang issues were documented for remediation.",
     category: "professional",
     depth: "case-study",
     role: "SEO Specialist",
@@ -137,7 +137,7 @@ export const agencyEngagements: Project[] = [
       implementation:
         "Mapped URLs, supported launch, crawled afterward and classified issues—reporting both the clean 224-URL QA result and outstanding redirect, sitemap and hreflang follow-ups.",
       outcome:
-        "A migration QA package stakeholders could act on. Public writing stays anonymized and avoids implying zero remaining work.",
+        "A migration QA package stakeholders could act on, with clean measured results reported separately from outstanding remediation.",
     },
   },
   {
@@ -149,7 +149,7 @@ export const agencyEngagements: Project[] = [
     summary:
       "Eighteen-page pillar-and-cluster framework for an AI customer-support platform—connecting intent, audience needs and product capabilities to a publishing roadmap that informed site architecture.",
     overview:
-      "Keyword lists alone do not make a site architecture. This engagement translated research into page purposes, topical relationships, content formats and internal linking guidance.\n\nStatus: strategy and architecture deliverable. No unverified organic performance claims.",
+      "Keyword lists alone do not make a site architecture. This engagement translated research into page purposes, topical relationships, content formats and internal linking guidance—an 18-page pillar-and-cluster framework that informed publishing strategy and website architecture.",
     category: "professional",
     depth: "case-study",
     role: "SEO Specialist",
@@ -182,7 +182,7 @@ export const agencyEngagements: Project[] = [
       problem:
         "An AI SaaS product needed content architecture that connected search demand to product capabilities without producing an unmaintainable blog farm.",
       constraints:
-        "Agency delivery, anonymized public documentation and the boundary between strategy recommendations and implemented site changes.",
+        "Agency delivery cadence and the boundary between strategy recommendations and implemented site changes.",
       responsibility:
         "Research synthesis, pillar-and-cluster design, page purpose definitions and a publishing roadmap that informed website architecture.",
       alternatives:
@@ -192,7 +192,7 @@ export const agencyEngagements: Project[] = [
       implementation:
         "Mapped keyword volume, competition, CPC, search intent, technical findings and content format into an 18-page executable publishing plan—supported by DataForSEO research, Sitebulb crawling, PageSpeed analysis and recurring content/performance work.",
       outcome:
-        "An actionable content architecture deliverable. Public case study remains anonymized and does not claim unmeasured traffic outcomes.",
+        "An actionable content architecture deliverable stakeholders could use to shape publishing and site structure.",
     },
   },
   {
@@ -204,7 +204,7 @@ export const agencyEngagements: Project[] = [
     summary:
       "Python-assisted workflow turning expert podcast material into structured, SEO-ready articles—roughly tripling production capacity while keeping human editorial oversight.",
     overview:
-      "Automation only helps when source grounding and factual review stay in the loop. This workflow integrated transcription, structuring, AI-assisted drafting, verification and CMS preparation for a Canadian financial-services organization.\n\nSupporting evidence from the engagement includes seven accuracy-sensitive articles produced during the work. Exact client identity stays anonymized.",
+      "Automation only helps when source grounding and factual review stay in the loop. For a Canadian financial-services organization, this workflow integrated transcription, structuring, AI-assisted drafting, verification and CMS preparation—producing seven accuracy-sensitive articles while roughly tripling production capacity.",
     category: "professional",
     depth: "case-study",
     role: "Automation / SEO Specialist",
@@ -237,7 +237,7 @@ export const agencyEngagements: Project[] = [
       problem:
         "Expert podcast material contained valuable insights, but turning episodes into publishable SEO articles by hand could not keep pace with editorial demand.",
       constraints:
-        "Accuracy requirements in financial services, CMS conventions, anonymized public reporting and the need for human judgment on factual claims.",
+        "Accuracy requirements in financial services, CMS conventions and the need for human judgment on factual claims.",
       responsibility:
         "Workflow design across transcription, structuring, AI-assisted drafting, factual verification and CMS preparation.",
       alternatives:
@@ -259,7 +259,7 @@ export const agencyEngagements: Project[] = [
     summary:
       "Content consolidation strategy for a global entertainment-data platform—keyword, competitor and share-of-voice research turned into editorial direction, internal-linking standards and a film/TV subdomain restructuring proposal.",
     overview:
-      "Fragmented content across related properties rarely fixes itself with more publishing. This engagement translated research into editorial recommendations, link standards and a subdomain consolidation strategy for film and television content.\n\nStatus: strategy and architecture recommendation. Public writing does not claim that every recommendation was implemented or that organic performance was measured afterward.",
+      "Fragmented content across related properties rarely fixes itself with more publishing. For a global entertainment-data platform, keyword, competitor and share-of-voice research became editorial recommendations, internal-linking standards and a film-and-television subdomain consolidation strategy.",
     category: "professional",
     depth: "case-study",
     role: "SEO Specialist",
@@ -290,7 +290,7 @@ export const agencyEngagements: Project[] = [
       problem:
         "A global entertainment-data platform needed clearer topical ownership across film and television content that had grown across related surfaces.",
       constraints:
-        "Agency delivery cadence, anonymized public documentation and the boundary between strategic recommendation and engineering change.",
+        "Agency delivery cadence and the boundary between strategic recommendation and engineering change.",
       responsibility:
         "Convert keyword, competitor and share-of-voice research into editorial recommendations, internal-link standards, content opportunities and a subdomain consolidation proposal.",
       alternatives:
@@ -300,7 +300,7 @@ export const agencyEngagements: Project[] = [
       implementation:
         "Documented editorial direction, link standards and a film-and-television subdomain restructuring strategy stakeholders could evaluate against product and brand constraints.",
       outcome:
-        "A consolidation recommendation package. This page does not claim implementation completion or measured traffic outcomes.",
+        "A consolidation recommendation package stakeholders could evaluate against product and brand constraints.",
     },
   },
   {
@@ -312,7 +312,7 @@ export const agencyEngagements: Project[] = [
     summary:
       "SEO-driven architecture and UI/UX improvements for an AI software platform—working directly in Webflow and its custom theme to support features, on-site optimization and content publishing.",
     overview:
-      "Search recommendations only matter when someone can implement them in the CMS the team actually uses. This engagement balanced organic discoverability with usability inside Webflow, including theme-level work and publishing support.\n\nClient identity stays anonymized; the emphasis is hands-on CMS implementation alongside SEO and design collaboration.",
+      "Search recommendations only matter when someone can implement them in the CMS the team actually uses. For an AI software platform, this engagement balanced organic discoverability with usability inside Webflow—including custom theme work, feature implementation, on-site optimization and content publishing.",
     category: "professional",
     depth: "case-study",
     role: "SEO Specialist",
@@ -338,7 +338,7 @@ export const agencyEngagements: Project[] = [
       problem:
         "An AI software marketing site needed SEO and UX improvements that could ship inside the team's existing Webflow setup rather than as abstract recommendations.",
       constraints:
-        "Custom theme limits, shared agency/client ownership of publishing and anonymized public documentation.",
+        "Custom theme limits and shared agency/client ownership of publishing.",
       responsibility:
         "Contribute to SEO-driven website architecture and UI/UX improvements while implementing features, on-site optimization and content publishing in Webflow.",
       alternatives:
@@ -348,7 +348,7 @@ export const agencyEngagements: Project[] = [
       implementation:
         "Used Webflow day-to-day for feature implementation, on-site optimization and publishing while coordinating SEO architecture with UI/UX goals.",
       outcome:
-        "Documented CMS implementation experience across SEO, development and design collaboration—without inventing unverified traffic claims.",
+        "Hands-on Webflow delivery that connected SEO architecture with UI/UX and publishing in the same CMS.",
     },
   },
   {
@@ -360,7 +360,7 @@ export const agencyEngagements: Project[] = [
     summary:
       "Technical SEO across enterprise and multi-location service portfolios spanning thousands to tens of thousands of URLs—audits, performance analysis, prioritized recommendations and stakeholder reporting.",
     overview:
-      "Large portfolios do not get page-by-page love equally. This practice case describes how audit findings, prioritization and reporting worked across concurrent enterprise and multi-location accounts at agency scale.\n\nThe sitewide **50+** audit count is an aggregate across agency and consulting work—not a claim that every URL on every property received individual optimization.",
+      "Large portfolios do not get page-by-page attention equally. Across concurrent enterprise and multi-location accounts, technical auditing, performance analysis, prioritized recommendations and stakeholder reporting covered websites and multi-site portfolios spanning thousands to tens of thousands of URLs.",
     category: "professional",
     depth: "case-study",
     role: "SEO Specialist",
@@ -393,7 +393,7 @@ export const agencyEngagements: Project[] = [
       problem:
         "Enterprise and multi-location portfolios concentrate crawl, indexation and template risk across large URL inventories that cannot all be optimized manually.",
       constraints:
-        "Concurrent accounts, shared tooling, limited engineering bandwidth and anonymized public reporting.",
+        "Concurrent accounts, shared tooling and limited engineering bandwidth.",
       responsibility:
         "Contribute to technical auditing, performance analysis, prioritized recommendations and stakeholder reporting across large portfolios.",
       alternatives:
@@ -403,7 +403,7 @@ export const agencyEngagements: Project[] = [
       implementation:
         "Moved between Screaming Frog/Sitebulb crawls, GSC and analytics reviews, recommendation writing and client communication across B2B SaaS, AI, data, insurance and multi-location service accounts.",
       outcome:
-        "A representative practice case for portfolio-scale technical SEO. Aggregate audit volume is documented separately; this page does not attribute that total to a single client.",
+        "Portfolio-scale technical SEO delivery with prioritized recommendations stakeholders could schedule across large URL inventories.",
     },
   },
   {
@@ -415,7 +415,7 @@ export const agencyEngagements: Project[] = [
     summary:
       "Ongoing technical advisory across three Atlantic Canadian brands for 2+ years—technical SEO, local search, Google Business Profile, platform strategy, integrations and marketing technology.",
     overview:
-      "Long-running advisory is less about a single launch and more about prioritization, troubleshooting and incremental systems improvement. Across three Nova Scotian brands this has meant SEO and local search support, GBP, platform strategy, integrations and marketing technology ownership over 2+ years.\n\nBrand names stay out of this public page; the engagement pattern is what hiring managers usually need.",
+      "Long-running advisory is less about a single launch and more about prioritization, troubleshooting and incremental systems improvement. Across three Atlantic Canadian brands this has meant SEO and local search support, Google Business Profile, platform strategy, integrations and marketing technology ownership for more than two years.",
     category: "professional",
     depth: "case-study",
     role: "Technical advisor",
@@ -444,7 +444,7 @@ export const agencyEngagements: Project[] = [
       problem:
         "Small multi-brand operators needed steady technical ownership—local visibility, platform choices and integrations—without staffing a full in-house web team.",
       constraints:
-        "Budget realism, mixed platforms, anonymized public documentation and work that accumulates over years rather than a single ship date.",
+        "Budget realism, mixed platforms and work that accumulates over years rather than a single ship date.",
       responsibility:
         "Ongoing technical SEO, local search, Google Business Profile support, platform strategy, integrations troubleshooting and marketing technology guidance.",
       alternatives:
@@ -454,7 +454,7 @@ export const agencyEngagements: Project[] = [
       implementation:
         "Supported three Nova Scotian brands concurrently—balancing SEO/local search work with platform and integration decisions as needs emerged.",
       outcome:
-        "A durable advisory pattern demonstrating multi-brand technical ownership. Specific brand identities remain anonymized here.",
+        "Durable multi-brand technical ownership spanning SEO, local search, platforms and integrations.",
     },
   },
   {
@@ -504,7 +504,7 @@ export const agencyEngagements: Project[] = [
       implementation:
         "Co-led stream development and delivery with AI First Consulting for the Digital Nova Scotia / StFX Practical Utilization of AI program.",
       outcome:
-        "96% stream completion alongside strong program-level participation and feedback. Public metrics keep stream and program figures distinct.",
+        "96% stream completion alongside strong program-level participation and feedback—stream results kept distinct from broader program figures.",
     },
   },
   {
@@ -566,7 +566,7 @@ export const agencyEngagements: Project[] = [
     summary:
       "Managed MacMillan Search’s in-house newsletter and blog The B2B SEO—topic planning, research, technical writing, editing and recurring publication for marketing and search professionals.",
     overview:
-      "Running an agency’s own channel is a useful stress test of editorial judgment: the audience already knows the subject. Ownership covered planning, research, writing, editing and recurring publication for The B2B SEO.\n\nStatus: **retired** public channel from the agency tenure. Authorized writing samples are not attached here; treat this page as evidence of editorial ownership and technical communication.",
+      "Running an agency’s own channel is a useful stress test of editorial judgment: the audience already knows the subject. Ownership covered planning, research, writing, editing and recurring publication for The B2B SEO, MacMillan Search’s newsletter and blog for marketing and search professionals.\n\nThe channel is retired following the agency engagement.",
     category: "professional",
     depth: "case-study",
     role: "Editor / writer",
@@ -591,13 +591,13 @@ export const agencyEngagements: Project[] = [
     outcomes: [
       "Owned topic planning through publication for The B2B SEO",
       "Regular writing and editing for a professional marketing/search audience",
-      "Channel marked retired after the agency engagement",
+      "Channel retired after the agency engagement",
     ],
     caseStudy: {
       problem:
         "The agency needed a recurring editorial channel that spoke credibly to B2B marketers and SEO practitioners.",
       constraints:
-        "Async account work elsewhere, editorial standards for an expert audience and no public sample pack attached to this portfolio page.",
+        "Async account work elsewhere and editorial standards for an expert audience.",
       responsibility:
         "Topic planning, research, writing, editing and recurring publication for the in-house newsletter and blog.",
       alternatives:
@@ -607,7 +607,7 @@ export const agencyEngagements: Project[] = [
       implementation:
         "Researched, drafted, edited and published for The B2B SEO while managing concurrent client accounts.",
       outcome:
-        "Demonstrable editorial ownership for a specialist audience. Publication is retired; samples available on request where authorized.",
+        "Editorial ownership for a specialist audience, from topic planning through recurring publication.",
     },
   },
 ];
