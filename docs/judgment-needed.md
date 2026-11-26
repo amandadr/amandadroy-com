@@ -7,11 +7,11 @@ Resolved from your Nov 2025 decisions: keep exact metrics; no live résumé PDF 
 1. **Flagship figures** — Provide or approve diagrams/screens for: SEO Rankings Report sample output, marketplace rendering comparison, migration QA checklist (table is live; visual still optional), pillar/cluster map, editorial pipeline. Brief wants genuine or explicitly synthetic artifacts—not decorative placeholders.
 2. **OG / social images** — Want a default share image and/or per-project images?
 3. **Headshot reuse** — About-only today. OK on Experience/Home?
-4. **Favicon mark** — Wordmark SVG at tiny sizes vs cropped “M”?
-5. **Homepage featured set** — Still: SEO Rankings, B2B SaaS growth, marketplace rendering, Good Robot, enterprise migration QA, editorial automation. Swap any?
-6. **Analytics** — Plausible/GA (especially CV-request mailto clicks / case engagement), or stay dark?
-7. **Writing samples** — B2B technical editorial page marks The B2B SEO as retired. Attach authorized samples later?
-8. **Per-project `updatedAt`** — Sitemap uses `SITE_CONTENT_UPDATED` + year end-dates. Prefer explicit dates?
+4. **Homepage featured set** — Still: SEO Rankings, B2B SaaS growth, marketplace rendering, Good Robot, enterprise migration QA, editorial automation. Swap any?
+5. **Analytics** — Plausible/GA (especially CV-request mailto clicks / case engagement), or stay dark?
+6. **Writing samples** — B2B editorial folded into MacMillan practice. Attach authorized samples later?
+7. **Per-project `updatedAt`** — Sitemap uses `SITE_CONTENT_UPDATED` + year end-dates. Prefer explicit dates?
+8. **Cache headers** — GitHub Pages forces ~10 min `max-age` on assets (LH “efficient cache lifetimes”). Cloudflare (or similar) in front is the real fix; hashed Next filenames already make short TTL safe.
 ## Shipped recently
 
 - Merged AI SaaS architecture, enterprise consolidation, Webflow and B2B editorial into MacMillan Search practice

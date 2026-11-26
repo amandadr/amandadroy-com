@@ -213,7 +213,7 @@
   margin: var(--space-3) 0 0;
   font-size: 0.95rem;
   line-height: 1.5;
-  color: rgb(255 255 255 / 78%);
+  color: var(--mrc-mustard-on-dark);
 }
 
 .mrc-foot-consult a {
@@ -294,7 +294,7 @@
 }
 
 .mrc-foot-copy {
-  opacity: 0.9;
+  color: var(--mrc-mustard-on-dark);
 }
 
 @media (max-width: 991px) {

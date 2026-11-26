@@ -93,6 +93,7 @@ export function Header() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
+                    prefetch={false}
                     aria-current={current ? "page" : undefined}
                     onClick={() => setMenuOpen(false)}
                   >

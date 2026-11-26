@@ -45,14 +45,13 @@
   --light-gray-color: #e8e0d8;
   --brand-color: var(--colour-maroon);
 
-  /* Sans-led headings; mono for technical labels */
+  /* Sans-led headings and labels — avoid loading a third family on every page */
   --font-sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Helvetica, Arial, sans-serif;
   --font-serif: "IBM Plex Serif", Georgia, "Times New Roman", serif;
-  --font-mono: "IBM Plex Mono", Menlo, Consolas, Monaco, "Liberation Mono",
-    monospace;
+  --font-mono: Menlo, Consolas, Monaco, "Liberation Mono", monospace;
   --font-heading: var(--font-sans);
-  --font-label: var(--font-mono);
+  --font-label: var(--font-sans);
 
   /* Denser portfolio spacing defaults */
   --mrc-section-padding-block: var(--space-7); /* 48px */
@@ -210,7 +209,19 @@
 
 [data-theme="portfolio"] .mrc-case-row__tag,
 [data-theme="portfolio"] .mrc-project-id {
-  color: var(--colour-accent-secondary);
+  /* Olive at full strength is AA on paper; faded olive failed contrast */
+  color: var(--colour-olive);
+}
+
+[data-theme="portfolio"] .mrc-case-row__id {
+  color: var(--mrc-text-muted);
+  opacity: 1;
+}
+
+[data-theme="portfolio"] .mrc-foot-consult,
+[data-theme="portfolio"] .mrc-foot-copy {
+  /* Cream-on-olive was ~4.1:1; mustard-on-dark is ≥4.5:1 */
+  color: var(--mrc-mustard-on-dark);
 }
 
 [data-theme="portfolio"] .mrc-eyebrow {

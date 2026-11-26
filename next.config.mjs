@@ -5,6 +5,10 @@ const nextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
+  // Tree-shake icon imports; browserslist in package.json drops legacy polyfills.
+  experimental: {
+    optimizePackageImports: ["simple-icons"],
+  },
 };
 
 export default nextConfig;

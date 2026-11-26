@@ -27,9 +27,9 @@ export const metadata: Metadata = {
   creator: SITE_NAME,
   publisher: SITE_NAME,
   icons: {
-    icon: [{ url: "/mannyroy.svg", type: "image/svg+xml" }],
-    shortcut: "/mannyroy.svg",
-    apple: "/mannyroy.svg",
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
   },
   alternates: {
     canonical: "/",
@@ -103,6 +103,29 @@ export default function RootLayout({
 
   return (
     <html lang="en-CA" data-theme="portfolio">
+      <head>
+        <link
+          rel="preload"
+          href="/fonts/ibm-plex-sans/ibm-plex-sans-latin-400-normal.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/ibm-plex-sans/ibm-plex-sans-latin-600-normal.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/ibm-plex-serif/ibm-plex-serif-latin-600-normal.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body>
         <a className="mrc-skip-link" href="#main">
           Skip to content

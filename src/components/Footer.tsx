@@ -25,7 +25,9 @@ export function Footer() {
             <ul className="mrc-foot-list">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href}>{link.label}</Link>
+                  <Link href={link.href} prefetch={false}>
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>
