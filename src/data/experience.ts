@@ -46,7 +46,7 @@ export const experience: ExperienceItem[] = [
       },
       {
         text: "**226%** average organic click growth across **18** B2B SaaS pages over six months",
-        href: "/work/macmillan-search-practice/",
+        href: "/work/b2b-saas-organic-growth/",
       },
       {
         text: "Configurable Python GSC reporting tool for page- and query-level comparisons",
@@ -54,20 +54,29 @@ export const experience: ExperienceItem[] = [
       },
       {
         text: "Migration QA across **224** internal URLs with no 4xx/5xx, redirect chains or loops",
-        href: "/work/macmillan-search-practice/",
+        href: "/work/enterprise-migration-qa/",
       },
       {
         text: "JavaScript SEO recommendations for a React secondhand marketplace evaluating Next.js",
-        href: "/work/macmillan-search-practice/",
+        href: "/work/marketplace-rendering-architecture/",
       },
       {
         text: "**18-page** pillar-and-cluster content framework for an AI developer-platform site",
-        href: "/work/macmillan-search-practice/",
+        href: "/work/ai-saas-content-architecture/",
+      },
+      {
+        text: "Human-reviewed AI editorial workflow roughly tripling production capacity",
+        href: "/work/editorial-workflow-automation/",
       },
     ],
     selectedWork: [
       { label: "MacMillan practice", href: "/work/macmillan-search-practice/" },
+      { label: "B2B SaaS growth", href: "/work/b2b-saas-organic-growth/" },
       { label: "SEO Rankings Report", href: "/work/seo-rankings-report/" },
+      {
+        label: "Editorial automation",
+        href: "/work/editorial-workflow-automation/",
+      },
     ],
   },
   {

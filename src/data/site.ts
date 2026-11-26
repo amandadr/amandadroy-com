@@ -8,6 +8,10 @@ export const SITE_NAME = "Manny Roy";
 export const ALTERNATE_NAME = "Amanda Roy";
 export const EMAIL = "manny@mannyroy.com";
 export const LOCATION = "Souris, Prince Edward Island, Canada";
+export const PERSON_ID = `${SITE_URL}/#person`;
+
+/** Stable sitemap / freshness date — bump when major public content changes. */
+export const SITE_CONTENT_UPDATED = "2026-03-25";
 
 export const SOCIAL = {
   github: "https://github.com/amandadr",
@@ -32,12 +36,40 @@ export const FOOTER_LINKS = [
 
 export const RESUME_PATH = "/resume/manny-roy-technical.pdf";
 
-/** Verified against the current technical résumé PDF. */
-export const SITE_METRICS: SiteMetric[] = [
-  { value: "50+", label: "Technical SEO audits" },
-  { value: "226%", label: "Avg. click growth across 18 SaaS pages" },
-  { value: "3+", label: "Years in SEO & web systems" },
-];
+/** Short hero lede — longer narrative lives on About. */
+export const SITE_HERO_LEDE =
+  "I'm a technical SEO specialist and full-stack developer working at the intersection of search, software architecture, data and automation.";
 
+export const SITE_HERO_META =
+  "Based in Prince Edward Island, Canada · Available for remote opportunities";
+
+/** Longer professional summary for About and metadata-adjacent uses. */
 export const SITE_INTRO =
   "Technical SEO specialist and full-stack developer with 3+ years of agency and consulting experience across B2B SaaS, e-commerce, marketplaces and enterprise sites—including multi-site portfolios spanning thousands to tens of thousands of URLs. I combine technical SEO with hands-on development, Python automation and applied AI to investigate architectural issues, identify scalable opportunities and build repeatable analytical workflows.";
+
+/** Verified against the current technical résumé PDF. */
+export const SITE_METRICS: SiteMetric[] = [
+  {
+    value: "50+",
+    label: "Technical SEO audits delivered",
+    href: "/work/macmillan-search-practice/",
+  },
+  {
+    value: "226%",
+    label: "Avg. organic click growth across 18 SaaS pages",
+    href: "/work/b2b-saas-organic-growth/",
+  },
+  {
+    value: "10k+",
+    label: "URLs across supported multi-site portfolios",
+    href: "/work/macmillan-search-practice/",
+  },
+  {
+    value: "~3×",
+    label: "Editorial production capacity via workflow automation",
+    href: "/work/editorial-workflow-automation/",
+  },
+];
+
+export const ANONYMIZED_DISCLOSURE =
+  "This engagement is presented in anonymized form to respect client confidentiality. The technical approach and personal contribution are described accurately; illustrative artifacts use synthetic or generalized data where needed.";

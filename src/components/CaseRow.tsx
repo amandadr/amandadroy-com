@@ -9,9 +9,15 @@ type CaseRowProps = {
 
 export function CaseRow({ project }: CaseRowProps) {
   const code = getProjectCode(project);
+  const presentation = project.presentation ?? (project.featured ? "standard" : "compact");
+  const isFlagship = presentation === "flagship";
+  const isCompact = presentation === "compact";
 
   return (
-    <article className="mrc-case-row">
+    <article
+      className={`mrc-case-row mrc-case-row--${presentation}`}
+      data-presentation={presentation}
+    >
       <div className="mrc-case-row__body">
         <p className="mrc-project-id">{code}</p>
         <p className="mrc-case-row__tag">
@@ -20,10 +26,17 @@ export function CaseRow({ project }: CaseRowProps) {
         <h3 className="mrc-case-row__title">
           <Link href={`/work/${project.slug}/`}>{project.title}</Link>
         </h3>
-        <p className="mrc-case-row__excerpt">{project.summary}</p>
+        {!isCompact ? (
+          <p className="mrc-case-row__excerpt">{project.summary}</p>
+        ) : null}
+        {isFlagship ? (
+          <p className="mrc-case-row__cta">
+            <Link href={`/work/${project.slug}/`}>Read the case study</Link>
+          </p>
+        ) : null}
         <TechList
           technologies={project.technologies}
-          limit={4}
+          limit={isCompact ? 3 : 4}
           className="mrc-case-row__tech-list"
         />
       </div>

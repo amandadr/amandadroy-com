@@ -4,10 +4,12 @@ import { Hero } from "@/components/Hero";
 import { JsonLd } from "@/components/JsonLd";
 import { SectionHeader } from "@/components/SectionHeader";
 import { capabilities } from "@/data/capabilities";
-import { getFeaturedProjects, getProject } from "@/data/projects";
+import { getFeaturedProjects, getLabProjects, getProject } from "@/data/projects";
 import {
+  PERSON_ID,
   RESUME_PATH,
-  SITE_INTRO,
+  SITE_HERO_LEDE,
+  SITE_HERO_META,
   SITE_METRICS,
   SITE_NAME,
   SITE_URL,
@@ -15,7 +17,8 @@ import {
 } from "@/data/site";
 
 export default function HomePage() {
-  const featured = getFeaturedProjects();
+  const featured = getFeaturedProjects().slice(0, 6);
+  const labPreview = getLabProjects().slice(0, 3);
 
   return (
     <>
@@ -27,6 +30,7 @@ export default function HomePage() {
           url: SITE_URL,
           mainEntity: {
             "@type": "Person",
+            "@id": PERSON_ID,
             name: SITE_NAME,
             url: SITE_URL,
           },
@@ -36,7 +40,7 @@ export default function HomePage() {
       <Hero
         eyebrow="Technical SEO · Software development · Automation"
         headline="Building systems that are easier to find, use and maintain."
-        subtext={SITE_INTRO}
+        subtext={`${SITE_HERO_LEDE} ${SITE_HERO_META}`}
         primaryHref="/work/"
         primaryText="Explore selected work"
         secondaryHref={RESUME_PATH}
@@ -51,8 +55,17 @@ export default function HomePage() {
           <div className="mrc-metrics">
             {SITE_METRICS.map((metric) => (
               <div key={metric.label} className="mrc-metric">
-                <p className="mrc-metric__value">{metric.value}</p>
-                <p className="mrc-metric__label">{metric.label}</p>
+                {metric.href ? (
+                  <Link href={metric.href} className="mrc-metric__link">
+                    <p className="mrc-metric__value">{metric.value}</p>
+                    <p className="mrc-metric__label">{metric.label}</p>
+                  </Link>
+                ) : (
+                  <>
+                    <p className="mrc-metric__value">{metric.value}</p>
+                    <p className="mrc-metric__label">{metric.label}</p>
+                  </>
+                )}
               </div>
             ))}
           </div>
@@ -62,6 +75,9 @@ export default function HomePage() {
             </a>
             <a href={SOCIAL.linkedin} target="_blank" rel="noopener noreferrer">
               LinkedIn
+            </a>
+            <a href={`mailto:${SOCIAL.email.replace("mailto:", "")}`}>
+              Contact
             </a>
             <a href={SOCIAL.mrc} target="_blank" rel="noopener noreferrer">
               Manny Roy Consulting
@@ -78,7 +94,7 @@ export default function HomePage() {
           <SectionHeader
             heading="Selected work"
             headingId="featured-work"
-            intro="Search automation, commerce architecture, programmatic publishing, geographic content systems and consulting infrastructure—open a project for decisions, constraints and results."
+            intro="Search automation, commerce architecture, agency SEO engagements and applied AI workflows—open a project for decisions, constraints and results."
             layout="split"
             linkHref="/work/"
             linkText="All work"
@@ -98,9 +114,9 @@ export default function HomePage() {
       >
         <div className="gh-inner">
           <SectionHeader
-            heading="Where I can help"
+            heading="Areas of practice"
             headingId="capabilities"
-            intro="Technical SEO and indexation, web engineering, search analytics and automation, and GEO/AEO research—each area links to projects that demonstrate it."
+            intro="How I investigate search systems, build web infrastructure, automate analysis and explore applied AI—each area links to supporting projects."
             width="wide"
             spacing="tight"
           />
@@ -132,22 +148,49 @@ export default function HomePage() {
       </section>
 
       <section
+        className="mrc-section section-light gh-outer"
+        aria-labelledby="lab-preview"
+      >
+        <div className="gh-inner">
+          <SectionHeader
+            heading="From the lab"
+            headingId="lab-preview"
+            intro="Experiments, independent builds and ongoing research."
+            layout="split"
+            linkHref="/lab/"
+            linkText="Visit the lab"
+            spacing="tight"
+          />
+          <ul className="mrc-lab-preview">
+            {labPreview.map((project) => (
+              <li key={project.slug}>
+                <Link href={`/work/${project.slug}/`}>{project.title}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section
         className="mrc-closing section-light gh-outer"
         aria-labelledby="home-cta"
       >
         <div className="gh-inner mrc-stack mrc-stack--l">
           <SectionHeader
-            heading="Next step"
+            heading="Let's talk about good technical work"
             headingId="home-cta"
-            intro="See the career timeline and résumé, or go to mannyroy.com when you have a consulting project."
+            intro="Email, LinkedIn or GitHub for hiring conversations. Visit mannyroy.com when you have a consulting project."
             spacing="tight"
           />
           <div className="mrc-cluster">
-            <Link className="button mrc-btn-primary" href="/experience/">
-              Experience & résumé
-            </Link>
-            <a className="button mrc-btn-secondary" href={SOCIAL.mrc}>
-              Manny Roy Consulting
+            <a className="button mrc-btn-primary" href={SOCIAL.email}>
+              Email
+            </a>
+            <a className="button mrc-btn-secondary" href={SOCIAL.linkedin}>
+              LinkedIn
+            </a>
+            <a className="button mrc-btn-secondary" href={SOCIAL.github}>
+              GitHub
             </a>
           </div>
         </div>

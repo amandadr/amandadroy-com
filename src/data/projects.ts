@@ -1,15 +1,17 @@
+import { agencyEngagements } from "@/data/agency-engagements";
 import type { Project } from "@/lib/types";
 
-export const projects: Project[] = [
+const catalog: Project[] = [
   {
     slug: "seo-rankings-report",
     title: "SEO Rankings Report",
     year: "2024–2025",
+    code: "TOOL / 001",
     eyebrow: "Search automation · Agency SEO",
     summary:
       "Configurable Python reporting that turns Google Search Console data into repeatable page- and query-level organic performance comparisons.",
     overview:
-      "At MacMillan Search, recurring performance reviews for SaaS clients meant rebuilding the same GSC comparisons by hand. This tool automated those comparisons so analysts could spend time on interpretation—winners, losers, anomalies and re-optimization opportunities—instead of data assembly.\n\nIt was developed alongside organic growth work for a B2B SaaS account, where search-driven content optimization, internal linking and performance analysis produced a 226% average click increase across 18 pages over six months.",
+      "At MacMillan Search, recurring performance reviews for SaaS clients meant rebuilding the same GSC comparisons by hand. This tool automated those comparisons so analysts could spend time on interpretation—winners, losers, anomalies and re-optimization opportunities—instead of data assembly.\n\nIt was developed alongside organic growth work documented separately as B2B SaaS organic growth, where search-driven content optimization produced a 226% average click increase across 18 pages over six months.",
     category: "tools",
     depth: "case-study",
     role: "Developer / SEO Specialist",
@@ -25,6 +27,12 @@ export const projects: Project[] = [
     ],
     capabilities: ["technical-search", "data-automation"],
     featured: true,
+    featuredRank: 1,
+    presentation: "flagship",
+    engagementType: "open-source",
+    deliveryStatus: "live",
+    visibility: "public",
+    relatedProjectSlugs: ["b2b-saas-organic-growth", "macmillan-search-practice"],
     repository: "https://github.com/amandadr/seo-rankings-report",
     outcomes: [
       "Automated page- and query-level GSC comparisons for recurring client reviews",
@@ -72,6 +80,8 @@ export const projects: Project[] = [
     ],
     capabilities: ["web-engineering", "technical-search"],
     featured: true,
+    featuredRank: 4,
+    presentation: "standard",
     mrcUrl: "https://www.mannyroy.com/",
     outcomes: [
       "SEO-driven information architecture and URL migration strategy",
@@ -117,7 +127,8 @@ export const projects: Project[] = [
     status: "Public source code",
     technologies: ["PHP", "WordPress", "Structured data", "iCal", "JSON-LD"],
     capabilities: ["technical-search", "web-engineering"],
-    featured: true,
+    featured: false,
+    presentation: "compact",
     repository: "https://github.com/amandadr/wordpress-venue-management",
     outcomes: [
       "Reusable content model for events vs series",
@@ -157,7 +168,8 @@ export const projects: Project[] = [
     status: "Live demo",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
     capabilities: ["web-engineering"],
-    featured: true,
+    featured: false,
+    presentation: "compact",
     liveUrl: "https://eastward.amandadroy.com/",
     repository: "https://github.com/amandadr/eastward",
     outcomes: [
@@ -198,7 +210,8 @@ export const projects: Project[] = [
     status: "Published case study on MRC",
     technologies: ["Tableau", "Data architecture", "Public datasets"],
     capabilities: ["data-automation"],
-    featured: true,
+    featured: false,
+    presentation: "standard",
     mrcUrl: "https://www.mannyroy.com/case-studies/pcp-economic-dashboard/",
     outcomes: [
       "Decision-ready Tableau dashboard over shaped public data",
@@ -245,7 +258,8 @@ export const projects: Project[] = [
       "Structured content",
     ],
     capabilities: ["web-engineering", "applied-ai-geo", "technical-search"],
-    featured: true,
+    featured: false,
+    presentation: "standard",
     liveUrl: "https://www.mannyroy.com/",
     repository: "https://github.com/amandadr/mrc-ghost-custom",
     outcomes: [
@@ -354,12 +368,13 @@ export const projects: Project[] = [
     summary:
       "Technical SEO, automation and organic growth across B2B SaaS, marketplace, AI and enterprise accounts—including audits, migrations and content architecture.",
     overview:
-      "At MacMillan Search I was promoted from Automation Engineer to SEO Specialist. The work combined technical audits, search performance analysis, client collaboration and internal tooling across accounts that ranged from thousands to tens of thousands of URLs.\n\nSelected engagements below cover a React marketplace, a B2B SaaS growth account, an enterprise migration and an AI developer-platform content architecture.",
+      "At MacMillan Search I was promoted from Automation Engineer to SEO Specialist. The work combined technical audits, search performance analysis, client collaboration and internal tooling across accounts that ranged from thousands to tens of thousands of URLs.\n\nThis page is the agency practice overview. Individually shareable engagements live as their own case studies.",
     category: "professional",
     depth: "case-study",
     role: "SEO Specialist (promoted from Automation Engineer)",
     context: "MacMillan Search · April 2024–June 2025",
     status: "Employment experience",
+    code: "WORK / 007",
     technologies: [
       "Technical SEO",
       "JavaScript SEO",
@@ -371,11 +386,21 @@ export const projects: Project[] = [
       "Content architecture",
     ],
     capabilities: ["technical-search", "data-automation", "applied-ai-geo"],
+    engagementType: "agency",
+    deliveryStatus: "delivered",
+    visibility: "anonymized",
+    relatedProjectSlugs: [
+      "marketplace-rendering-architecture",
+      "b2b-saas-organic-growth",
+      "enterprise-migration-qa",
+      "ai-saas-content-architecture",
+      "editorial-workflow-automation",
+      "seo-rankings-report",
+    ],
     outcomes: [
       "50+ technical SEO audits with prioritized implementation recommendations",
-      "226% average organic click growth across 18 B2B SaaS pages",
-      "Migration QA across 224 URLs with no 4xx/5xx, chains or loops",
-      "18-page pillar-and-cluster framework for an AI developer-platform site",
+      "Promotion from Automation Engineer into SEO Specialist delivery",
+      "Reusable internal tooling and QA processes across diverse architectures",
     ],
     caseStudy: {
       problem:
@@ -391,24 +416,12 @@ export const projects: Project[] = [
       implementation:
         "Audits covering crawlability, rendering, indexation and performance; Python reporting against GSC; migration URL mapping and post-launch crawling; and content frameworks that connect search intent to site architecture.",
       outcome:
-        "Delivered prioritized recommendations across diverse architectures, measurable SaaS organic growth, a clean migration QA result set and reusable internal tooling. Engagement detail follows.",
+        "Prioritized recommendations across diverse architectures, measurable SaaS organic growth, clean migration QA evidence and reusable tooling—detailed in the related engagement case studies.",
     },
     sections: [
       {
-        heading: "React marketplace — JavaScript SEO & architecture",
-        body: "Investigated technical SEO for a React-based secondhand marketplace with thousands of product URLs. Developed recommendations for transitioning toward Next.js, addressing rendering, organic discoverability and the architectural foundations needed for scalable search performance. Communicated technical trade-offs and implementation priorities to stakeholders to establish buy-in and ROI.",
-      },
-      {
-        heading: "B2B SaaS — organic growth & automation",
-        body: "Wrote or refreshed 18 B2B SaaS pages over six months, achieving an average organic click increase of 226% across the measured set. Combined GSC, Ahrefs, Screaming Frog and DataForSEO with competitive research to guide optimization.\n\nDeveloped the configurable Python GSC reporting tool documented separately as SEO Rankings Report.",
-      },
-      {
-        heading: "Enterprise migration — site migration & technical QA",
-        body: "Led SEO support for a website migration spanning URL mapping, programmatic implementation, launch support, post-launch crawling and technical reporting. QA across 224 internal URLs found no 4xx or 5xx errors, redirect chains or loops. Documented and prioritized remaining redirect, sitemap and hreflang issues for remediation.",
-      },
-      {
-        heading: "AI developer platform — scalable content architecture",
-        body: "Developed an 18-page pillar-and-cluster content framework connecting search intent, competitive research, product capabilities and audience needs to a structured publishing strategy that ultimately shaped website architecture.",
+        heading: "Related engagement case studies",
+        body: "Marketplace rendering architecture, B2B SaaS organic growth, enterprise migration QA, AI SaaS content architecture and human-reviewed editorial automation each have their own shareable URLs. Use those pages for engagement-level evidence; keep this page for the practice-level story.",
       },
     ],
   },
@@ -600,6 +613,8 @@ export const projects: Project[] = [
   },
 ];
 
+export const projects: Project[] = [...agencyEngagements, ...catalog];
+
 export const categoryLabels: Record<Project["category"], string> = {
   professional: "Professional work",
   tools: "Tools & infrastructure",
@@ -629,7 +644,15 @@ export function getProjectCode(project: Project): string {
 }
 
 export function getFeaturedProjects(): Project[] {
-  return projects.filter((project) => project.featured);
+  return projects
+    .filter((project) => project.featured)
+    .sort((a, b) => (a.featuredRank ?? 99) - (b.featuredRank ?? 99));
+}
+
+export function getProjectsByCapability(
+  capabilityId: Project["capabilities"][number],
+): Project[] {
+  return projects.filter((project) => project.capabilities.includes(capabilityId));
 }
 
 export function getLabProjects(): Project[] {

@@ -106,10 +106,59 @@
   color: var(--mrc-text);
 }
 
-/* Olive remains brand cohesion in chrome; not a marketing chapter band */
+/* Editorial masthead: paper/ink with a thin maroon rule (prototype vs MRC olive) */
 [data-theme="portfolio"] .mrc-head {
-  background-color: var(--mrc-olive);
-  border-bottom: 1px solid var(--mrc-mustard);
+  background-color: var(--colour-paper);
+  color: var(--colour-ink);
+  border-bottom: 2px solid var(--colour-maroon);
+}
+
+[data-theme="portfolio"] .mrc-head .gh-head-logo,
+[data-theme="portfolio"] .mrc-head .gh-head-logo .mrc-logo-serif,
+[data-theme="portfolio"] .mrc-head .gh-head-menu a {
+  color: var(--colour-ink);
+}
+
+[data-theme="portfolio"] .mrc-head .gh-head-menu a:hover,
+[data-theme="portfolio"] .mrc-head .gh-head-menu a[aria-current="page"] {
+  color: var(--colour-maroon);
+}
+
+[data-theme="portfolio"] .mrc-head .gh-burger {
+  color: var(--colour-ink);
+  border-color: var(--colour-ink);
+}
+
+/* Open mobile sheet stays paper/ink (overrides olive/white chrome in header.css) */
+@media (max-width: 991px) {
+  [data-theme="portfolio"] body.is-head-open #gh-head.mrc-head,
+  [data-theme="portfolio"] body.is-head-open #gh-head.mrc-head .gh-head-actions,
+  [data-theme="portfolio"] #gh-head.mrc-head.is-head-open,
+  [data-theme="portfolio"] #gh-head.mrc-head.is-head-open .gh-head-actions {
+    background-color: var(--colour-paper) !important;
+  }
+
+  [data-theme="portfolio"] #gh-head.mrc-head .gh-burger::before,
+  [data-theme="portfolio"] #gh-head.mrc-head .gh-burger::after {
+    background-color: var(--colour-ink);
+  }
+
+  [data-theme="portfolio"] body.is-head-open #gh-head.mrc-head .gh-head-logo,
+  [data-theme="portfolio"] body.is-head-open #gh-head.mrc-head .gh-head-logo .mrc-logo-serif,
+  [data-theme="portfolio"] body.is-head-open #gh-head.mrc-head .gh-head-logo .mrc-logo-sans,
+  [data-theme="portfolio"] #gh-head.mrc-head.is-head-open .gh-head-logo,
+  [data-theme="portfolio"] #gh-head.mrc-head.is-head-open .gh-head-logo .mrc-logo-serif,
+  [data-theme="portfolio"] #gh-head.mrc-head.is-head-open .gh-head-logo .mrc-logo-sans,
+  [data-theme="portfolio"] body.is-head-open #gh-head.mrc-head .gh-head-menu .nav > li > a,
+  [data-theme="portfolio"] #gh-head.mrc-head.is-head-open .gh-head-menu .nav > li > a {
+    color: var(--colour-ink) !important;
+  }
+
+  [data-theme="portfolio"] body.is-head-open #gh-head.mrc-head .gh-head-menu .nav a[href*="/contact/"],
+  [data-theme="portfolio"] #gh-head.mrc-head.is-head-open .gh-head-menu .nav a[href*="/contact/"] {
+    color: var(--colour-ink) !important;
+    border-color: var(--colour-maroon);
+  }
 }
 
 [data-theme="portfolio"] .mrc-foot {

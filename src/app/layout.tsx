@@ -5,6 +5,8 @@ import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
 import {
   ALTERNATE_NAME,
+  EMAIL,
+  PERSON_ID,
   SITE_DESCRIPTION,
   SITE_NAME,
   SITE_TITLE,
@@ -24,6 +26,11 @@ export const metadata: Metadata = {
   authors: [{ name: SITE_NAME, url: SITE_URL }],
   creator: SITE_NAME,
   publisher: SITE_NAME,
+  icons: {
+    icon: [{ url: "/mannyroy.svg", type: "image/svg+xml" }],
+    shortcut: "/mannyroy.svg",
+    apple: "/mannyroy.svg",
+  },
   alternates: {
     canonical: "/",
   },
@@ -63,17 +70,26 @@ export default function RootLayout({
   const personLd = {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": PERSON_ID,
     name: SITE_NAME,
     alternateName: ALTERNATE_NAME,
     url: SITE_URL,
-    email: "manny@mannyroy.com",
+    email: EMAIL,
     jobTitle: "Technical SEO Specialist and Software Developer",
     address: {
       "@type": "PostalAddress",
       addressRegion: "PE",
       addressCountry: "CA",
     },
-    sameAs: [SOCIAL.github, SOCIAL.linkedin, SOCIAL.mrc],
+    sameAs: [SOCIAL.github, SOCIAL.linkedin],
+  };
+
+  const organizationLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Manny Roy Consulting",
+    url: SOCIAL.mrc,
+    founder: { "@type": "Person", "@id": PERSON_ID, name: SITE_NAME },
   };
 
   const websiteLd = {
@@ -82,7 +98,7 @@ export default function RootLayout({
     name: SITE_NAME,
     url: SITE_URL,
     description: SITE_DESCRIPTION,
-    author: { "@type": "Person", name: SITE_NAME },
+    author: { "@type": "Person", "@id": PERSON_ID, name: SITE_NAME },
   };
 
   return (
@@ -98,7 +114,7 @@ export default function RootLayout({
           </main>
           <Footer />
         </div>
-        <JsonLd data={[personLd, websiteLd]} />
+        <JsonLd data={[personLd, organizationLd, websiteLd]} />
         <Analytics />
       </body>
     </html>

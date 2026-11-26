@@ -1,21 +1,19 @@
 import { projects } from "@/data/projects";
 import type { Project } from "@/lib/types";
 
+const CORE_CASE_KEYS: (keyof NonNullable<Project["caseStudy"]>)[] = [
+  "problem",
+  "responsibility",
+  "implementation",
+  "outcome",
+];
+
 export function requireCaseStudySections(project: Project): void {
   if (project.depth !== "case-study") return;
   if (!project.caseStudy) {
     throw new Error(`Case study missing sections: ${project.slug}`);
   }
-  const required: (keyof NonNullable<Project["caseStudy"]>)[] = [
-    "problem",
-    "constraints",
-    "responsibility",
-    "alternatives",
-    "choice",
-    "implementation",
-    "outcome",
-  ];
-  for (const key of required) {
+  for (const key of CORE_CASE_KEYS) {
     if (!project.caseStudy[key]?.trim()) {
       throw new Error(`Case study ${project.slug} missing ${key}`);
     }
@@ -44,6 +42,12 @@ export function validateProjects(list: Project[] = projects): string[] {
 
     if (project.featured && project.depth !== "case-study") {
       errors.push(`Featured project must be case-study: ${project.slug}`);
+    }
+
+    for (const related of project.relatedProjectSlugs ?? []) {
+      if (!list.some((item) => item.slug === related)) {
+        errors.push(`Unknown related project on ${project.slug}: ${related}`);
+      }
     }
   }
 

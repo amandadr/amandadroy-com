@@ -10,7 +10,7 @@ import {
   getProjectCode,
   projects,
 } from "@/data/projects";
-import { SITE_NAME, SITE_URL } from "@/data/site";
+import { ANONYMIZED_DISCLOSURE, PERSON_ID, SITE_NAME, SITE_URL } from "@/data/site";
 
 type PageProps = {
   params: { slug: string };
@@ -45,11 +45,21 @@ const CASE_LABELS = {
   outcome: "Outcome",
 } as const;
 
+const REQUIRED_CASE_KEYS: (keyof typeof CASE_LABELS)[] = [
+  "problem",
+  "responsibility",
+  "implementation",
+  "outcome",
+];
+
 export default function ProjectPage({ params }: PageProps) {
   const project = getProject(params.slug);
   if (!project) notFound();
 
   const code = getProjectCode(project);
+  const related = (project.relatedProjectSlugs ?? [])
+    .map((slug) => getProject(slug))
+    .filter(Boolean);
 
   const creativeWork = {
     "@context": "https://schema.org",
@@ -58,9 +68,18 @@ export default function ProjectPage({ params }: PageProps) {
     description: project.summary,
     url: `${SITE_URL}/work/${project.slug}/`,
     dateCreated: project.year,
-    author: { "@type": "Person", name: SITE_NAME },
+    author: { "@type": "Person", "@id": PERSON_ID, name: SITE_NAME },
     keywords: project.technologies.join(", "),
   };
+
+  const caseKeys = project.caseStudy
+    ? (Object.keys(CASE_LABELS) as (keyof typeof CASE_LABELS)[]).filter((key) => {
+        const value = project.caseStudy?.[key]?.trim();
+        if (!value) return false;
+        if (REQUIRED_CASE_KEYS.includes(key)) return true;
+        return Boolean(value);
+      })
+    : [];
 
   return (
     <>
@@ -75,6 +94,10 @@ export default function ProjectPage({ params }: PageProps) {
           <p className="mrc-lede">{project.summary}</p>
 
           {project.overview ? <Prose text={project.overview} /> : null}
+
+          {project.visibility === "anonymized" ? (
+            <p className="mrc-disclosure">{ANONYMIZED_DISCLOSURE}</p>
+          ) : null}
 
           {project.outcomes?.length ? (
             <ul className="mrc-outcome-list">
@@ -127,11 +150,9 @@ export default function ProjectPage({ params }: PageProps) {
             ) : null}
           </div>
 
-          {project.caseStudy ? (
+          {caseKeys.length ? (
             <div className="mrc-stack mrc-stack--l" style={{ marginTop: "2rem" }}>
-              {(
-                Object.keys(CASE_LABELS) as (keyof typeof CASE_LABELS)[]
-              ).map((key) => (
+              {caseKeys.map((key) => (
                 <section key={key} className="mrc-case-section">
                   <h2>{CASE_LABELS[key]}</h2>
                   <Prose text={project.caseStudy?.[key] ?? ""} />
@@ -151,6 +172,21 @@ export default function ProjectPage({ params }: PageProps) {
             <section className="mrc-case-section">
               <h2>Decision note</h2>
               <Prose text={project.decisionNote} />
+            </section>
+          ) : null}
+
+          {related.length ? (
+            <section className="mrc-case-section">
+              <h2>Related work</h2>
+              <ul className="mrc-related-list">
+                {related.map((item) =>
+                  item ? (
+                    <li key={item.slug}>
+                      <Link href={`/work/${item.slug}/`}>{item.title}</Link>
+                    </li>
+                  ) : null,
+                )}
+              </ul>
             </section>
           ) : null}
 

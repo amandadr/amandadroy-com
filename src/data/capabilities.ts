@@ -3,42 +3,54 @@ import type { Capability } from "@/lib/types";
 export const capabilities: Capability[] = [
   {
     id: "technical-search",
-    title: "Technical SEO & indexation",
+    title: "Technical SEO & search architecture",
     description:
-      "Technical audits, crawlability and indexation, crawl budget, JavaScript SEO, canonicalization, sitemaps, robots.txt, structured data, hreflang, Core Web Vitals and site migrations.",
+      "I investigate how websites are crawled, rendered, indexed and discovered, translating technical findings into practical implementation priorities.",
     tools: ["GSC", "Screaming Frog", "Ahrefs", "GA4"],
     projectSlugs: [
+      "marketplace-rendering-architecture",
+      "enterprise-migration-qa",
       "seo-rankings-report",
-      "macmillan-search-practice",
-      "wordpress-venue-management",
+      "b2b-saas-organic-growth",
     ],
   },
   {
     id: "web-engineering",
-    title: "Web development & infrastructure",
+    title: "Web engineering & infrastructure",
     description:
-      "Full-stack development with React and Next.js, rendering strategies, dynamic routing, headless CMS, WordPress, DNS, CDN and caching—built to stay maintainable after handoff.",
+      "I build and maintain web systems with an emphasis on reusable architecture, accessibility, performance and long-term ownership.",
     tools: ["Next.js", "React", "TypeScript", "WordPress"],
-    projectSlugs: ["good-robot-brewing", "organized-chaos-arts", "eastward"],
+    projectSlugs: [
+      "good-robot-brewing",
+      "organized-chaos-arts",
+      "eastward",
+      "marketplace-rendering-architecture",
+    ],
   },
   {
     id: "data-automation",
-    title: "Search analytics & automation",
+    title: "Data & automation",
     description:
-      "Repeatable analytical workflows with Google Search Console, GA4, Python, SQL and BigQuery—API integrations, automated reporting and performance monitoring.",
+      "I develop repeatable workflows that turn disparate data into reliable information, reducing manual work and supporting better decisions.",
     tools: ["Python", "SQL", "BigQuery", "GSC API"],
     projectSlugs: [
       "seo-rankings-report",
+      "editorial-workflow-automation",
       "pcp-economic-dashboard",
       "rfp-finder",
     ],
   },
   {
     id: "applied-ai-geo",
-    title: "GEO, AEO & applied AI",
+    title: "Applied AI & GEO research",
     description:
-      "AI-search discoverability research, LLM evaluation, prompt engineering, source verification and structured content systems that support semantic discoverability.",
+      "I explore how language models interact with information, drawing on evaluation, source verification and structured content to investigate emerging search behaviours.",
     tools: ["LLM APIs", "Evaluation", "Entity architecture"],
-    projectSlugs: ["manny-roy-consulting", "rfp-finder", "macmillan-search-practice"],
+    projectSlugs: [
+      "editorial-workflow-automation",
+      "ai-saas-content-architecture",
+      "manny-roy-consulting",
+      "rfp-finder",
+    ],
   },
 ];

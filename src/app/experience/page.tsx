@@ -18,7 +18,7 @@ export default function ExperiencePage() {
     <>
       <Hero
         eyebrow="Experience"
-        headline="Agency SEO, consulting and applied AI"
+        headline="Professional experience & education"
         subtext="Roles and outcomes across MacMillan Search, Manny Roy Consulting and professional AI training. Download the résumé when you need it for an application."
         primaryHref={RESUME_PATH}
         primaryText="Download résumé"

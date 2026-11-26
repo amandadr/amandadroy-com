@@ -29,6 +29,25 @@ export type ProjectSection = {
   body: string;
 };
 
+export type ProjectPresentation = "flagship" | "standard" | "compact";
+
+export type EngagementType =
+  | "agency"
+  | "consulting"
+  | "independent"
+  | "open-source"
+  | "educational";
+
+export type DeliveryStatus =
+  | "delivered"
+  | "live"
+  | "recommendation"
+  | "in-progress"
+  | "prototype"
+  | "retired";
+
+export type ProjectVisibility = "public" | "anonymized";
+
 export type Project = {
   slug: string;
   title: string;
@@ -44,9 +63,16 @@ export type Project = {
   status: string;
   technologies: string[];
   capabilities: CapabilityId[];
-  /** Optional override; otherwise derived as CATEGORY / NNN */
+  /** Immutable journal ID, e.g. WORK / 004 */
   code?: string;
   featured?: boolean;
+  /** Lower sorts first among featured homepage projects */
+  featuredRank?: number;
+  presentation?: ProjectPresentation;
+  engagementType?: EngagementType;
+  deliveryStatus?: DeliveryStatus;
+  visibility?: ProjectVisibility;
+  relatedProjectSlugs?: string[];
   lab?: boolean;
   repository?: string;
   liveUrl?: string;
@@ -89,4 +115,5 @@ export type Capability = {
 export type SiteMetric = {
   value: string;
   label: string;
+  href?: string;
 };
