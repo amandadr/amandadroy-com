@@ -38,12 +38,6 @@ export const experience: ExperienceItem[] = [
         linkText: "mannyroy.com",
       },
     ],
-    selectedWork: [
-      { label: "Good Robot Brewing", href: "/work/good-robot-brewing/" },
-      { label: "Multi-brand ops", href: "/work/multibrand-digital-operations/" },
-      { label: "PCP dashboard", href: "/work/pcp-economic-dashboard/" },
-      { label: "Manny Roy Consulting", href: "/work/manny-roy-consulting/" },
-    ],
   },
   {
     kind: "work",
@@ -105,15 +99,6 @@ export const experience: ExperienceItem[] = [
         linkText: "The B2B SEO",
       },
     ],
-    selectedWork: [
-      { label: "MacMillan practice", href: "/work/macmillan-search-practice/" },
-      { label: "B2B SaaS growth", href: "/work/b2b-saas-organic-growth/" },
-      { label: "Multi-site SEO", href: "/work/multisite-technical-seo/" },
-      {
-        label: "Editorial automation",
-        href: "/work/editorial-workflow-automation/",
-      },
-    ],
   },
   {
     kind: "work",
@@ -139,16 +124,6 @@ export const experience: ExperienceItem[] = [
         linkText: "Tourism AI training",
       },
     ],
-    selectedWork: [
-      {
-        label: "AI microcredential",
-        href: "/work/applied-ai-microcredential/",
-      },
-      {
-        label: "Tourism AI training",
-        href: "/work/applied-ai-tourism-training/",
-      },
-    ],
   },
   {
     kind: "work",
@@ -164,9 +139,6 @@ export const experience: ExperienceItem[] = [
         href: "/work/llm-evaluation-practice/",
         linkText: "LLM evaluation practice",
       },
-    ],
-    selectedWork: [
-      { label: "LLM evaluation", href: "/work/llm-evaluation-practice/" },
     ],
   },
 ];

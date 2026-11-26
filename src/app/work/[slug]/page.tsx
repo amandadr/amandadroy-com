@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ContentBlocks } from "@/components/ContentBlocks";
 import { JsonLd } from "@/components/JsonLd";
+import { ProjectBreadcrumbs } from "@/components/ProjectBreadcrumbs";
 import { Prose } from "@/components/Prose";
 import { TechList } from "@/components/TechList";
 import {
   categoryLabels,
   getProject,
-  getProjectCode,
   projects,
 } from "@/data/projects";
+import { getRedirectTarget, PROJECT_REDIRECTS } from "@/data/redirects";
 import { ANONYMIZED_DISCLOSURE, PERSON_ID, SITE_NAME, SITE_URL } from "@/data/site";
 
 type PageProps = {
@@ -17,18 +19,32 @@ type PageProps = {
 };
 
 export function generateStaticParams() {
-  return projects.map((project) => ({ slug: project.slug }));
+  const projectSlugs = projects.map((project) => ({ slug: project.slug }));
+  const redirectSlugs = Object.keys(PROJECT_REDIRECTS).map((slug) => ({ slug }));
+  return [...projectSlugs, ...redirectSlugs];
 }
 
 export function generateMetadata({ params }: PageProps): Metadata {
+  const redirectTo = getRedirectTarget(params.slug);
+  if (redirectTo) {
+    const target = getProject(redirectTo);
+    return {
+      title: target?.title ?? "Moved",
+      description: target?.summary,
+      robots: { index: false, follow: true },
+      alternates: { canonical: `/work/${redirectTo}/` },
+    };
+  }
+
   const project = getProject(params.slug);
   if (!project) return {};
+  const pageTitle = project.headline ?? project.title;
   return {
-    title: project.title,
+    title: pageTitle,
     description: project.summary,
     alternates: { canonical: `/work/${project.slug}/` },
     openGraph: {
-      title: `${project.title} | ${SITE_NAME}`,
+      title: `${pageTitle} | ${SITE_NAME}`,
       description: project.summary,
       url: `${SITE_URL}/work/${project.slug}/`,
     },
@@ -53,18 +69,47 @@ const REQUIRED_CASE_KEYS: (keyof typeof CASE_LABELS)[] = [
 ];
 
 export default function ProjectPage({ params }: PageProps) {
+  const redirectTo = getRedirectTarget(params.slug);
+  if (redirectTo) {
+    const target = getProject(redirectTo);
+    const href = `/work/${redirectTo}/`;
+    return (
+      <article className="mrc-section section-light gh-outer">
+        <div className="gh-inner mrc-prose">
+          <h1 className="mrc-hero-headline">This case study moved</h1>
+          <p className="mrc-lede">
+            {target
+              ? `The content now lives under ${target.title}.`
+              : "The content has been merged into another case study."}
+          </p>
+          <p>
+            <Link href={href}>Continue to the updated case study →</Link>
+          </p>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `window.location.replace(${JSON.stringify(href)});`,
+            }}
+          />
+        </div>
+      </article>
+    );
+  }
+
   const project = getProject(params.slug);
   if (!project) notFound();
 
-  const code = getProjectCode(project);
   const related = (project.relatedProjectSlugs ?? [])
     .map((slug) => getProject(slug))
     .filter(Boolean);
+
+  const pageTitle = project.headline ?? project.title;
+  const showProductName = Boolean(project.headline && project.headline !== project.title);
 
   const creativeWork = {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
     name: project.title,
+    headline: pageTitle,
     description: project.summary,
     url: `${SITE_URL}/work/${project.slug}/`,
     dateCreated: project.year,
@@ -81,30 +126,28 @@ export default function ProjectPage({ params }: PageProps) {
       })
     : [];
 
+  const engagementLabel =
+    project.eyebrow ??
+    (project.engagementType
+      ? `${project.engagementType.replace("-", " ")} · ${project.year}`
+      : categoryLabels[project.category]);
+
   return (
     <>
       <JsonLd data={creativeWork} />
       <article className="mrc-section section-light gh-outer">
         <div className="gh-inner mrc-prose">
-          <p className="mrc-project-id">{code}</p>
-          <p className="mrc-eyebrow">
-            {project.eyebrow ?? categoryLabels[project.category]}
-          </p>
-          <h1 className="mrc-hero-headline">{project.title}</h1>
-          <p className="mrc-lede">{project.summary}</p>
+          <ProjectBreadcrumbs project={project} />
 
-          {project.overview ? <Prose text={project.overview} /> : null}
+          <p className="mrc-eyebrow">{engagementLabel}</p>
+          <h1 className="mrc-hero-headline">{pageTitle}</h1>
+          {showProductName ? (
+            <p className="mrc-project-product">{project.title}</p>
+          ) : null}
+          <p className="mrc-lede">{project.summary}</p>
 
           {project.visibility === "anonymized" ? (
             <p className="mrc-disclosure">{ANONYMIZED_DISCLOSURE}</p>
-          ) : null}
-
-          {project.outcomes?.length ? (
-            <ul className="mrc-outcome-list">
-              {project.outcomes.map((outcome) => (
-                <li key={outcome}>{outcome}</li>
-              ))}
-            </ul>
           ) : null}
 
           <dl className="mrc-project-meta">
@@ -150,6 +193,24 @@ export default function ProjectPage({ params }: PageProps) {
             ) : null}
           </div>
 
+          {project.overview ? (
+            <section className="mrc-case-section">
+              <h2>Overview</h2>
+              <Prose text={project.overview} />
+            </section>
+          ) : null}
+
+          {project.outcomes?.length ? (
+            <section className="mrc-case-section">
+              <h2>Results</h2>
+              <ul className="mrc-outcome-list">
+                {project.outcomes.map((outcome) => (
+                  <li key={outcome}>{outcome}</li>
+                ))}
+              </ul>
+            </section>
+          ) : null}
+
           {caseKeys.length ? (
             <div className="mrc-stack mrc-stack--l" style={{ marginTop: "2rem" }}>
               {caseKeys.map((key) => (
@@ -160,6 +221,8 @@ export default function ProjectPage({ params }: PageProps) {
               ))}
             </div>
           ) : null}
+
+          {project.blocks?.length ? <ContentBlocks blocks={project.blocks} /> : null}
 
           {project.sections?.map((section) => (
             <section key={section.heading} className="mrc-case-section">
@@ -183,6 +246,9 @@ export default function ProjectPage({ params }: PageProps) {
                   item ? (
                     <li key={item.slug}>
                       <Link href={`/work/${item.slug}/`}>{item.title}</Link>
+                      {item.summary ? (
+                        <span className="mrc-related-list__summary"> — {item.summary}</span>
+                      ) : null}
                     </li>
                   ) : null,
                 )}

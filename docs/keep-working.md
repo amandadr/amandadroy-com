@@ -1,1049 +1,851 @@
-# **Developer brief — amandadroy.com portfolio refinement**
+# **Content audit — amandadroy.com**
 
-**Objective:** Evolve the rebuilt portfolio into an evidence-led professional publication that demonstrates technical SEO, software engineering, analytical thinking and applied AI expertise, while maintaining a recognizable relationship with mannyroy.com.
+**The portfolio now has sufficient breadth, but it needs substantially more depth, stronger editorial prioritization and less repetition.**
 
-The rebuild is a substantial improvement over the original React portfolio. The new architecture, dedicated project routes, structured project data, categorized work, professional experience section and portfolio-specific design tokens establish a much more mature foundation.
+The latest iteration has addressed many of the structural issues we previously identified. Individual agency engagements have been separated into case studies, capability-based browsing has been introduced, the About page has a more personal narrative, and the homepage metrics now link to supporting work.
 
-The next iteration should concentrate less on rebuilding infrastructure and more on **art direction, information hierarchy, technical storytelling and the presentation of professional accomplishments.**
+However, the expansion has introduced a new problem: the portfolio is becoming a comprehensive inventory of professional experience rather than a carefully curated collection of compelling work.
 
-### **Review scope**
+I've audited the latest content and page templates in the [Next.js repository](https://github.com/amandadr/amandadroy-com?utm_source=chatgpt.com). The live domain still returns an older React snapshot to my web crawler, so I cannot independently verify the current production rendering or actual browsing behaviour. The navigation and content findings below are based on the current source implementation.
 
-I've reviewed the new [Next.js portfolio repository](https://github.com/amandadr/amandadroy-com?utm_source=chatgpt.com), including its page templates, project data, component architecture, CSS, metadata and experience content. I've also compared it against MRC's design system and your attached collection of previous résumés and cover letters.
+## **1. Content and usability scorecard**
 
-The live website returned a month-old snapshot of the original React application to my web crawler, and the new routes were not accessible through it. Consequently, the following is a source-informed implementation review rather than a verified visual audit of the newly deployed website. Deployment, responsive rendering and visual findings should be validated in a browser.
+**Professional positioning**
 
-## **1. Overall design assessment**
+8/10
 
-| Area                        | Assessment                         | Direction                                                |
-| --------------------------- | ---------------------------------- | -------------------------------------------------------- |
-| Technical architecture      | Strong foundation                  | Retain and refine                                        |
-| MRC brand cohesion          | Strong                             | Preserve shared foundations                              |
-| Portfolio differentiation   | Partially established              | Develop more distinctive editorial compositions          |
-| Professional positioning    | Strong but somewhat generic        | Lead with specialization and evidence                    |
-| Project discoverability     | Much improved                      | Introduce stronger hierarchy and navigation              |
-| Case study content          | Structured but overly standardized | Allow more varied technical storytelling                 |
-| Visual evidence             | Underdeveloped                     | Introduce actual project artifacts                       |
-| Professional SEO experience | Underrepresented                   | Separate agency engagements into individual case studies |
+Clear specialization and coherent professional identity.
 
-The principal risk at this stage is that the portfolio becomes **a well-organized, technically sound résumé rendered as a website**, rather than a genuinely compelling exhibition of professional work.
+**Breadth of experience**
 
-The developer should preserve the restraint of the current design while giving the work itself greater visual and narrative prominence.
+9/10
 
-## **2. Refine the art direction**
+Excellent coverage across SEO, engineering, data and AI.
 
-### **Preserve the existing design foundations**
+**Navigation structure**
 
-Do not introduce a new design system or substantially alter the established colour palette. The portfolio-specific semantic theme in `src/styles/theme-portfolio.css` is an appropriate extension of the MRC design system.
+7/10
 
-Retain the following:
+Logical categories, but too many overlapping browsing paths.
 
-- IBM Plex Sans, Serif and Mono typography.
-- Paper, cream, ink, olive, maroon and mustard palette.
-- Existing spacing scale, responsive composition primitives and accessibility standards.
-- Sans-led headings and monospace technical metadata.
-- Continuous editorial surfaces rather than alternating marketing-style section backgrounds.
+**Content scanability**
 
-However, the current implementation relies heavily on typography, horizontal rules and repeated text-based rows. Introduce more compositional variation so the site feels intentionally art-directed rather than simply restrained.
+6/10
 
-### **Differentiate the site chrome**
+Repeated metadata and inconsistent summary visibility.
 
-The portfolio currently retains MRC's olive header and footer. While this reinforces brand cohesion, it also represents one of the strongest visual similarities between the websites.
+**Case study depth**
 
-Test a lighter, more editorial header treatment for the portfolio.
+4/10
 
-Manny Roy Consulting
+Most entries describe the work without sufficiently demonstrating it.
 
-Home　Services　About　Contact
+**Technical evidence**
 
-PRACTICAL DIGITAL SOLUTIONS
+4/10
 
-# ***Technology that works for your business.***
+Too few artifacts, examples and methodological explanations.
 
-**MRC**
+**Distinctive personal voice**
 
-Strong brand chrome and warm, service-oriented presentation.
+6/10
 
-Manny Roy
+Strong About page; project descriptions remain formulaic.
 
-Work　Experience　Lab　About
+**Recruiter experience**
 
-TECHNICAL PORTFOLIO
+7/10
 
-# **Search, software and systems.**
+Good entry points, but unnecessary browsing and CV-request friction.
 
-**Portfolio**
+Qualitative editorial assessments based on the current source, not measured usability-test results.
 
-Publication-style masthead with restrained brand accents.
+## **2. Is the content too thin?**
 
-Retain the serif wordmark as a recognizable connection between the identities, but consider using the paper background, ink text and a thin maroon or olive rule for the portfolio masthead.
+Yes — but primarily in the case studies, not across the website as a whole.
 
-This is an art-direction recommendation to prototype, not a requirement to remove olive entirely.
+# **37**
 
-## **3. Strengthen the homepage hierarchy**
+Project records
 
-**Affected files:**
+# **25**
 
-`src/app/page.tsx` · `src/components/Hero.tsx` · `src/data/site.ts`
+Designated case studies
 
-### **Current issue**
+# **6**
 
-The homepage hero communicates the professional identity reasonably well, but the introductory text is essentially a résumé summary. The same `SITE_INTRO` content is also reused on the About page.
+Homepage featured projects
 
-The hero should establish identity and expertise immediately, without asking the visitor to process an extensive paragraph of qualifications.
+The problem is the disparity between how many projects are described as case studies and how much substantive detail those case studies provide.
 
-### **Recommended homepage copy**
+Approximate narrative word counts from the current project data, excluding technology tags, metadata and interface labels:
 
-MANNY ROY / TECHNICAL PORTFOLIO
+SEO Rankings Report
 
-# **Building systems that are easier to find, use and maintain.**
-
-I'm a technical SEO specialist and full-stack developer working at the intersection of search, software architecture, data and automation.
-
-Based in Prince Edward Island, Canada · Available for remote opportunities
-
-Explore my work
-
-View résumé
-
-GitHub　LinkedIn　Contact
-
-Keep the existing headline. It communicates the professional philosophy effectively and connects SEO, accessibility and maintainability without becoming excessively specialized.
-
-Move the discussion of enterprise accounts, website scale and agency experience into the evidence section immediately beneath the hero.
-
-### **Improve the metrics section**
-
-Replace the generic three-year metric with something that establishes a more distinctive accomplishment.
-
-# **50+**
-
-Technical SEO audits delivered
-
-# **226%**
-
-Average organic click growth across 18 optimized SaaS pages
-
-# **10,000s**
-
-URLs across supported multi-site portfolios
-
-# **\~3×**
-
-Editorial production capacity through workflow automation
-
-On desktop, use a four-column arrangement when space permits. On mobile, use a two-column grid without reducing the font sizes excessively.
-
-Make each metric link to a relevant supporting case study. Treat the metrics as entry points into the portfolio rather than decorative statistics.
-
-Ensure the 226% metric retains its measured-set qualification. The résumé archive explains that several high-performing pages influenced the average; do not present it as median growth, sitewide growth or a guaranteed result.&#x20;
-
-Resume October 2026(2).pdf
-
-
-
-## **4. Introduce a more compelling project presentation system**
-
-**Affected files:**
-
-`src/components/CaseRow.tsx` · `src/styles/portfolio.css` · `src/styles/site/case-study-row.css` · `src/lib/types.ts`
-
-### **Current issue**
-
-The `CaseRow` component renders a project's identifier, status, year, title, summary and technology list. Every project consequently receives a nearly identical presentation.
-
-The inherited case-study row stylesheet even contains media-related styles, but the current React component does not render a media element.
-
-As additional projects are introduced, this uniform presentation will become increasingly difficult to scan.
-
-### **Implement three levels of project presentation**
-
-01 / FLAGSHIP FEATURE
-
-SEARCH ANALYTICS · AUTOMATION
-
-# **Making organic performance analysis repeatable**
-
-A configurable Python workflow for identifying search performance changes and informing optimization priorities.
-
-Read the case study
-
-02 / STANDARD FEATURE
-
-PROGRAMMATIC PUBLISHING
-
-Venue Management
-
-Reusable content generation and Event schema.
-
-NEXT.JS · CONTENT ARCHITECTURE
-
-Eastward
-
-A location-driven discovery platform.
-
-03 / COMPACT INDEX ENTRY
-
-Canadian AI-Driven RFP Finder
-
-Python · Data ingestion · Evaluation
-
-2026
-
-Proposed presentation variants. Diagrams are conceptual placeholders; replace them with genuine project artifacts.
-
-| Variant          | Usage                                                       |
-| ---------------- | ----------------------------------------------------------- |
-| Flagship feature | One or two highest-priority projects on the homepage        |
-| Standard feature | Selected professional work and substantial technical builds |
-| Compact index    | Complete work directory, secondary projects and archive     |
-
-Do not turn every project into a large image card. Use visual emphasis selectively, based on the significance of the work.
-
-The homepage should contain approximately five or six projects, while the Work index can grow substantially without compromising homepage usability.
-
-## **5. Rework the Work index to support exploration**
-
-**Affected file:** `src/app/work/page.tsx`
-
-The Work index currently organizes projects into Professional, Tools, Independent and Archive categories, with Lab presented separately.
-
-This taxonomy is useful for establishing the context and maturity of each project. However, a hiring manager is more likely to investigate projects by expertise.
-
-Introduce a complementary capability-based navigation system.
-
-## **Explore the work**
-
-AllTechnical SEOWeb engineeringData & automationApplied AI
-
-7 illustrative projects
-
-**Marketplace rendering strategy**
-
-Technical SEO · Web engineering
-
-Agency engagement
-
-**SEO Rankings Report**
-
-Technical SEO · Data & automation
-
-Public source code
-
-**Enterprise migration QA**
-
-Technical SEO · Web engineering
-
-Agency engagement
-
-**Podcast-to-publish workflow**
-
-Applied AI · Data & automation
-
-Agency engagement
-
-**Eastward**
-
-Web engineering
-
-Independent build
-
-**Regional economic dashboard**
-
-Data & automation
-
-Consulting engagement
-
-**Professional AI microcredential**
-
-Applied AI
-
-Collaborative engagement
-
-Interactive illustration of capability-based browsing.
-
-The existing `CapabilityId` type and `projectSlugs` mappings already provide much of the necessary data.
-
-Implement this as progressive enhancement. All projects and their links should remain available in statically rendered HTML, regardless of whether JavaScript is available.
-
-Also consider providing anchored category navigation at the top of the Work index, rather than requiring visitors to scroll through each category sequentially.
-
-## **6. Improve case study pages**
-
-**Affected file:** `src/app/work/[slug]/page.tsx`
-
-### **Current issue**
-
-The case study template uses a standardized sequence of seven required sections:
-
-1. The problem
-2. Constraints
-3. What I owned
-4. Alternatives considered
-5. Why this approach
-6. Implementation & validation
-7. Outcome
-
-This is a useful framework for authoring case studies, but it should not necessarily be the mandatory presentation format for every project.
-
-There is also a risk of inventing retrospective design decisions or alternatives simply to satisfy the content validator.
-
-### **Make the narrative structure flexible**
-
-Establish a smaller set of required content fields:
-
-- Context and problem.
-- Personal contribution.
-- Technical approach.
-- Evidence, deliverable or outcome.
-- Limitations, where applicable.
-
-Allow other sections to be optional. An enterprise migration QA case study will naturally have a different narrative structure from an educational curriculum project.
-
-### **Introduce technical artifacts as first-class content**
-
-The current project schema supports text sections but lacks structured support for figures, tables, code samples and diagrams.
-
-Extend it to support typed content blocks.
-
-```
-type ProjectBlock =
-  | {
-      type: "prose";
-      heading?: string;
-      body: string;
-    }
-  | {
-      type: "figure";
-      src: string;
-      alt: string;
-      caption?: string;
-      width: number;
-      height: number;
-    }
-  | {
-      type: "code";
-      language: string;
-      code: string;
-      caption?: string;
-    }
-  | {
-      type: "table";
-      caption?: string;
-      columns: string[];
-      rows: string[][];
-    }
-  | {
-      type: "decision";
-      context: string;
-      decision: string;
-      rationale: string;
-      tradeoffs?: string;
-    };
-```
-
-This would make the project pages substantially more expressive without abandoning the structured-content architecture.
-
-### **Recommended project page composition**
-
-WORK / SEARCH ENGINEERING / 004
-
-# **Evaluating rendering architecture for a marketplace**
-
-Investigating organic discoverability across thousands of product URLs in a React-based application.
-
-ROLE
-
-Technical SEO
-
-CONTEXT
-
-Agency engagement
-
-DELIVERABLE
-
-Recommendation
-
-Illustrative rendering comparison, not a reconstruction of confidential client infrastructure.
-
-ON THIS PAGE
-
-Context
-
-Investigation
-
-Recommendation
-
-Trade-offs
-
-Deliverable
-
-### **Context**
-
-Explain the relationship between JavaScript rendering, product discovery and the marketplace's organic acquisition objectives.
-
-### **Technical investigation**
-
-Describe the investigation, evidence and architectural considerations that informed the recommendation.
-
-For longer case studies, introduce an automatically generated table of contents. Keep the reading column approximately 70ch, but allow meaningful technical figures to extend beyond that column on wider screens.
-
-The aim is to create an engineering publication rather than seven consecutive paragraphs with dividing lines.
-
-# **7. Expand the professional project catalogue**
-
-The most important content issue is that your professional agency experience is condensed into the **MacMillan Search Practice** page.
-
-This page currently contains four anonymized engagements, including the marketplace rendering recommendation, SaaS growth engagement, migration QA and AI SaaS content framework.
-
-These are some of your strongest professional accomplishments. They should not all be hidden beneath one general employment case study.
-
-Retain the MacMillan page as an **agency practice overview**, but convert the individual engagements into independently addressable projects.
-
-The following entries are grounded in the supplied résumé archive. They use anonymized titles and avoid claiming outcomes beyond those documented.
-
-## **P0 — Highest-priority professional case studies**
-
-## **1. Marketplace rendering architecture**
-
-2024–2025
-
-Suggested slug: `/work/marketplace-rendering-architecture/`
-
-**Category:** Professional · Technical SEO · Web engineering
-
-**Public summary**
-
-Investigated JavaScript SEO and rendering considerations for a React-based second-hand marketplace with thousands of product URLs, developing recommendations for a transition toward Next.js to support scalable organic discoverability.
-
-**Case study focus:** Technical investigation, architectural trade-offs, communicating recommendations to stakeholders and establishing implementation priorities.
-
-**Suggested artifact:** An original diagram comparing client-side rendering with relevant Next.js rendering approaches.
-
-**Status:** Technical recommendation. Do not imply that the migration was implemented or that organic growth was measured.
-
-## **2. Organic growth for a B2B SaaS platform**
-
-2024–2025
-
-Suggested slug: `/work/b2b-saas-organic-growth/`
-
-**Category:** Professional · Organic growth · Search analytics
-
-**Public summary**
-
-Developed and executed recurring organic optimization initiatives for a Canadian HR and payroll software platform. Combined search performance data, competitive research, internal linking and editorial improvements to achieve an average 226% organic click increase across 18 written or refreshed pages over six months.
-
-**Case study focus:** Opportunity identification, search intent, content selection, recurring measurement, high-performing versus underperforming pages and re-optimization decisions.
-
-**Suggested artifact:** A sanitized performance report or explicitly synthetic example of the page-level analysis methodology.
-
-**Related project:** SEO Rankings Report.
-
-This should be the authoritative case study for the 226% metric, with the reporting tool described separately as the supporting infrastructure.&#x20;
-
-Resume October 2026(2).pdf
-
-
-
-## **3. Enterprise website migration & QA**
-
-2024–2025
-
-Suggested slug: `/work/enterprise-migration-qa/`
-
-**Category:** Professional · Technical SEO · Web infrastructure
-
-**Public summary**
-
-Led SEO support for an enterprise website migration, coordinating URL mapping, launch support, post-launch crawling and technical reporting. QA across 224 internal URLs identified no 4xx or 5xx errors, redirect chains or loops, with remaining redirect, sitemap and hreflang issues documented for remediation.
-
-**Case study focus:** Migration preparation, validation criteria, launch risk, issue classification and follow-up requirements.
-
-**Suggested artifact:** Sanitized redirect mapping template, migration QA checklist and categorized crawl findings.
-
-Do not describe this as an entirely error-free migration; the distinction between the clean measured results and outstanding remediation work is valuable evidence of rigorous QA.&#x20;
-
-Resume October 2026(2).pdf
-
-
-
-## **4. AI SaaS content architecture**
-
-2024–2025
-
-Suggested slug: `/work/ai-saas-content-architecture/`
-
-**Category:** Professional · Information architecture · Semantic SEO
-
-**Public summary**
-
-Developed an 18-page pillar-and-cluster content framework for an AI-powered customer support platform. Connected search intent, audience needs, product capabilities, competitive research and technical findings to an actionable publishing strategy that informed website architecture.
-
-**Case study focus:** Translating keyword datasets into page purposes, topical relationships, content formats, internal linking and a coherent publishing roadmap.
-
-**Suggested artifact:** A fictionalized pillar-and-cluster map illustrating the methodology without revealing proprietary keyword research or the client's product strategy.
-
-**Status:** Strategy and architecture deliverable; no unverified organic performance claims.&#x20;
-
-Resume October 2026(2).pdf
-
-
-
-## **5. Human-reviewed AI editorial automation**
-
-2024–2025
-
-Suggested slug: `/work/editorial-workflow-automation/`
-
-**Category:** Professional · Applied AI · Workflow engineering
-
-**Public summary**
-
-Developed a Python-assisted workflow converting expert podcast material into structured, SEO-ready articles for a Canadian financial-services organization. Integrated transcription, content structuring, AI-assisted drafting, factual verification and CMS preparation, roughly tripling content-production capacity while preserving human editorial oversight.
-
-**Case study focus:** Source grounding, prompt design, editorial quality control, CMS preparation and the boundaries between automation and human judgment.
-
-**Supporting evidence:** Seven accuracy-sensitive articles were produced during the engagement.
-
-**Suggested artifact:** A pipeline diagram, synthetic transcript, generated outline and sample factual-review checklist.
-
-This project should become a flagship example of applied AI. It demonstrates a real productivity improvement rather than a speculative GEO capability.&#x20;
-
-Resume October 2026(2).pdf
-
-
-
-### **Suggested editorial automation figure**
-
-Proposed conceptual figure based on the documented workflow. Validate implementation details before publication.
-
-## **P1 — Additional professional engagements**
-
-These projects broaden the portfolio beyond the five primary case studies and support applications across technical SEO, growth engineering, analytics, content strategy and AI.
-
-**06. Content consolidation for an enterprise data platform**
-
-`/work/enterprise-content-consolidation/`
-
-Developed a content consolidation strategy for a global entertainment-data platform, translating keyword, competitor and share-of-voice research into editorial recommendations, internal-linking standards and a proposed subdomain restructuring.
-
-Emphasize information architecture, topical relationships and the strategic considerations behind consolidating fragmented content. Describe the consolidation as a recommendation unless implementation and results can be verified.&#x20;
-
-Resume October 2026(2).pdf
-
-
-
-**07. Webflow optimization for an AI software platform**
-
-`/work/webflow-platform-optimization/`
-
-Contributed to SEO-driven website architecture and UI/UX improvements for an AI software platform. Worked directly within Webflow and its custom theme to support feature implementation, website optimization and content publishing.
-
-This establishes direct CMS implementation experience and collaboration across SEO, development and design.&#x20;
-
-Resume October 2026(2).pdf
-
-
-
-**08. Large-scale technical SEO across multi-site portfolios**
-
-`/work/multisite-technical-seo/`
-
-Supported technical SEO across enterprise and multi-location service portfolios spanning thousands to tens of thousands of URLs, contributing to technical auditing, performance analysis, prioritized recommendations and stakeholder reporting.
-
-Position this as a representative agency practice case study. Do not attribute the aggregate 50+ audit count to a single client or imply that every URL received individual optimization.
-
-The résumé archive confirms enterprise and multi-location accounts, while your latest clarification establishes their approximate URL scale.&#x20;
-
-Resume October 2026(2).pdf
-
-
-
-**09. Multi-brand digital infrastructure and advisory**
-
-`/work/multibrand-digital-operations/`
-
-Provided ongoing technical advisory across three Atlantic Canadian brands, supporting technical SEO, local search, Google Business Profile, platform strategy, integrations, troubleshooting and digital operations.
-
-Frame this as an example of long-term technical ownership, prioritization and incremental systems improvement rather than a single website launch.&#x20;
-
-Resume October 2026(2).pdf
-
-
-
-**10. Professional AI microcredential development**
-
-`/work/applied-ai-microcredential/`
-
-Co-developed the Marketing & Communications stream of an accredited professional AI microcredential, translating prompt engineering, responsible AI, research, tool evaluation and workflow augmentation into an applied curriculum.
-
-The stream reported a 96% completion rate, while the broader initial program reached more than 127 learners.
-
-Focus on instructional architecture, technical communication, responsible AI and collaboration. Distinguish the stream's results from the broader program's results.&#x20;
-
-Resume October 2026(2).pdf
-
-
-
-**11. Applied AI for tourism operations**
-
-`/work/applied-ai-tourism-training/`
-
-Co-developed and delivered professional AI training for tourism operators, combining source-based research, prompt refinement, tool evaluation and practical workflow automation. One in-person workshop was sold out, with 32 tourism operators participating.
-
-Include the CLEAN prompting framework and the use of review data as examples of practical instructional methods, while excluding identifiable participant data.&#x20;
-
-Resume October 2026(2).pdf
-
-
-
-**12. Technical editorial strategy and publication**
-
-`/work/b2b-technical-editorial/`
-
-Managed an agency's internal B2B SEO newsletter and blog, including topic planning, research, technical writing, editing and recurring publication for marketing and search professionals.
-
-This provides evidence of professional writing, subject-matter understanding and editorial ownership. Mark the publication as retired and include authorized writing samples if available.&#x20;
-
-Resume October 2026(2).pdf
-
-
-
-## **P2 — Potential additions requiring more documentation**
-
-The following experiences could eventually become useful projects, but the existing résumés don't provide enough information to substantiate detailed public case studies.
-
-| Project opportunity                     | Documentation needed                                                                |
-| --------------------------------------- | ----------------------------------------------------------------------------------- |
-| Paid versus organic revenue attribution | Tracking implementation details, contribution, validation and reporting methodology |
-| LLM evaluation and quality assurance    | Public-safe evaluation examples and methodology                                     |
-| Cloud-based RAG development             | Architecture, retrieval strategy, data sources and evaluation                       |
-| Squarespace publishing automation       | Workflow details and defensible productivity measurements                           |
-| Technical audit methodology             | Sanitized example deliverables and prioritization framework                         |
-| UX experimentation                      | Actual hypotheses, test designs and results                                         |
-
-Do not create fictional case studies to fill these gaps. Use the Lab section for new experiments that reproduce relevant techniques with publicly available or synthetic datasets.
-
-## **8. Improve the existing projects rather than only adding new ones**
-
-The portfolio already contains approximately 20 entries. Adding more content without strengthening existing material would increase breadth at the expense of depth.
-
-Prioritize the following improvements.
-
-| Existing project           | Recommended enhancement                                                              |
-| -------------------------- | ------------------------------------------------------------------------------------ |
-| SEO Rankings Report        | Include sample output, configuration examples and data-flow diagram                  |
-| Good Robot Brewing         | Show system architecture, implementation dependencies and documented QA              |
-| WordPress Venue Management | Illustrate the recurrence model, event generation, URLs and structured data          |
-| Eastward                   | Explain geographic taxonomy, routing and content modelling                           |
-| PCP Economic Dashboard     | Show aggregation methodology, data freshness and dashboard design decisions          |
-| MRC                        | Document custom routing, design system, glossary architecture and technical SEO      |
-| Organized Chaos Arts       | Separate currently implemented functionality from planned membership features        |
-| WooCommerce to Trexity     | Show order eligibility, shipment creation, duplicate prevention and failure handling |
-| Hyrule Merchant            | Explain build-time generation, validation and data provenance                        |
-| This portfolio             | Turn into a substantial cross-platform design-system case study                      |
-
-The PCP dashboard in particular deserves more technical storytelling. Your earlier application material describes two substantive analytical challenges: outdated census data and the construction of a regional aggregate that did not correspond to an official Statistics Canada geography. Those are excellent examples of decision-making under imperfect data conditions.&#x20;
-
-Resume October 2026(2).pdf
-
-
-
-### **Reconsider some project dates**
-
-The new `projects.ts` currently assigns 2025 to PCP, WordPress Venue Management, Eastward, WooCommerce to Trexity and several other projects.
-
-Your previous résumé and portfolio materials identify several of these as 2026 projects.
-
-Verify whether each date represents initial development, release or the broader engagement. Do not automatically change them all to 2026, but ensure the public chronology is intentional and consistent.
-
-## **9. Introduce a stronger content taxonomy**
-
-The existing category system answers the question: *What kind of project is this?*
-
-Extend it to answer two additional questions: *What capabilities does this demonstrate?* and *What actually happened?*
-
-```
-type EngagementType =
-  | "agency"
-  | "consulting"
-  | "independent"
-  | "open-source"
-  | "educational";
-
-type DeliveryStatus =
-  | "delivered"
-  | "live"
-  | "recommendation"
-  | "in-progress"
-  | "prototype"
-  | "retired";
-
-type Visibility =
-  | "public"
-  | "anonymized";
-```
-
-Extend the project model accordingly.
-
-```
-type ProjectEvidence = {
-  label: string;
-  value?: string;
-  scope?: string;
-  methodology?: string;
-};
-
-type ProjectExtensions = {
-  engagementType: EngagementType;
-  deliveryStatus: DeliveryStatus;
-  visibility: Visibility;
-  evidence?: ProjectEvidence[];
-  featuredRank?: number;
-  relatedProjectSlugs?: string[];
-  blocks?: ProjectBlock[];
-  updatedAt?: string;
-};
-```
-
-Avoid relying entirely on free-text `status` values. The existing data mixes delivery state, source-code availability, context and project category into this one field.
-
-For example, `Public source code` and `Live commercial site` describe different properties.
-
-Separating them makes filtering, presentation, maintenance and validation much easier.
-
-### **Refactor project identifiers**
-
-The existing project identifiers are derived from categories unless manually overridden.
-
-If project numbering depends on array position or category ordering, it may change whenever a new project is introduced.
-
-Either establish immutable project identifiers or remove numbering where it doesn't provide meaningful navigation. The engineering-journal aesthetic does not require every project to resemble a ticket.
-
-## **10. Establish a client confidentiality policy**
-
-The current repository is public. Treat everything committed to it as public, including material that isn't rendered in the application.
-
-This is particularly important when incorporating content from previous résumés.
-
-| Safe to publish, subject to agreements | Do not publish without authorization       |
-| -------------------------------------- | ------------------------------------------ |
-| Broad industry descriptions            | Confidential client names                  |
-| General technical methodology          | Proprietary keyword datasets               |
-| Original explanatory diagrams          | Search Console property exports            |
-| Approved aggregate metrics             | Revenue and attribution data               |
-| Synthetic examples                     | Internal tickets or private correspondence |
-| Personal contribution descriptions     | Unreleased product strategies              |
-| Authorized public repositories         | Private infrastructure configurations      |
-
-Anonymization must extend beyond the visible title.
-
-Review repository history, metadata, URLs, image filenames, alt text, structured data, source-code comments and downloadable artifacts for identifying information.
-
-Exact metrics and niche industry descriptions can also make engagements identifiable when combined with other public information. Confirm permission before retaining exact numbers such as 226%, or use rounded values or qualitative descriptions where necessary.
-
-**Do not copy the full résumé compilation into the public repository.** It contains identifiable client engagements, application-specific letters and private interview preparation material.
-
-Add a short disclosure to anonymized case studies:
-
-> This engagement is presented in anonymized form to respect client confidentiality. The technical approach and personal contribution are described accurately; illustrative artifacts use synthetic or generalized data.
-
-## **11. Improve the Experience and About pages**
-
-### **Experience**
-
-The new Experience page is considerably stronger than the original timeline. Preserve the promotion, responsibilities, achievements and education.
-
-However, several individual achievements currently link to the same MacMillan practice page.
-
-Once the new projects are created, update those links to the corresponding case studies.
-
-For example:
-
-| Experience highlight            | Destination                        |
-| ------------------------------- | ---------------------------------- |
-| Organic click growth            | B2B SaaS organic growth            |
-| React marketplace investigation | Marketplace rendering architecture |
-| Migration QA                    | Enterprise migration QA            |
-| Pillar-and-cluster strategy     | AI SaaS content architecture       |
-| AI-assisted content workflows   | Editorial workflow automation      |
-| Professional AI training        | Applied AI microcredential         |
-
-Rename the Experience page headline to something more personal and useful than a list of disciplines.
-
-Suggested H1: **Professional experience & education**
-
-The content below already provides the necessary specificity.
-
-### **About**
-
-The current About page repeats much of the professional summary and primarily directs visitors toward other pages.
-
-This is an opportunity to introduce a more personal narrative that distinguishes the individual from the consultancy.
-
-Suggested copy:
-
-## How I approach technical work
-
-My background is somewhat unconventional: an English degree, full-stack development training, agency SEO, software automation and independent consulting.
-
-What connects those disciplines is an interest in making complex things understandable and useful. I enjoy investigating how a system works, identifying where it breaks down, and developing solutions that make the next person's work easier.
-
-In technical SEO, that means looking beyond individual ranking changes to understand the architecture, content and processes that influence discoverability. In development, it means building with accessibility, maintainability and clear ownership in mind. In applied AI, it means understanding where automation adds value and where human judgment needs to remain involved.
-
-I work best where research, implementation and measurement remain connected. I'm particularly interested in large-scale search architecture, emerging AI-search technologies and the tools that make technical work more repeatable.
-
-Through Manny Roy Consulting, I apply these principles to client projects. This portfolio is a more technical and personal record of the systems I've built, the problems I've investigated and the ideas I'm continuing to explore.
-
-Include a professional photograph if desired, ideally the same recognizable image used on MRC or LinkedIn. Keep it secondary to the written introduction.
-
-## **12. Reframe the capabilities section**
-
-The homepage currently uses the heading **Where I can help**, which reads like consultancy messaging.
-
-Replace it with **Areas of practice** or **How I work**.
-
-Avoid capability descriptions that read like condensed ATS keyword lists. Each should articulate an approach, followed by tools and supporting projects.
-
-| Capability                          | Suggested description                                                                                                                                                 |
-| ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Technical SEO & search architecture | I investigate how websites are crawled, rendered, indexed and discovered, translating technical findings into practical implementation priorities.                    |
-| Web engineering & infrastructure    | I build and maintain web systems with an emphasis on reusable architecture, accessibility, performance and long-term ownership.                                       |
-| Data & automation                   | I develop repeatable workflows that turn disparate data into reliable information, reducing manual work and supporting better decisions.                              |
-| Applied AI & GEO research           | I explore how language models interact with information, drawing on evaluation, source verification and structured content to investigate emerging search behaviours. |
-
-Update `src/data/capabilities.ts` to include the new individual case studies rather than primarily linking to general practice pages.
-
-# **13. Technical refinement and QA**
-
-The static-export architecture is appropriate for this portfolio. There is no compelling reason to introduce a backend, database or external CMS at this point.
-
-Retain the current Next.js implementation and address the following refinements.
-
-| Priority | Finding                                    | Developer instruction                                                                                                                             |
-| -------- | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| P0       | Live deployment not independently verified | Confirm that the new static export is being served at the canonical domain and that all deep links return 200 responses.                          |
-| P0       | Public project confidentiality             | Validate all content, metadata, artifacts and downloadable files before publishing.                                                               |
-| P0       | Résumé download                            | Ensure the PDF contains only the intended general-purpose résumé and is current.                                                                  |
-| P1       | Structured data                            | Introduce a stable Person `@id` and reference it consistently from the WebSite, ProfilePage and project entities.                                 |
-| P1       | Social metadata                            | Provide project-specific Open Graph imagery; `summary_large_image` is declared but no corresponding image is specified in the inspected metadata. |
-| P1       | Static sitemap                             | Use actual content-modified dates instead of resetting every page's `lastModified` to the build date.                                             |
-| P1       | Media optimization                         | Since Next.js image optimization is disabled for static export, generate optimized image variants before deployment.                              |
-| P1       | Navigation accessibility                   | Test mobile menu keyboard behavior, Escape, focus restoration, zoom and background interaction.                                                   |
-| P1       | Project validation                         | Check related-project references, capability references, unique identifiers, required alt text and permitted visibility states.                   |
-| P2       | Analytics                                  | Add appropriate résumé download, case study engagement and outbound repository link measurements.                                                 |
-| P2       | Regression testing                         | Add automated accessibility, broken-link and visual regression checks.                                                                            |
-
-### **Correct the distinction between related entities**
-
-The root layout currently includes MRC in the Person entity's `sameAs` array.
-
-The consultancy is a related commercial entity, not necessarily an equivalent representation of the individual.
-
-Consider modelling the relationship using separate identifiers and an appropriate relationship such as `founder`, rather than treating the person and consultancy as interchangeable entities.
-
-This is a particularly worthwhile refinement for a technical SEO and GEO portfolio.
-
-### **Refine the design-system implementation**
-
-Do not undertake a full design-system extraction yet. The current use of shared MRC styles and portfolio-specific semantic overrides is reasonable for a project at this stage.
-
-However, the coexistence of Ghost-oriented classes such as `.gh-inner`, MRC-specific prefixes and portfolio-specific blocks will eventually become harder to reason about.
-
-Gradually separate:
-
-```
-styles/
-├── foundations/
-├── composition/
-├── utilities/
-├── themes/
-│   └── portfolio.css
-└── blocks/
-    ├── masthead.css
-    ├── hero.css
-    ├── project-feature.css
-    ├── project-index.css
-    ├── project-article.css
-    ├── technical-figure.css
-    └── experience.css
-```
-
-Remove inherited components and styles that have no role in the portfolio after confirming they are unused.
-
-Build abstractions when the need for them becomes apparent rather than trying to make the two codebases structurally identical.
-
-# **14. Recommended homepage composition**
-
-The revised homepage should have a more deliberate editorial hierarchy.
-
-### ***Manny Roy***
-
-Work　Experience　Lab　About
-
-TECHNICAL SEO / SOFTWARE / AUTOMATION
-
-# **Building systems that are easier to find, use and maintain.**
-
-Technical SEO specialist and full-stack developer based in Atlantic Canada.
-
-Explore my work
-
-View résumé
-
-## **50+**
-
-Technical audits
-
-## **226%**
-
-Avg. click growth
-
-## **10k+**
-
-Portfolio URL scale
-
-## **\~3×**
-
-Editorial capacity
-
-## **Selected work**
-
-All projects
-
-FEATURED / SEARCH AUTOMATION
-
-## **SEO Rankings Report**
-
-Making recurring organic performance analysis repeatable.
-
-JAVASCRIPT SEO
-
-Marketplace rendering
-
-WEB INFRASTRUCTURE
+291
 
 Good Robot Brewing
 
-SEARCH ANALYTICS
+263
+
+WordPress Venue Management
+
+233
+
+PCP Economic Dashboard
+
+232
 
 B2B SaaS organic growth
 
-APPLIED AI
+210
 
-Editorial automation
+Marketplace rendering
 
-## **Areas of practice**
+193
 
-Technical search
+Enterprise migration & QA
 
-Web engineering
+185
 
-Data & automation
+Editorial workflow automation
 
-Applied AI
+177
 
-## **From the lab**
+AI SaaS content architecture
 
-Experiments, independent builds and ongoing research.
+173
 
-Hyrule Merchant　·　Eastward　·　Newfie
+Hyrule Merchant
 
-## **Let's talk about good technical work.**
+62
 
-Email　·　LinkedIn　·　GitHub
+These lengths aren't inherently problematic for project summaries. However, a 180-word entry divided into seven sections is unlikely to communicate the complexity of an enterprise migration, architectural investigation or engineering project.
 
-Proposed homepage wireframe. Illustrative artifacts and sample metric treatments are not verified project visuals.
+Many of the current case studies function as **expanded résumé entries**.
 
-Notice the variation in scale: one major featured project, a compact evidence section, smaller supporting projects, a capability overview and an understated Lab preview.
+There is no universal SEO minimum word count, and shorter pages aren't automatically low quality. The relevant question is whether each page delivers enough original information to justify its existence and satisfy a technically interested visitor.
 
-This retains the shared MRC foundations but produces a different visual composition and reading experience.
+For many of the current entries, the answer is not yet.
 
-# **15. Implementation roadmap**
+## **3. Browsing: the Work page is becoming unnecessarily complicated**
 
-**Developer backlog**
+The [Work page implementation](https://github.com/amandadr/amandadroy-com/blob/main/src/app/work/page.tsx?utm_source=chatgpt.com) currently provides two complete ways of browsing the portfolio on the same page:
 
-0 / 26 completed
+- Browse by discipline: Technical SEO, Web Engineering, Data & Automation, Applied AI.
+- Browse by project type: Professional Work, Tools & Infrastructure, Independent Builds, Archive.
 
-**P0 — Content and credibility**
+Both classifications are valuable, but displaying both complete directories creates repetition. Projects associated with multiple disciplines appear several times before appearing again in the main directory.
 
-Verify the new production deployment and deep links.
+Furthermore, the discipline navigation looks like a filtering mechanism in the implementation, but actually consists of anchor links to different sections.
 
-Audit all project dates, statuses, claims and résumé consistency.
+### **Recommendation: one directory, multiple browsing dimensions**
 
-Establish and apply the client confidentiality policy.
+Create a single project index with capability filtering. Retain project type as secondary metadata rather than another full directory.
 
-Separate the five priority agency engagements into dedicated project pages.
+## **Work directory**
 
-Correct attribution of metrics and link them to their primary evidence.
+AllSEODevelopmentAutomationAI
 
-**P1 — Art direction and UX**
+6 projects
 
-Prototype the lighter portfolio masthead.
+All project types
 
-Condense homepage introduction and improve contact access.
+Agency engagement · Recommendation delivered
 
-Implement flagship, standard and compact project presentations.
+**Marketplace rendering architecture**
 
-Introduce capability-based project browsing.
+Rendering strategy and Next.js recommendations for a large marketplace.
 
-Add a Lab preview to the homepage.
+SEO · Development
 
-Rewrite capability descriptions and the About page.
+Open-source tool · Source available
 
-**P1 — Case study infrastructure**
+**SEO Rankings Report**
 
-Extend the project schema with evidence, delivery status and visibility.
+Repeatable page- and query-level analysis using the Search Console API.
 
-Introduce typed content blocks for diagrams, figures, tables and code.
+SEO · Automation
 
-Make case study narrative sections flexible.
+Consulting · Launched
 
-Add related-project navigation and optional tables of contents.
+**Good Robot Brewing**
 
-Produce genuine or explicitly illustrative technical artifacts for flagship projects.
+Commerce architecture, custom integrations and website modernization.
 
-**P2 — Catalogue expansion**
+Development · SEO
 
-Add enterprise content consolidation and Webflow optimization.
+Agency engagement · Delivered
 
-Add multi-site technical SEO and multi-brand advisory.
+**Editorial workflow automation**
 
-Add AI microcredential and tourism training projects.
+Human-reviewed publishing workflow that roughly tripled production capacity.
 
-Add technical editorial experience and authorized writing samples.
+AI · Automation
 
-Develop this portfolio's design-system case study.
+Consulting · Delivered
 
-**P2 — Technical QA**
+**Pictou County Partnership**
 
-Validate canonical URLs, structured data, sitemap and Open Graph previews.
+Regional data modelling and investor-facing Tableau dashboard.
 
-Optimize project media for static delivery.
+Automation
 
-Test mobile navigation and accessibility.
+Independent build · Prototype
 
-Implement meaningful portfolio interaction measurements.
+**Hyrule Merchant**
 
-Establish automated content, accessibility and regression checks.
+Programmatic page generation and build-time data validation.
 
-## **Definition of done**
+Development
 
-The next iteration should satisfy the following acceptance criteria:
+Interactive example of the proposed browsing experience, using a subset of existing projects.
 
-- A hiring manager can establish professional specialization and inspect relevant evidence within seconds of arriving.
-- Every significant professional accomplishment has an independently shareable destination.
-- Projects clearly differentiate completed work, recommendations, collaborative contributions and experiments.
-- Technical claims are supported by documented outcomes, artifacts or transparent methodologies.
-- The website remains recognizable as a sibling of MRC without behaving like another consultancy website.
-- Primary content is available in statically generated HTML.
-- The project catalogue can expand without requiring redesigns or duplicated content.
-- Confidential client information is excluded from all public assets and repository content.
+This could be implemented through progressive enhancement of the statically rendered directory. Maintain shareable filter state and preserve access to every project without JavaScript.
 
-## **Final design principle**
+### **Additional browsing improvements**
 
-The portfolio should evolve from a collection of projects into a **curated body of professional evidence**.
+| Current behaviour                                  | Recommended change                                                                                       |
+| -------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| Compact project rows hide summaries                | Always show a one-sentence description                                                                   |
+| Technology lists dominate compact entries          | Prioritize the problem solved and contribution                                                           |
+| Project identifiers occupy prominent space         | Demote identifiers to secondary metadata                                                                 |
+| Every project links back to All Work               | Add breadcrumbs and relevant discipline links                                                            |
+| Related projects appear only at the end            | Include contextual links within case study prose                                                         |
+| Lab entries appear in capability groups and Lab    | Include them only when the visitor explicitly chooses to browse experiments, or clearly distinguish them |
+| Professional projects appear in source-array order | Establish deliberate editorial ordering                                                                  |
 
-The strongest opportunity is not to add more decorative elements or demonstrate more frameworks. It is to communicate the depth of the work that has already been completed: the investigations, architectural recommendations, engineering decisions, analytical methods, measurable improvements and collaborative responsibilities that are currently more apparent in the résumé archive than on the website.
+The biggest immediate issue is hiding summaries in compact entries. In `CaseRow.tsx`, summaries are conditionally rendered only for non-compact projects.
 
-Preserve the excellent technical foundation of the rebuild. Invest the next iteration in making the evidence visible, interesting and easy to investigate.
+A visitor encountering **Newfie**, **Eastward** or **UX experimentation practice** should not need to open a page just to understand why it might interest them.
+
+## **4. Reduce the number of standalone case studies**
+
+Not every experience warrants an independent project page.
+
+The previous content expansion went too far in treating individual responsibilities, related workstreams and general professional practices as discrete case studies.
+
+There are several instances of substantial conceptual overlap.
+
+| Existing pages                                                                     | Recommended action                                                                                     |
+| ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| Human-reviewed AI editorial automation + Squarespace publishing automation         | Merge into one comprehensive case study                                                                |
+| Good Robot Brewing + UX experimentation practice                                   | Integrate experimentation into the main commerce case study                                            |
+| MacMillan Search Practice + Multi-site technical SEO + Technical audit methodology | Establish one agency practice hub and one substantial audit methodology article                        |
+| B2B SaaS organic growth + SEO Rankings Report                                      | Keep separate, but clearly distinguish the growth engagement from the software tool                    |
+| Paid vs organic attribution                                                        | Incorporate into agency experience until more detailed evidence is available                           |
+| LLM evaluation practice                                                            | Retain as an experience entry or develop into a substantive methodology article                        |
+| MRC + This portfolio                                                               | Keep separate; differentiate consultancy architecture from cross-platform design-system implementation |
+
+The Squarespace publishing entry is the clearest example of unnecessary duplication. Both it and the editorial automation case study describe the same technologies, workflow and roughly threefold productivity improvement.
+
+A visitor could reasonably conclude that they represent separate accomplishments, when the content describes substantially the same engagement.
+
+**Fewer, stronger pages would improve credibility more than additional project pages.**
+
+If merging already-public URLs, implement permanent redirects where your hosting environment supports them and update internal links, canonicals and sitemap entries.
+
+## **5. Establish a content hierarchy**
+
+I would restructure the catalogue around four editorial levels.
+
+**Tier 1 — Signature case studies**
+
+Approximately 6–8 projects · Suggested 600–1,200 words where justified
+
+Your most consequential work. Detailed investigations, original artifacts, technical decisions, implementation, results and limitations.
+
+**Tier 2 — Supporting projects**
+
+Approximately 10–15 projects · Suggested 200–500 words
+
+Focused descriptions of meaningful builds, recommendations and engagements, with enough information to understand your contribution.
+
+**Tier 3 — Lab notes**
+
+Variable length
+
+Experiments with explicit research questions, current status, observations and unresolved problems.
+
+**Tier 4 — Archive**
+
+Short descriptions and external links
+
+Earlier development work that demonstrates progression but does not require full editorial treatment.
+
+The suggested word counts are editorial guidelines, not search engine requirements. The underlying evidence should determine how much content is necessary.
+
+### **Recommended signature case studies**
+
+| Project                                | Primary strength                                        |
+| -------------------------------------- | ------------------------------------------------------- |
+| SEO Rankings Report                    | Search engineering and automation                       |
+| B2B SaaS organic growth                | Measurable SEO performance                              |
+| Marketplace rendering architecture     | JavaScript SEO and technical strategy                   |
+| Good Robot Brewing                     | Engineering ownership and system integration            |
+| Enterprise website migration           | Technical risk management and QA                        |
+| Human-reviewed AI editorial automation | Applied AI and measurable efficiency                    |
+| PCP Economic Dashboard                 | Analytical problem-solving                              |
+| MRC website                            | Design systems, structured content and web architecture |
+
+These eight projects should receive the majority of your content-development effort.
+
+The rest of the portfolio should support them, not compete with them for attention.
+
+## **6. The case studies are too formulaic**
+
+The [current case study template](https://github.com/amandadr/amandadroy-com/blob/main/src/app/work/%5Bslug%5D/page.tsx?utm_source=chatgpt.com) supports optional sections, but much of the existing content still follows the same narrative structure.
+
+That means many pages repeatedly explain that:
+
+- A system needed to be maintainable.
+- Manual processes did not scale.
+- Technical decisions needed to support stakeholders.
+- The chosen approach was practical and repeatable.
+- The outcome was a useful deliverable.
+
+These are sound professional principles, but they become generic through repetition.
+
+**The most interesting information is what was specific to each problem.**
+
+### **Example: PCP Economic Dashboard**
+
+The current implementation section reads:
+
+> Structured census, housing, economic and climate inputs; validated joins and calculations; documented update workflows; and oriented the dashboard narrative to partnership questions rather than decorative charts.
+
+This communicates the responsibilities, but not the analytical challenge.
+
+Your earlier application materials provide considerably more interesting information: the best available census data was from 2021, the desired North Shore region didn't correspond to an official Statistics Canada geography, and you worked with stakeholders to define and aggregate five county-level datasets.&#x20;
+
+Resume October 2026(2).pdf
+
+
+
+A stronger case study would organize itself around those decisions.
+
+### Defining a region that doesn't officially exist
+
+One of the first challenges emerged before dashboard wireframes were developed. The regional comparison stakeholders wanted to present included Nova Scotia's North Shore, but the North Shore is not an official Statistics Canada reporting geography.
+
+Rather than use a superficially similar geographic boundary, I worked with Pictou County Partnership to establish a definition that reflected the region they wanted to represent. I then aggregated five county-level datasets using consistent definitions to construct the regional comparison.
+
+This decision influenced how indicators were sourced, calculated and presented. The resulting methodology was documented alongside the dashboard so future updates could preserve the same geographic assumptions.
+
+### Designing around the census cycle
+
+A second constraint was data freshness. The most authoritative census data available during development was from 2021, making it unsuitable for presentation as a permanently current economic snapshot.
+
+I structured the data layer, documentation and handoff around future refreshes, including the expected availability of new census data in 2027. The objective was to deliver a living analytical asset rather than a dashboard that would need to be rebuilt whenever its underlying data changed.
+
+That is the level of specificity the portfolio needs.
+
+It explains the problem, your decision, your reasoning and the practical implications without relying on generic statements about systems thinking.
+
+## **7. Specific content critiques for each flagship project**
+
+### **SEO Rankings Report**
+
+Current depth: approximately 291 narrative words
+
+This is currently your flagship project, but its description doesn't explain enough about the actual software.
+
+The case study should answer:
+
+| Technical question                  | Content to develop                                             |
+| ----------------------------------- | -------------------------------------------------------------- |
+| What goes in?                       | GSC property, date ranges, configuration and filters           |
+| How is data acquired?               | API requests, authentication, pagination and caching           |
+| What is calculated?                 | Page-level and query-level comparison methodology              |
+| What constitutes a winner or loser? | Ranking logic, thresholds and handling of edge cases           |
+| How are results presented?          | Markdown output, JSON data and example reports                 |
+| What are the limitations?           | Search Console aggregation, incomplete data and interpretation |
+| How is it maintained?               | Configuration, modularity, testing and reuse                   |
+
+Retrieve those details from the [actual repository](https://github.com/amandadr/seo-rankings-report?utm_source=chatgpt.com), rather than expanding the narrative through assumptions.
+
+Include a genuine sanitized or synthetic report.
+
+This project could be an exceptionally convincing demonstration of your engineering approach to SEO, but visitors currently need to leave your portfolio and investigate GitHub themselves to establish that depth.
+
+### **B2B SaaS organic growth**
+
+Current depth: approximately 210 narrative words
+
+The 226% metric is compelling, but it currently carries too much of the case study.
+
+Explain the acquisition problem preceding the work, why those particular pages were selected, how different opportunities were classified, what types of revisions were made and how performance informed the following month's work.
+
+Most importantly, explain the measurement methodology.
+
+## **226% average organic click growth**
+
+Current claim
+
+| Measured population | 18 written or refreshed pages                                     |
+| ------------------- | ----------------------------------------------------------------- |
+| Engagement duration | Six months                                                        |
+| Metric              | Google Search Console organic clicks                              |
+| Aggregation         | Document precisely how the average was calculated                 |
+| Distribution        | Several high-performing pages influenced the average              |
+| Limitations         | Not necessarily representative of sitewide or typical page growth |
+
+Being transparent about the distribution would strengthen your credibility considerably. Your own application notes already recognize the influence of the strongest performers on the aggregate result.
+
+If the underlying data is unavailable for publication, explain the methodology and limitations rather than constructing a fictitious performance chart.
+
+### **Marketplace rendering architecture**
+
+Current depth: approximately 193 narrative words
+
+This is one of your most valuable case studies for technical SEO roles, but it currently amounts to a statement that you investigated a React application and recommended Next.js.
+
+Develop the investigation itself.
+
+Explain what rendering-related observations informed the recommendation, whether the issues involved initial HTML, rendered HTML, routing, internal linking, metadata or other architectural considerations, and what made the recommendation suitable for this marketplace.
+
+A useful structure would be:
+
+Maintain the distinction between **recommendation delivered** and **implementation completed**.
+
+Also, don't frame Next.js as inherently better for SEO than React. Next.js itself is a React framework. The interesting discussion concerns rendering strategies and architectural capabilities.
+
+### **Good Robot Brewing**
+
+Current depth: approximately 263 narrative words
+
+Your most comprehensive commercial development engagement deserves considerably more attention.
+
+The current case study mentions two WordPress origins, custom plugins, data mapping, payments, DNS/CDN, events management and fulfillment. These are presented as a collection of responsibilities rather than an interconnected system.
+
+Conceptual system diagram for editorial planning. Verify the actual architecture before publication.
+
+Develop the narrative around:
+
+- Why e-commerce required broader website modernization.
+- What architectural dependencies needed to be resolved.
+- How content, events, products and fulfillment were coordinated.
+- Why custom plugins were necessary.
+- How you approached migration risk and launch readiness.
+- What you would improve in a future iteration.
+
+Link directly to the venue management and Trexity plugin pages within the appropriate sections.
+
+The current related-project data includes venue management but does not directly reference your WooCommerce-to-Trexity project. That is a missed opportunity to connect the commercial engagement with publicly inspectable engineering work.
+
+### **Enterprise website migration & QA**
+
+Current depth: approximately 185 narrative words
+
+Rather than repeatedly mentioning the clean 224-URL QA result, show what constituted successful validation.
+
+A case study artifact could be a migration acceptance matrix:
+
+| Validation area                | Documented observation                |
+| ------------------------------ | ------------------------------------- |
+| Internal 4xx and 5xx responses | None identified in the 224-URL QA set |
+| Redirect chains and loops      | None identified in the QA set         |
+| Redirect configuration         | Additional remediation documented     |
+| XML sitemaps                   | Follow-up issues documented           |
+| Hreflang                       | Follow-up issues documented           |
+
+Then explain why these observations mattered, how they were communicated and what the remaining work involved.
+
+A sanitized URL mapping example and QA methodology would demonstrate much more expertise than the metric alone.
+
+### **Human-reviewed AI editorial automation**
+
+Current depth: approximately 177 narrative words
+
+This project has enormous potential because it combines software development, LLM usage, editorial processes, search optimization and accuracy-sensitive content.
+
+The current page identifies the workflow and the approximate threefold productivity improvement but doesn't explain how the process managed quality.
+
+Include an annotated example showing how expert source material progressed through the workflow.
+
+PROPOSED CASE STUDY ARTIFACT
+
+1. Source transcript excerpt
+2. Structured editorial outline
+3. AI-assisted draft
+4. Human verification and corrections
+5. CMS-ready content
+
+**What the artifact should demonstrate**
+
+Where automation saves time, where errors can be introduced, and where human review remains indispensable.
+
+A synthetic example using nonconfidential material would be entirely suitable.
+
+You should also distinguish this work from GEO experimentation. It proves applied AI and content-engineering capabilities; it doesn't independently prove improved visibility in AI-generated search answers.
+
+### **MRC website**
+
+Current depth: approximately 231 narrative words
+
+The MRC theme is a much more substantial technical project than its current description suggests.
+
+You already have extensive design-system documentation, component fixtures, architectural principles and structured publishing infrastructure.
+
+Feature those assets directly.
+
+The case study should discuss:
+
+| Area                 | Evidence                                                          |
+| -------------------- | ----------------------------------------------------------------- |
+| Design system        | Tokens, semantic roles and CUBE CSS                               |
+| Composition          | Shared layout primitives and responsive behaviour                 |
+| CMS architecture     | Ghost routes, collections and templates                           |
+| Content architecture | Glossary taxonomy and internal relationships                      |
+| Accessibility        | Design requirements and documented testing                        |
+| Maintainability      | Component fixtures, documentation and editorial workflows         |
+| GEO research         | Hypotheses, experiments and verified observations where available |
+
+Your existing documentation means much of this case study can be developed from material you've already produced.
+
+## **8. Strengthen information scent**
+
+Information scent is a UX concept describing how visitors determine whether a link or navigational path is likely to lead to information they need.
+
+Several of your project titles are technically accurate but insufficiently descriptive.
+
+| Current title                      | More informative title                                      |
+| ---------------------------------- | ----------------------------------------------------------- |
+| SEO Rankings Report                | SEO Rankings Report — Automated Search Performance Analysis |
+| Marketplace rendering architecture | JavaScript SEO for a Large-Scale Marketplace                |
+| Multi-site technical SEO           | Technical SEO Across Large Multi-Site Portfolios            |
+| Enterprise content consolidation   | Consolidating Fragmented Enterprise Content Architecture    |
+| B2B technical editorial            | Managing a B2B Technical Publication                        |
+| Eastward                           | Eastward — A Location-Driven Next.js Travel Platform        |
+| Hyrule Merchant                    | Hyrule Merchant — Programmatic E-commerce Architecture      |
+| This portfolio                     | Building a Shared Design Language Across Ghost and Next.js  |
+
+You don't necessarily need to use these longer versions as the official project names.
+
+Instead, introduce a distinction between `title` and `headline`.
+
+```
+{
+  title: "SEO Rankings Report",
+  headline: "Making organic search analysis repeatable",
+  summary: "A configurable Python reporting pipeline...",
+}
+```
+
+This allows the product name to remain recognizable while the editorial headline communicates why the project matters.
+
+The headline can be used on featured cards and case study pages, with the product name retained in metadata and compact directories.
+
+## **9. Improve readability and scanability**
+
+The current case study pages contain several successive introductory elements:
+
+Current content sequence
+
+01
+
+Project identifier
+
+02
+
+Eyebrow
+
+03
+
+Project title
+
+04
+
+Summary
+
+05
+
+Overview
+
+06
+
+Anonymization disclosure
+
+07
+
+Outcome list
+
+08
+
+Role, context, status and year
+
+09
+
+Technology list
+
+10
+
+External links
+
+11
+
+Case study narrative
+
+That is a substantial amount of introductory material before the substantive article begins.
+
+There is also significant overlap between the summary, overview, outcome list and narrative introduction.
+
+I would consolidate the case study header.
+
+AGENCY ENGAGEMENT · 2024–2025
+
+# **Making organic search analysis repeatable**
+
+SEO Rankings Report — a Python tool for recurring page- and query-level search performance comparisons.
+
+MY ROLE
+
+Developer & SEO specialist
+
+DELIVERABLE
+
+Reusable reporting tool
+
+Python · GSC API · JSON · Markdown
+
+Source code
+
+Example report
+
+## **Why I built it**
+
+Begin the substantive narrative immediately, rather than repeating the project introduction several times.
+
+Suggested compact article header.
+
+Other content improvements:
+
+- Expand acronyms on first use, especially IA, GSC, PSI and GBP.
+- Use descriptive subheadings instead of generic labels wherever possible.
+- Reserve bold text for key decisions, findings and outcomes.
+- Break long technical explanations into figures, tables or short code examples.
+- Introduce tables of contents only for articles substantial enough to benefit from them.
+
+The [project template](https://github.com/amandadr/amandadroy-com/blob/main/src/app/work/%5Bslug%5D/page.tsx?utm_source=chatgpt.com) still primarily renders prose strings. Introducing rich editorial content blocks should now be a priority.
+
+## **10. The writing needs more personality and specificity**
+
+The About page is much stronger than the previous version. It establishes an intellectual connection between your English degree, development background, SEO practice and interest in useful systems.
+
+Unfortunately, much of that personality disappears in the project descriptions.
+
+Some examples from the current content:
+
+| Existing phrase                                                                    | Editorial issue                                                                |
+| ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| "A durable audit method"                                                           | Doesn't explain what distinguishes the methodology                             |
+| "Clearer lead-acquisition conversations"                                           | Vague outcome                                                                  |
+| "A consolidation recommendation package stakeholders could evaluate"               | Describes a deliverable without explaining its substance                       |
+| "A live public presence and an application architecture ready for membership work" | Needs clearer distinction between available functionality and planned features |
+| "Stronger instincts for when AI assistance is trustworthy"                         | Subjective claim without supporting examples                                   |
+| "Without pretending billing is finished before it is"                              | Reads defensively rather than professionally                                   |
+
+I would establish a writing standard based on specificity.
+
+Replace descriptions of desirable qualities with descriptions of actual decisions.
+
+| Instead of       | Write about                                                                       |
+| ---------------- | --------------------------------------------------------------------------------- |
+| Maintainability  | What a future maintainer needs to change, and how                                 |
+| Scalability      | What grows, which dependencies become expensive and how the architecture responds |
+| Accessibility    | Specific barriers identified, decisions made and validation performed             |
+| Automation       | Inputs, outputs, transformations, error handling and human intervention           |
+| Technical SEO    | Observations, diagnosis, recommendations and evidence                             |
+| Systems thinking | Dependencies and trade-offs that influenced a decision                            |
+
+Additionally, some case studies describe alternatives that aren't established in your original résumé material, such as spreadsheet templates breaking, custom storefront alternatives being prohibitively expensive, or specific analytics approaches being rejected.
+
+These may be accurate, but they need verification. Do not manufacture retrospective design deliberations simply because the template has an Alternatives Considered section.
+
+## **11. Make the Experience page a better recruiter resource**
+
+The current Experience page is substantially more comprehensive and its individual achievements now link to relevant case studies.
+
+However, I would simplify the repeated links.
+
+For example, the MacMillan Search entry has ten detailed achievement links followed by a separate selected-work link group. MRC has a similar pattern.
+
+Use linked accomplishments as the primary navigation mechanism and eliminate the redundant project-link group unless it serves a genuinely different purpose.
+
+### **Address the CV-request friction**
+
+The website now deliberately requires visitors to email you to request a current résumé.
+
+This is a reasonable decision if you want to tailor every résumé and avoid publishing personal information. However, it introduces friction for recruiters who are reviewing dozens of candidates.
+
+I'd retain your email-based CV request policy but add a highly scannable professional profile section at the top of Experience.
+
+## **Professional profile**
+
+| Specialization    | Technical SEO & software development                  |
+| ----------------- | ----------------------------------------------------- |
+| Experience        | 3+ years across agency and consulting environments    |
+| Industries        | B2B SaaS, AI, marketplaces, e-commerce and enterprise |
+| Core technologies | Next.js, React, Python, SQL, WordPress                |
+| Location          | Atlantic Canada · Remote                              |
+
+A current, role-specific CV is available by email.
+
+Request a CV
+
+Make the page useful as a web résumé in its own right. Consider adding print-specific CSS so recruiters can save a clean PDF of the page without needing to request a separate document.
+
+## **12. Develop the Lab into something genuinely interesting**
+
+The Lab currently contains three projects: Hyrule Merchant, Newfie and Home Camera Pipeline.
+
+Their narrative descriptions range from approximately 44 to 62 words. They describe what was built but don't substantially discuss what was learned.
+
+The Lab should be where you demonstrate intellectual curiosity, research discipline and ongoing professional development.
+
+A strong lab entry should contain a question, an approach, observations and unresolved issues.
+
+For example, these would be valuable future experiments:
+
+| Experiment                               | Question to investigate                                                                  |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------- |
+| JavaScript rendering and discoverability | How does content availability differ across CSR, SSR and static generation?              |
+| Programmatic page generation             | How can template-driven pages remain useful, distinctive and indexable at scale?         |
+| AI citation visibility                   | How consistent are source citations across repeated prompts and platforms?               |
+| Structured entity relationships          | How can semantic content architecture improve the clarity of entity representation?      |
+| Image-heavy Next.js performance          | Which image-loading and layout strategies produce measurable performance improvements?   |
+| Multi-brand design systems               | How can two websites share foundations without developing homogeneous visual identities? |
+| Automated technical SEO validation       | Which crawl, metadata and structured-data checks can reliably become build-time tests?   |
+
+These would be future research projects, not claims about experiments already completed.
+
+The Lab could become one of the strongest assets for your job search because it demonstrates what you're currently learning, rather than only what you've done in previous roles.
+
+## **13. SEO and content quality considerations**
+
+From a search perspective, I would not attempt to make every project page rank for a competitive keyword.
+
+This is a professional portfolio, not a content-marketing site.
+
+Its organic search objectives should primarily concern your professional identity, relevant expertise, individual projects and discoverability when someone researches your background.
+
+### **Recommended treatment by content type**
+
+| Page type                         | Recommended approach                                      |
+| --------------------------------- | --------------------------------------------------------- |
+| Homepage                          | Index; establish professional identity and specialization |
+| Experience and About              | Index; reinforce career and identity information          |
+| Signature case studies            | Index; unique, substantive technical content              |
+| Supporting projects               | Index when independently useful                           |
+| Lab articles                      | Index when they contain meaningful original information   |
+| Very short archived project pages | Consider consolidating into an archive index              |
+| Duplicate project entries         | Merge rather than maintain competing versions             |
+
+Avoid automatically applying `noindex` to every short page. The question is whether the page provides unique value, not whether it meets a particular word count.
+
+Also ensure consistency of factual claims across the project catalogue.
+
+For example:
+
+- The 226% growth outcome belongs principally to the SaaS growth engagement, not the reporting software.
+- The roughly threefold editorial capacity improvement belongs to one documented workflow.
+- The 50+ technical audits are an aggregate career accomplishment, not necessarily 50 distinct client engagements.
+- Recommendations, delivered functionality and measured outcomes should remain separate.
+- Anonymized client material must be reviewed for confidentiality, including exact metrics and potentially identifying technical details.
+
+## **14. Developer implementation priorities**
+
+**Content improvement backlog**
+
+~14 / 25 (P0 largely done; signature depth and artifacts remain)
+
+**P0 — Simplify and consolidate** ✅ (shipped)
+
+Replace the duplicate Work directories with a single browsable project index. ✅
+
+Always display meaningful project summaries. ✅
+
+Merge Squarespace publishing into the editorial automation case study. ✅
+
+Consolidate overlapping agency practice and methodology content. ✅ (attribution folded; audit methodology retained; multi-site still separate—see judgment)
+
+Integrate UX experimentation into the Good Robot case study. ✅
+
+Remove redundant project links from the Experience page. ✅
+
+**P1 — Improve signature case studies**
+
+Expand SEO Rankings Report using actual repository documentation.
+
+Develop the marketplace rendering investigation and recommendation narrative.
+
+Document B2B SaaS growth methodology and limitations.
+
+Illustrate Good Robot architecture and integration dependencies.
+
+Publish a migration validation matrix.
+
+Demonstrate the human-reviewed editorial workflow.
+
+Expand PCP's data aggregation and freshness methodology.
+
+Document MRC's design system and content architecture.
+
+**P1 — Improve editorial infrastructure**
+
+Implement structured figure, table and code content blocks.
+
+Separate editorial headlines from project names.
+
+Simplify the project article header.
+
+Add contextual links and breadcrumbs.
+
+Introduce stable editorial ordering.
+
+Add print styles to the Experience page.
+
+**P2 — Strengthen long-term authority**
+
+Develop Lab entries around actual research questions.
+
+Publish reproducible technical SEO experiments.
+
+Verify all historical claims and architectural alternatives.
+
+Improve metadata for substantive project pages.
+
+Conduct mobile, keyboard and recruiter browsing tests.
+
+## **15. Test the portfolio against actual visitor objectives**
+
+Rather than evaluating usability solely through personal browsing, establish representative tasks.
+
+| Visitor             | Task                                                   | Suggested success criterion                        |
+| ------------------- | ------------------------------------------------------ | -------------------------------------------------- |
+| Recruiter           | Establish role, experience and availability            | Within 10 seconds                                  |
+| SEO director        | Find evidence of large-scale JavaScript SEO experience | Within two navigation actions from Home            |
+| Engineering manager | Inspect a substantial code-based project               | Within two navigation actions                      |
+| Marketing manager   | Understand a measurable organic growth outcome         | Within two navigation actions                      |
+| AI specialist       | Investigate a real applied-AI workflow                 | Within two navigation actions                      |
+| Returning visitor   | Locate a previously viewed project                     | Direct URL or straightforward directory navigation |
+
+These are proposed usability targets, not measurements of the existing site.
+
+Ask a few people unfamiliar with the portfolio to perform these tasks without coaching. Observe where they hesitate, which links they choose and whether they can accurately explain your contribution after reading a case study.
+
+## **Overall recommendation**
+
+Your portfolio currently has **more than enough projects, but not enough stories**.
+
+I would stop adding project pages for the time being. Instead, take the eight strongest projects and develop them into technically substantial, genuinely interesting case studies that somebody in your industry would enjoy reading even if they weren't hiring.
+
+That is a much higher standard than simply answering what you built or what technologies you used.
+
+The portfolio should demonstrate three things:
+
+- **Competence:** You can do the work.
+- **Judgment:** You understand why particular decisions are appropriate.
+- **Curiosity:** You are actively investigating how to do the work better.
+
+The first is already well established. The next content iteration should focus overwhelmingly on the other two.

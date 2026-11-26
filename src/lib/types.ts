@@ -29,6 +29,18 @@ export type ProjectSection = {
   body: string;
 };
 
+/** Rich case-study blocks beyond blank-line prose. */
+export type ContentBlock =
+  | { type: "prose"; heading?: string; body: string }
+  | {
+      type: "table";
+      heading?: string;
+      caption?: string;
+      headers: string[];
+      rows: string[][];
+    }
+  | { type: "steps"; heading?: string; items: string[] };
+
 export type ProjectPresentation = "flagship" | "standard" | "compact";
 
 export type EngagementType =
@@ -51,6 +63,8 @@ export type ProjectVisibility = "public" | "anonymized";
 export type Project = {
   slug: string;
   title: string;
+  /** Editorial headline on the case-study page (falls back to title). */
+  headline?: string;
   year: string;
   /** Short index-card summary */
   summary: string;
@@ -68,6 +82,8 @@ export type Project = {
   featured?: boolean;
   /** Lower sorts first among featured homepage projects */
   featuredRank?: number;
+  /** Lower sorts first in the Work directory (editorial sequence). */
+  editorialRank?: number;
   presentation?: ProjectPresentation;
   engagementType?: EngagementType;
   deliveryStatus?: DeliveryStatus;
@@ -81,6 +97,8 @@ export type Project = {
   caseStudy?: CaseStudySections;
   /** Extra narrative blocks after the core case-study template */
   sections?: ProjectSection[];
+  /** Structured figures, tables and annotated steps */
+  blocks?: ContentBlock[];
   /** Bullet outcomes shown near the top of the page */
   outcomes?: string[];
   decisionNote?: string;
@@ -103,7 +121,6 @@ export type ExperienceItem = {
   years: string;
   summary: string;
   highlights?: ExperienceHighlight[];
-  selectedWork?: { label: string; href: string }[];
   kind: "work" | "education";
 };
 

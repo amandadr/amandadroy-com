@@ -9,9 +9,10 @@ type CaseRowProps = {
 
 export function CaseRow({ project }: CaseRowProps) {
   const code = getProjectCode(project);
-  const presentation = project.presentation ?? (project.featured ? "standard" : "compact");
+  const presentation =
+    project.presentation ?? (project.featured ? "standard" : "compact");
   const isFlagship = presentation === "flagship";
-  const isCompact = presentation === "compact";
+  const displayTitle = project.headline ?? project.title;
 
   return (
     <article
@@ -19,16 +20,20 @@ export function CaseRow({ project }: CaseRowProps) {
       data-presentation={presentation}
     >
       <div className="mrc-case-row__body">
-        <p className="mrc-project-id">{code}</p>
         <p className="mrc-case-row__tag">
           {project.status} · {project.year}
+          <span className="mrc-case-row__id" aria-hidden="true">
+            {" "}
+            · {code}
+          </span>
         </p>
         <h3 className="mrc-case-row__title">
-          <Link href={`/work/${project.slug}/`}>{project.title}</Link>
+          <Link href={`/work/${project.slug}/`}>{displayTitle}</Link>
         </h3>
-        {!isCompact ? (
-          <p className="mrc-case-row__excerpt">{project.summary}</p>
+        {project.headline && project.headline !== project.title ? (
+          <p className="mrc-case-row__product">{project.title}</p>
         ) : null}
+        <p className="mrc-case-row__excerpt">{project.summary}</p>
         {isFlagship ? (
           <p className="mrc-case-row__cta">
             <Link href={`/work/${project.slug}/`}>Read the case study</Link>
@@ -36,7 +41,7 @@ export function CaseRow({ project }: CaseRowProps) {
         ) : null}
         <TechList
           technologies={project.technologies}
-          limit={isCompact ? 3 : 4}
+          limit={4}
           className="mrc-case-row__tech-list"
         />
       </div>

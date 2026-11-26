@@ -1,10 +1,15 @@
 import type { Project } from "@/lib/types";
 
-/** Cross-account practice and applied-AI work presented as shareable projects. */
+/**
+ * Cross-account practice notes kept as standalone pages.
+ * Squarespace publishing, UX experimentation and paid/organic attribution
+ * were merged into stronger case studies (see src/data/redirects.ts).
+ */
 export const practiceEngagements: Project[] = [
   {
     slug: "technical-audit-methodology",
     title: "Technical audit methodology",
+    headline: "How technical SEO audits become implementation work",
     year: "2024–2025",
     code: "WORK / 022",
     eyebrow: "Technical SEO · Prioritization · Delivery",
@@ -27,6 +32,7 @@ export const practiceEngagements: Project[] = [
     capabilities: ["technical-search"],
     featured: false,
     presentation: "standard",
+    editorialRank: 20,
     engagementType: "agency",
     deliveryStatus: "delivered",
     visibility: "public",
@@ -48,7 +54,7 @@ export const practiceEngagements: Project[] = [
       responsibility:
         "Structure technical audits so crawlability, rendering, indexation and performance findings become ranked implementation recommendations and stakeholder-ready reporting.",
       alternatives:
-        "Tool exports without narrative; checklist SEO disconnected from IA; or endless discovery with no delivery.",
+        "Tool exports without narrative; checklist SEO disconnected from information architecture; or endless discovery with no delivery.",
       choice:
         "Audit-first delivery that carries findings into content opportunities, information architecture and web strategy.",
       implementation:
@@ -56,65 +62,24 @@ export const practiceEngagements: Project[] = [
       outcome:
         "A durable audit method used across more than fifty engagements, with findings that could move into implementation planning.",
     },
-  },
-  {
-    slug: "paid-organic-attribution",
-    title: "Paid vs organic attribution",
-    year: "2024–2025",
-    code: "WORK / 023",
-    eyebrow: "Analytics · Lead acquisition · Reporting",
-    summary:
-      "Contributed to tracking and revenue attribution initiatives—analyzing paid versus organic channel performance to inform lead acquisition strategies across B2B SaaS, AI, data and enterprise accounts.",
-    overview:
-      "Organic priorities are clearer when paid and organic acquisition can be read together. Across concurrent B2B SaaS, AI, data and enterprise accounts, I contributed to tracking and revenue attribution work and analyzed paid-versus-organic performance for lead acquisition conversations.\n\nDay-to-day tools included GA4, Search Console and Looker Studio/Tableau-oriented reporting, with attention to what the data could and could not support before using it to prioritize content or technical work.",
-    category: "professional",
-    depth: "case-study",
-    role: "SEO Specialist",
-    context: "Agency engagement · Anonymized",
-    status: "Delivered",
-    technologies: [
-      "GA4",
-      "Google Search Console",
-      "Looker Studio",
-      "Tableau",
-      "Revenue attribution",
+    blocks: [
+      {
+        type: "steps",
+        heading: "The delivery loop",
+        items: [
+          "Investigate: crawl, render checks, Search Console and performance signals.",
+          "Prioritize: rank by risk, effort and dependency on other workstreams.",
+          "Recommend: write implementation notes developers can schedule.",
+          "Support: clarify findings during engineering and content handoff.",
+          "Validate: re-crawl or re-measure after changes land.",
+        ],
+      },
     ],
-    capabilities: ["data-automation", "technical-search"],
-    featured: false,
-    presentation: "compact",
-    engagementType: "agency",
-    deliveryStatus: "delivered",
-    visibility: "anonymized",
-    relatedProjectSlugs: [
-      "macmillan-search-practice",
-      "seo-rankings-report",
-      "b2b-saas-organic-growth",
-    ],
-    outcomes: [
-      "Contributed to tracking and revenue attribution initiatives",
-      "Analyzed paid vs organic performance to inform lead acquisition strategy",
-      "Connected SEO delivery to stakeholder reporting beyond rankings alone",
-    ],
-    caseStudy: {
-      problem:
-        "Organic work is hard to prioritize when paid and organic acquisition are reported in isolation—or when tracking cannot support the questions stakeholders actually ask.",
-      constraints:
-        "Shared agency access and varied maturity of client measurement stacks.",
-      responsibility:
-        "Contribute to tracking/attribution initiatives and analyze paid versus organic channel performance for lead acquisition conversations.",
-      alternatives:
-        "Rankings-only reporting; accepting last-click defaults without critique; or deferring all measurement work to a separate analytics vendor without SEO input.",
-      choice:
-        "Treat attribution questions as part of SEO delivery—validate what the data can support before using it to prioritize content or technical work.",
-      implementation:
-        "Worked with GA4, Search Console and BI-style reporting surfaces while collaborating with clients and internal stakeholders on acquisition interpretation.",
-      outcome:
-        "Clearer lead-acquisition conversations that connected organic work to channel performance, not rankings alone.",
-    },
   },
   {
     slug: "llm-evaluation-practice",
     title: "LLM evaluation practice",
+    headline: "Judging model answers when fluency is not enough",
     year: "2023–2025",
     code: "WORK / 024",
     eyebrow: "Evaluation · Prompting · Quality",
@@ -135,7 +100,8 @@ export const practiceEngagements: Project[] = [
     ],
     capabilities: ["applied-ai-geo"],
     featured: false,
-    presentation: "compact",
+    presentation: "standard",
+    editorialRank: 28,
     engagementType: "educational",
     deliveryStatus: "delivered",
     visibility: "public",
@@ -163,108 +129,6 @@ export const practiceEngagements: Project[] = [
         "Reviewed model responses for reasoning reliability, factual accuracy, instruction adherence and overall quality while iterating prompts and rubrics.",
       outcome:
         "Stronger instincts for when AI assistance is trustworthy—later applied in curriculum design and editorial automation with human review.",
-    },
-  },
-  {
-    slug: "squarespace-publishing-automation",
-    title: "Squarespace publishing automation",
-    year: "2024",
-    code: "WORK / 026",
-    eyebrow: "CMS preparation · Editorial ops",
-    summary:
-      "AI-assisted, human-reviewed publishing for accuracy-sensitive articles prepared for Squarespace—roughly tripling content output while keeping factual review before CMS handoff.",
-    overview:
-      "Accuracy-sensitive financial-services articles needed a path from expert podcast material to a Squarespace publishing surface without skipping factual review. Upstream automation covered transcription, structuring and drafting; people stayed responsible for verification; CMS preparation made the work publish-ready.\n\nThe measured workflow roughly tripled content-production capacity.",
-    category: "professional",
-    depth: "case-study",
-    role: "Automation / SEO Specialist",
-    context: "Agency engagement · Anonymized",
-    status: "Delivered",
-    technologies: [
-      "Squarespace",
-      "CMS preparation",
-      "Python",
-      "Whisper/AssemblyAI",
-      "Editorial QA",
-    ],
-    capabilities: ["applied-ai-geo", "data-automation"],
-    featured: false,
-    presentation: "compact",
-    engagementType: "agency",
-    deliveryStatus: "delivered",
-    visibility: "anonymized",
-    relatedProjectSlugs: ["editorial-workflow-automation"],
-    outcomes: [
-      "CMS preparation path into Squarespace for accuracy-sensitive articles",
-      "Human factual review retained before publish-ready handoff",
-      "~3× capacity for the measured editorial workflow",
-    ],
-    caseStudy: {
-      problem:
-        "Podcast-sourced expert material needed a path to a Squarespace publishing surface without skipping factual review.",
-      constraints:
-        "Accuracy-sensitive vertical and CMS publishing conventions.",
-      responsibility:
-        "Connect transcription/structuring/drafting automation to human review and CMS preparation for Squarespace publication.",
-      alternatives:
-        "Fully manual CMS entry; unattended auto-publish; or drafting without a defined CMS handoff.",
-      choice:
-        "Automate preparation up to the CMS edge while keeping people responsible for factual approval.",
-      implementation:
-        "Used Python with Whisper/AssemblyAI, SurferSEO and OpenAI-assisted drafting upstream of human review and Squarespace-oriented CMS preparation.",
-      outcome:
-        "A publishable handoff that supported roughly triple production capacity without unattended Squarespace posting.",
-    },
-  },
-  {
-    slug: "ux-experimentation-practice",
-    title: "UX experimentation practice",
-    year: "2026",
-    code: "WORK / 027",
-    eyebrow: "Experimentation · Conversion · Architecture",
-    summary:
-      "UX experimentation inside a website modernization—A/B testing, conversion-path thinking and template/layout optimization alongside SEO-driven architecture on a multi-location commerce engagement.",
-    overview:
-      "On Good Robot Brewing (with Differo), ecommerce work expanded into modernization that included UX experimentation, an events overhaul, custom development and SEO-driven architecture.\n\nExperimentation sat next to information architecture and WordPress implementation—not as a separate cosmetic track after launch.",
-    category: "professional",
-    depth: "case-study",
-    role: "Technical lead",
-    context: "Manny Roy Consulting · with Differo",
-    status: "Delivered",
-    technologies: [
-      "A/B testing",
-      "UI/UX",
-      "Conversion paths",
-      "WordPress",
-      "Technical SEO",
-    ],
-    capabilities: ["web-engineering", "technical-search"],
-    featured: false,
-    presentation: "compact",
-    engagementType: "consulting",
-    deliveryStatus: "delivered",
-    visibility: "public",
-    relatedProjectSlugs: ["good-robot-brewing", "webflow-platform-optimization"],
-    outcomes: [
-      "UX experimentation included in a live commerce modernization scope",
-      "Experimentation paired with SEO-driven IA",
-      "Hypothesis-led UI/UX work coordinated through launch",
-    ],
-    caseStudy: {
-      problem:
-        "Architecture and SEO changes can still fail commercially if usability and conversion paths are left untested.",
-      constraints:
-        "Multi-stakeholder agency/client delivery and live commerce risk.",
-      responsibility:
-        "Include UX experimentation and UI/UX improvements alongside SEO-driven architecture, custom development and launch QA.",
-      alternatives:
-        "Ship IA changes with no behavioral validation; run cosmetic A/B tests disconnected from architecture; or defer UX until after launch exclusively.",
-      choice:
-        "Treat experimentation as part of modernization—templates, journeys and SEO constraints in the same conversation.",
-      implementation:
-        "Coordinated A/B-oriented UI/UX work with information architecture and WordPress implementation during the Good Robot engagement.",
-      outcome:
-        "Hypothesis-led UX work shipped inside a real commerce launch alongside SEO and platform modernization.",
     },
   },
 ];

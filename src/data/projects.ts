@@ -6,29 +6,31 @@ const catalog: Project[] = [
   {
     slug: "seo-rankings-report",
     title: "SEO Rankings Report",
+    headline: "Making organic search analysis repeatable",
     year: "2024–2025",
     code: "TOOL / 001",
-    eyebrow: "Search automation · Agency SEO",
+    eyebrow: "Open-source tool · Agency SEO",
     summary:
-      "Configurable Python reporting that turns Google Search Console data into repeatable page- and query-level organic performance comparisons.",
+      "A Python CLI that pulls Google Search Console data and compares two periods so SEO teams can see which pages and queries gained or lost clicks—without rebuilding the same spreadsheet every week.",
     overview:
-      "At MacMillan Search, recurring performance reviews for SaaS clients meant rebuilding the same GSC comparisons by hand. This tool automated those comparisons so analysts could spend time on interpretation—winners, losers, anomalies and re-optimization opportunities—instead of data assembly.\n\nIt ran alongside organic growth work for a Canadian HR/payroll SaaS platform, where search-driven content optimization produced a 226% average click increase across 18 pages over six months.",
+      "At MacMillan Search, recurring performance reviews meant rebuilding the same Search Console comparisons by hand. This tool automates that assembly so analysts spend time on interpretation instead of exports.\\n\\nIt ran beside organic growth work for a Canadian HR/payroll SaaS platform. The 226% average click increase across 18 pages belongs to that engagement; this tool is the measurement workflow that made the monthly review repeatable. Full case study: B2B SaaS organic growth.",
     category: "tools",
     depth: "case-study",
     role: "Developer / SEO Specialist",
-    context: "MacMillan Search · B2B SaaS engagement",
+    context: "MacMillan Search · open-sourced afterward",
     status: "Public source code",
     technologies: [
-      "Python",
+      "Python 3.11+",
       "Google Search Console API",
+      "OAuth 2.0",
       "Caching",
-      "Ahrefs",
-      "Screaming Frog",
-      "DataForSEO",
+      "Markdown / JSON / CSV",
+      "Docker",
     ],
     capabilities: ["technical-search", "data-automation"],
     featured: true,
     featuredRank: 1,
+    editorialRank: 1,
     presentation: "flagship",
     engagementType: "open-source",
     deliveryStatus: "live",
@@ -36,36 +38,65 @@ const catalog: Project[] = [
     relatedProjectSlugs: ["b2b-saas-organic-growth", "macmillan-search-practice"],
     repository: "https://github.com/amandadr/seo-rankings-report",
     outcomes: [
-      "Automated page- and query-level GSC comparisons for recurring client reviews",
-      "Supported 226% average organic click growth across 18 B2B SaaS pages over six months",
-      "Surfaced winners, losers and re-optimization opportunities without opaque dashboards",
+      "Page- and query-level winners/losers comparisons from Search Console",
+      "Configurable filters for brand terms, country, device and URL patterns",
+      "Markdown, JSON, CSV and Google Sheets output for agency handoff",
     ],
     caseStudy: {
       problem:
-        "Organic performance comparisons for agency accounts required manual collection from Google Search Console and adjacent tools. Analysts rebuilt the same views each cycle, which slowed prioritization and made it harder to trust week-over-week changes.",
+        "Organic performance reviews for agency accounts required manual collection from Search Console. Analysts rebuilt the same period-over-period views each cycle, which slowed prioritization and made week-over-week changes harder to trust.",
       constraints:
-        "Had to work with real Search Console properties, stay configurable per client, remain explainable to SEO specialists who are not engineers, and avoid locking the workflow into a heavyweight BI product.",
+        "Real Search Console properties, OAuth authentication, configurable per client, explainable to SEO specialists who are not engineers, and no dependency on a heavyweight BI product.",
       responsibility:
-        "Designed and implemented the reporting workflow end to end: GSC API integration, caching, configuration, validation and report generation. Used the outputs alongside Ahrefs, Screaming Frog and competitive research while writing or refreshing SaaS landing pages.",
+        "Designed and implemented the reporting workflow end to end: API client, caching, configuration, validation, analysis engine and report generation.",
       alternatives:
-        "Spreadsheet templates drifted and broke. One-off notebooks did not transfer between accounts. A full BI dashboard would have been slower to ship and harder for day-to-day SEO operators to own.",
+        "Spreadsheet templates drifted between accounts. Notebooks did not transfer cleanly. A full BI dashboard would have been slower to ship and harder for day-to-day SEO operators to own.",
       choice:
-        "A configurable Python tool with cached API responses and explicit page- and query-level comparisons—auditable, repeatable and independent of any single client’s proprietary data.",
+        "A CLI-first Python tool with cached API responses, explicit comparison logic and multiple export formats—auditable and reusable across properties.",
       implementation:
-        "Integrates the Search Console API, caches responses, validates inputs and generates comparisons that highlight relative movement. Property-specific rules stay in configuration so the core logic remains reusable across accounts.",
+        "The tool authenticates with OAuth 2.0, accepts domain or URL-prefix properties, compares a current window against a previous window and ranks pages by click delta. Query-level drilldowns show which terms drove the change. Optional filters cover non-branded analysis, country, device and URL patterns. Results export as Markdown reports, JSON, CSV or Google Sheets. Caching with TTL and optional Docker packaging keep repeated runs practical for agency cadence.",
       outcome:
-        "A reusable agency workflow that identifies organic search winners and losers and informs optimization priorities. Source code is public; client property data stays out of the repository.",
+        "A reusable winners-and-losers workflow. Source code is public; client property data stays out of the repository. Growth outcomes from pages optimized with this loop are documented separately in the B2B SaaS case study.",
     },
+    blocks: [
+      {
+        type: "table",
+        heading: "What the tool compares",
+        caption: "Inputs and outputs for a typical winners/losers run",
+        headers: ["Stage", "Detail"],
+        rows: [
+          ["Input", "GSC property, date ranges, optional brand/country/device/URL filters"],
+          ["Acquisition", "Search Console API with OAuth; responses cached with configurable TTL"],
+          ["Calculation", "Page-level click/impression/position deltas vs prior period"],
+          ["Ranking", "Pages sorted by click gain or loss; queries contributing to each page"],
+          ["Output", "Markdown report, JSON, CSV or Google Sheets worksheet"],
+          ["Limits", "GSC sampling/aggregation, property access and incomplete historical data"],
+        ],
+      },
+      {
+        type: "prose",
+        heading: "How winners and losers are defined",
+        body:
+          "A winner is a page whose clicks increased between the selected periods; a loser is a page whose clicks decreased. The report also surfaces impression and average-position movement so a click gain is not mistaken for a ranking improvement alone.\\n\\nQuery drilldowns list the search terms that contributed most to each page’s change. Non-branded mode excludes configured brand terms when the question is competitive demand rather than branded navigational traffic.",
+      },
+      {
+        type: "prose",
+        heading: "What it does not claim",
+        body:
+          "Search Console data is sampled and aggregated. The tool makes period comparisons repeatable; it does not invent causal proof that a content change produced a ranking move. Interpretation still belongs to the analyst.",
+      },
+    ],
   },
   {
     slug: "good-robot-brewing",
     title: "Good Robot Brewing",
+    headline: "Modernizing a multi-location brewery on WordPress and WooCommerce",
     year: "2026",
-    eyebrow: "Commerce architecture · Technical SEO · Integrations",
+    eyebrow: "Consulting · Commerce architecture",
     summary:
-      "Website modernization and e-commerce infrastructure for a multi-location brewery—SEO-driven IA, custom plugins, fulfillment paths and launch QA.",
+      "Website modernization and e-commerce infrastructure for a multi-location brewery—SEO-driven information architecture, custom plugins, fulfillment paths, UX experiments and launch QA.",
     overview:
-      "What began as an e-commerce proposal became a full modernization roadmap with Differo: SEO-driven information architecture, URL migration strategy, events management overhaul and UI/UX improvements supported by A/B testing.\n\nThe technical surface spanned two WordPress origins, 40+ products and three fulfillment paths—plus DNS/CDN, payments, data mapping and stakeholder requirements through implementation and launch.",
+      "What started as an e-commerce proposal with Differo became a full modernization: SEO-driven information architecture, URL migration, events overhaul, UX experimentation and the integrations that keep products, payments and fulfillment honest.\\n\\nThe live surface spans two WordPress origins, more than forty products and three fulfillment paths—plus DNS/CDN, payments, data mapping and launch QA.",
     category: "professional",
     depth: "case-study",
     role: "Technical lead",
@@ -82,33 +113,54 @@ const catalog: Project[] = [
     capabilities: ["web-engineering", "technical-search"],
     featured: true,
     featuredRank: 4,
-    presentation: "standard",
+    editorialRank: 4,
+    presentation: "flagship",
     engagementType: "consulting",
     deliveryStatus: "live",
     visibility: "public",
-    relatedProjectSlugs: ["ux-experimentation-practice", "wordpress-venue-management"],
+    relatedProjectSlugs: ["wordpress-venue-management", "woo-trexity"],
     mrcUrl: "https://www.mannyroy.com/",
     outcomes: [
-      "SEO-driven information architecture and URL migration strategy",
-      "Custom plugins and integrations across 2 WordPress origins, 40+ products and 3 fulfillment paths",
-      "UX experimentation / A/B-oriented UI work coordinated with launch QA",
+      "SEO-driven information architecture and URL migration strategy before launch",
+      "Custom plugins across 2 WordPress origins, 40+ products and 3 fulfillment paths",
+      "UX experimentation coordinated with architecture and launch QA—not a post-launch cosmetic track",
     ],
     caseStudy: {
       problem:
-        "The brewery needed a maintainable commerce and content platform that could absorb product, location, events and marketing complexity without becoming a fragile one-off stack—or a shallow theme swap that left search and fulfillment problems untouched.",
+        "The brewery needed a commerce and content platform that could absorb products, locations, events and marketing without a fragile one-off stack—or a theme swap that left search and fulfillment untouched.",
       constraints:
-        "Existing brand and operational requirements, multiple fulfillment paths, migration risk, third-party integrations and a site the client could operate after launch.",
+        "Existing brand and ops requirements, multiple fulfillment paths, migration risk, third-party integrations and a site the client could run after launch.",
       responsibility:
-        "Led SEO-driven IA, URL migration strategy, events management overhaul, UI/UX improvements with A/B testing, custom WordPress plugins, third-party integrations, data mapping, DNS/CDN, payment processing coordination and technical QA through launch.",
+        "Led SEO-driven information architecture, URL migration, events overhaul, UX/A/B work, custom WordPress plugins, integrations, data mapping, DNS/CDN, payment coordination and technical QA through launch.",
       alternatives:
-        "A full custom commerce build would have been expensive to maintain. A hosted SaaS storefront would have fought existing WordPress content operations. A theme-only refresh would not have fixed URL, events or fulfillment architecture.",
+        "A full custom storefront would have been expensive to maintain. A hosted SaaS storefront would have fought WordPress content operations. A theme-only refresh would not have fixed URL, events or fulfillment architecture.",
       choice:
-        "Evolve WordPress/WooCommerce with deliberate content models, custom plugins where integrations demanded it, and a migration plan that handled search and redirects before launch, not after.",
+        "Evolve WordPress/WooCommerce with deliberate content models, custom plugins where integrations demanded it, and a migration plan that handled search and redirects before launch.",
       implementation:
-        "Managed technical dependencies across two WordPress origins, more than forty products and three fulfillment paths. Coordinated data mapping, DNS/CDN infrastructure, payment processing, stakeholder requirements and QA through implementation and launch, including experimentation around UI/UX changes.",
+        "Mapped dependencies across two WordPress origins, forty-plus products and three fulfillment paths. Venue and events work reused patterns later packaged in the WordPress Venue Management plugin. Delivery booking for eligible WooCommerce orders was handled through the Trexity integration. UX experiments sat next to information architecture—templates and conversion paths were tested as part of modernization, not after.",
       outcome:
-        "A launched commercial platform with clearer ownership boundaries between content, commerce and fulfillment.",
+        "A launched commercial platform with clearer boundaries between content, commerce and fulfillment, and a migration that treated redirects as launch work.",
     },
+    blocks: [
+      {
+        type: "prose",
+        heading: "Why e-commerce forced a broader modernization",
+        body:
+          "Selling online exposed every weak seam in the existing sites: inconsistent URL patterns, events that did not match how venues actually run programmes, and fulfillment rules that lived in people’s heads. Fixing checkout alone would have left search and content operations broken.",
+      },
+      {
+        type: "steps",
+        heading: "Dependencies that had to move together",
+        items: [
+          "Information architecture and redirects planned before content cutover.",
+          "Product and fulfillment data mapped across two WordPress origins.",
+          "Events/venues handled with structured data and calendar rules (see Venue Management).",
+          "Paid-order delivery booking written back to WooCommerce (see WooCommerce to Trexity).",
+          "DNS/CDN and payments coordinated so launch did not strand live traffic.",
+          "UI/UX experiments run against the same templates shipping to production.",
+        ],
+      },
+    ],
   },
   {
     slug: "wordpress-venue-management",
@@ -154,6 +206,8 @@ const catalog: Project[] = [
   {
     slug: "eastward",
     title: "Eastward",
+    headline: "A location-driven Next.js travel platform",
+    editorialRank: 40,
     year: "2025",
     eyebrow: "Geographic content architecture · Next.js",
     summary:
@@ -241,6 +295,21 @@ const catalog: Project[] = [
       outcome:
         "A usable economic dashboard with documented sourcing, update workflows and ownership built for the client.",
     },
+    blocks: [
+      {
+        type: "prose",
+        heading: "Defining a region that does not officially exist",
+        body:
+          "Stakeholders wanted a North Shore comparison that Statistics Canada does not publish as a single geography. Rather than substitute a nearby official boundary, I worked with Pictou County Partnership to define the region they needed, then aggregated five county-level datasets with consistent definitions so the comparison stayed honest.",
+      },
+      {
+        type: "prose",
+        heading: "Designing around the census cycle",
+        body:
+          "The most authoritative census inputs available during development were from 2021—too stale to present as a permanently current snapshot. The data layer, documentation and handoff assumed future refreshes, including expected new census availability in 2027, so the dashboard could be updated without a rebuild.",
+      },
+    ],
+    editorialRank: 7,
   },
   {
     slug: "manny-roy-consulting",
@@ -290,6 +359,25 @@ const catalog: Project[] = [
       outcome:
         "A live consulting site that doubles as a content and SEO laboratory—with a public theme repository and a knowledge base large enough to test entity and internal-linking hypotheses in production.",
     },
+    headline: "A consulting site that is also a design system and research lab",
+    editorialRank: 8,
+    relatedProjectSlugs: ["this-portfolio"],
+    blocks: [
+      {
+        type: "table",
+        heading: "What the platform is built from",
+        headers: ["Area", "Evidence"],
+        rows: [
+          ["Design system", "Tokens, semantic colour roles and CUBE-informed CSS"],
+          ["Composition", "Shared layout primitives and responsive partials"],
+          ["CMS architecture", "Ghost routes, collections and Handlebars templates"],
+          ["Content architecture", "13 topic collections and 200+ glossary entries"],
+          ["Accessibility", "Design requirements and documented testing expectations"],
+          ["Maintainability", "Component fixtures, theme docs and editorial workflows"],
+          ["GEO research", "Hypotheses published through the knowledge base on the live site"],
+        ],
+      },
+    ],
   },
   {
     slug: "organized-chaos-arts",
@@ -370,12 +458,14 @@ const catalog: Project[] = [
   {
     slug: "macmillan-search-practice",
     title: "MacMillan Search Practice",
+    headline: "Agency technical SEO across SaaS, marketplace and enterprise accounts",
+    editorialRank: 15,
     year: "2024–2025",
     eyebrow: "Agency technical SEO · Automation",
     summary:
       "Technical SEO, automation and organic growth across B2B SaaS, marketplace, AI and enterprise accounts—including audits, migrations and content architecture.",
     overview:
-      "At MacMillan Search I was promoted from Automation Engineer to SEO Specialist. The work combined technical audits, search performance analysis, client collaboration and internal tooling across accounts that ranged from thousands to tens of thousands of URLs.",
+      "At MacMillan Search I was promoted from Automation Engineer to SEO Specialist. The work combined technical audits, search performance analysis, client collaboration and internal tooling across accounts that ranged from thousands to tens of thousands of URLs.\n\nAlongside delivery, I contributed to tracking and revenue-attribution conversations—reading paid and organic acquisition together in GA4, Search Console and BI-style reporting so SEO priorities reflected what the measurement stack could actually support.",
     category: "professional",
     depth: "case-study",
     role: "SEO Specialist (promoted from Automation Engineer)",
@@ -472,6 +562,8 @@ const catalog: Project[] = [
   {
     slug: "this-portfolio",
     title: "This portfolio",
+    headline: "Building a shared design language across Ghost and Next.js",
+    editorialRank: 9,
     year: "2026",
     summary:
       "Statically generated Next.js site with shareable case studies, structured project metadata and technical SEO acceptance criteria built into the build.",
@@ -490,6 +582,8 @@ const catalog: Project[] = [
   },
   {
     slug: "hyrule-merchant",
+    headline: "Programmatic e-commerce architecture",
+    editorialRank: 50,
     title: "Hyrule Merchant",
     year: "2025",
     summary:
@@ -674,5 +768,13 @@ export function getProjectsByCategory(category: Project["category"]): Project[] 
 }
 
 export function getWorkIndexProjects(): Project[] {
-  return projects.filter((project) => project.category !== "lab");
+  return projects
+    .filter((project) => project.category !== "lab")
+    .slice()
+    .sort((a, b) => {
+      const rankA = a.editorialRank ?? (a.featured ? (a.featuredRank ?? 50) + 10 : 200);
+      const rankB = b.editorialRank ?? (b.featured ? (b.featuredRank ?? 50) + 10 : 200);
+      if (rankA !== rankB) return rankA - rankB;
+      return a.title.localeCompare(b.title);
+    });
 }

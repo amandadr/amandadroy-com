@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { CvRequestCallout } from "@/components/CvRequestCallout";
 import { Hero } from "@/components/Hero";
 import { HighlightText } from "@/components/HighlightText";
@@ -26,6 +25,50 @@ export default function ExperiencePage() {
         secondaryHref="/work/"
         secondaryText="View case studies"
       />
+
+      <section
+        className="mrc-section section-light gh-outer mrc-print-profile"
+        aria-labelledby="profile"
+      >
+        <div className="gh-inner">
+          <SectionHeader
+            heading="Professional profile"
+            headingId="profile"
+            intro="A quick scan for hiring conversations. Email for a role-specific CV."
+            spacing="tight"
+          />
+          <div className="mrc-table-wrap">
+            <table className="mrc-table mrc-profile-table">
+              <tbody>
+                <tr>
+                  <th scope="row">Specialization</th>
+                  <td>Technical SEO &amp; software development</td>
+                </tr>
+                <tr>
+                  <th scope="row">Experience</th>
+                  <td>3+ years across agency and consulting environments</td>
+                </tr>
+                <tr>
+                  <th scope="row">Industries</th>
+                  <td>B2B SaaS, AI, marketplaces, e-commerce and enterprise</td>
+                </tr>
+                <tr>
+                  <th scope="row">Core technologies</th>
+                  <td>Next.js, React, Python, SQL, WordPress</td>
+                </tr>
+                <tr>
+                  <th scope="row">Location</th>
+                  <td>Atlantic Canada · Remote</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="mrc-profile-cv-note">
+            A current, role-specific CV is available by email.{" "}
+            <a href={CV_REQUEST_MAILTO}>Request a CV</a>
+          </p>
+        </div>
+      </section>
 
       <section
         className="mrc-section section-light gh-outer"
@@ -75,15 +118,6 @@ export default function ExperiencePage() {
                   ))}
                 </ul>
               ) : null}
-              {item.selectedWork?.length ? (
-                <div className="mrc-link-row">
-                  {item.selectedWork.map((work) => (
-                    <Link key={work.href} href={work.href}>
-                      {work.label}
-                    </Link>
-                  ))}
-                </div>
-              ) : null}
             </article>
           ))}
         </div>
@@ -129,7 +163,10 @@ export default function ExperiencePage() {
         </div>
       </section>
 
-      <section className="mrc-section section-surface gh-outer" aria-label="CV request">
+      <section
+        className="mrc-section section-surface gh-outer mrc-print-hide"
+        aria-label="CV request"
+      >
         <div className="gh-inner">
           <CvRequestCallout headingId="experience-cv-request" />
         </div>

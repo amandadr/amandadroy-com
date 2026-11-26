@@ -5,59 +5,82 @@ export const agencyEngagements: Project[] = [
   {
     slug: "marketplace-rendering-architecture",
     title: "Marketplace rendering architecture",
+    headline: "JavaScript SEO for a large-scale marketplace",
     year: "2024–2025",
     code: "WORK / 010",
-    eyebrow: "JavaScript SEO · Rendering strategy",
+    eyebrow: "Agency engagement · Recommendation delivered",
     summary:
-      "Investigated JavaScript SEO and rendering for a React secondhand marketplace with thousands of product URLs, with recommendations toward Next.js for scalable organic discoverability.",
+      "Investigated how a React secondhand marketplace with thousands of product URLs rendered for crawlers, then recommended a Next.js path with prioritized implementation steps—not a rewrite slogan.",
     overview:
-      "A React marketplace with a large product inventory needed a clearer path from client-side rendering constraints to organic discovery. The work centered on technical investigation, architectural trade-offs and communicating implementation priorities to stakeholders—delivered as a recommendation package for a transition toward Next.js.",
+      "The marketplace already ran on React. The question was not whether React can rank; it was which rendering and routing choices blocked discovery at inventory scale.\\n\\nThis engagement produced a recommendation package. Implementation ownership stayed with the client’s engineering team.",
     category: "professional",
     depth: "case-study",
     role: "Technical SEO",
     context: "Agency engagement · Anonymized",
-    status: "Recommendation",
+    status: "Recommendation delivered",
     technologies: ["React", "Next.js recommendations", "JavaScript SEO", "Technical SEO"],
     capabilities: ["technical-search", "web-engineering"],
     featured: true,
     featuredRank: 3,
-    presentation: "standard",
+    editorialRank: 3,
+    presentation: "flagship",
     engagementType: "agency",
     deliveryStatus: "recommendation",
     visibility: "anonymized",
-    relatedProjectSlugs: ["macmillan-search-practice"],
+    relatedProjectSlugs: ["macmillan-search-practice", "enterprise-migration-qa"],
     outcomes: [
       "Documented rendering and discoverability constraints across a large product URL inventory",
-      "Recommended architectural direction toward Next.js with prioritized implementation steps",
-      "Framed stakeholder trade-offs without overselling unverified growth outcomes",
+      "Recommended Next.js capabilities (SSR/SSG/hybrid) mapped to marketplace templates",
+      "Prioritized implementation steps developers could schedule—without claiming unverified traffic lifts",
     ],
     caseStudy: {
       problem:
-        "Thousands of product URLs in a React application raised crawl, rendering and indexation questions that a conventional page-by-page SEO checklist could not answer.",
+        "Thousands of product URLs raised crawl, rendering and indexation questions that a page-by-page SEO checklist could not answer.",
       constraints:
-        "Agency timelines, existing React architecture and stakeholder buy-in requirements.",
+        "Agency timelines, an existing React architecture and the need for stakeholder buy-in before engineering investment.",
       responsibility:
-        "Technical investigation of JavaScript SEO and rendering implications; recommendations for a transition path toward Next.js; communication of priorities and ROI framing to stakeholders.",
+        "Investigate JavaScript SEO and rendering implications; recommend a transition path that used Next.js rendering options deliberately; communicate priorities without overselling growth.",
       alternatives:
-        "Continue optimizing within client-side rendering alone; recommend a full rewrite without evidence; or defer architecture work until ranking declines forced the issue.",
+        "Keep optimizing within client-side rendering alone; recommend a full rewrite without evidence; or wait until ranking declines forced the conversation.",
       choice:
-        "Ground the recommendation in rendering and discoverability analysis, then sequence implementation priorities that developers could schedule.",
+        "Ground the recommendation in rendering and discoverability analysis, then sequence work developers could schedule.",
       implementation:
-        "Reviewed how product discovery interacted with rendering strategy, documented architectural considerations and produced a prioritized recommendation set for stakeholders.",
+        "Compared what crawlers received in initial HTML versus after client rendering for product and listing templates. Reviewed routing and internal linking patterns that affected discovery of deep inventory URLs. Assessed metadata and structured-data delivery under the current render path. Mapped those findings to Next.js rendering strategies (server rendering, static generation and hybrid patterns) where they addressed the observed gaps—not because Next.js is “better React,” but because those capabilities change what reaches the crawler before hydration.",
       outcome:
-        "A clear recommendation package establishing buy-in for architectural change, with prioritized implementation steps developers could schedule.",
+        "A recommendation package that separated investigation findings from implementation sequencing. Buy-in was for architectural change with clear next steps; delivery of the migration itself was out of scope.",
     },
+    blocks: [
+      {
+        type: "table",
+        heading: "Investigation focus",
+        headers: ["Area", "What I checked", "Why it mattered"],
+        rows: [
+          ["Initial HTML", "Whether product content appeared before JavaScript execution", "Crawlers that do not fully render never see CSR-only content"],
+          ["Routing", "How listing and product URLs were generated and linked", "Orphan or parameter-heavy paths limit discovery at inventory scale"],
+          ["Metadata", "Title, canonical and structured-data delivery under the current render path", "Marketplace SERP presentation depends on stable head content"],
+          ["Internal linking", "Paths from hubs and filters into deep product URLs", "Large inventories fail when only a fraction of SKUs are reachable"],
+          ["Recommendation", "Where SSR, SSG or hybrid rendering would close gaps", "Next.js was proposed for those capabilities—not as a brand preference"],
+        ],
+      },
+      {
+        type: "prose",
+        heading: "Recommendation vs implementation",
+        body:
+          "This page documents a delivered recommendation. It does not claim that the marketplace completed a Next.js migration or that organic traffic changed as a result. Those outcomes would require a separate implementation engagement and measurement window.",
+      },
+    ],
   },
   {
     slug: "b2b-saas-organic-growth",
     title: "B2B SaaS organic growth",
+    headline: "226% average organic click growth on 18 SaaS pages",
     year: "2024–2025",
     code: "WORK / 011",
-    eyebrow: "Organic growth · Search analytics",
+    eyebrow: "Agency engagement · Delivered",
     summary:
-      "Recurring organic optimization for a Canadian HR/payroll SaaS platform—content, internal linking and measurement that produced a 226% average click increase across 18 pages over six months.",
+      "Recurring organic optimization for a Canadian HR/payroll SaaS platform—page selection, content refreshes, internal linking and Search Console measurement over six months.",
     overview:
-      "Recurring organic optimization for a Canadian HR and payroll SaaS platform. Search performance data, competitive research, internal linking and editorial improvements across eighteen written or refreshed pages produced a 226% average organic click increase over six months.\n\nThat average reflects the measured set of pages—including strong performers—not median growth, sitewide growth or a guaranteed result.",
+      "The acquisition problem was not a missing blog calendar. Priority landing and feature pages underperformed relative to demand the product could serve. Over six months I selected, wrote or refreshed eighteen pages, improved internal linking and reviewed performance every cycle.\\n\\nThe headline metric is a 226% average organic click increase across that measured set. Several high-performing pages pulled the average up; this is not median growth, sitewide growth or a claim about typical page performance.",
     category: "professional",
     depth: "case-study",
     role: "SEO Specialist",
@@ -67,43 +90,66 @@ export const agencyEngagements: Project[] = [
     capabilities: ["technical-search", "data-automation"],
     featured: true,
     featuredRank: 2,
-    presentation: "standard",
+    editorialRank: 2,
+    presentation: "flagship",
     engagementType: "agency",
     deliveryStatus: "delivered",
     visibility: "anonymized",
     relatedProjectSlugs: ["seo-rankings-report", "macmillan-search-practice"],
     outcomes: [
       "226% average organic click growth across 18 written or refreshed SaaS pages over six months",
-      "Recurring measurement loop connecting winners, losers and re-optimization opportunities",
-      "Supporting GSC comparison tooling later open-sourced as SEO Rankings Report",
+      "Monthly winners/losers loop that set the next round of refreshes",
+      "Measurement workflow later open-sourced as SEO Rankings Report",
     ],
     caseStudy: {
       problem:
-        "SaaS organic growth required more than one-off content production: pages needed selection rationale, internal linking and a measurement loop that could survive monthly reporting cycles.",
+        "Organic acquisition lagged where the product had clear search demand. One-off content production without a measurement loop could not prioritize the next page.",
       constraints:
-        "Agency delivery cadence, shared tooling and the need to keep client property data out of shared repositories.",
+        "Agency delivery cadence, shared tooling and keeping client property data out of shared repositories.",
       responsibility:
-        "Opportunity identification, search intent mapping, page selection and refresh, internal linking guidance and recurring performance analysis.",
+        "Opportunity identification, intent mapping, page selection and refresh, internal linking guidance and recurring Search Console analysis.",
       alternatives:
-        "Spray-and-pray content volume; dashboard-only reporting without editorial action; or outsourcing measurement to opaque third-party scorecards.",
+        "High-volume publishing without prioritization; dashboard reporting with no editorial action; or opaque third-party scorecards.",
       choice:
-        "Pair editorial work with repeatable GSC-based comparisons so optimization priorities stayed evidence-led.",
+        "Pair editorial work with repeatable Search Console comparisons so each month’s priorities came from evidence.",
       implementation:
-        "Wrote or refreshed 18 pages over six months while using GSC, Ahrefs, Screaming Frog and DataForSEO. A Python reporting workflow supported page- and query-level comparisons (see SEO Rankings Report).",
+        "Pages were selected from demand, competitive gaps and existing equity—not from a generic keyword dump. Revisions covered titles, on-page structure, internal links and clarity of product fit. Ahrefs, Screaming Frog and DataForSEO informed research; a Python GSC comparison workflow (later open-sourced) showed which pages gained or lost clicks so the next sprint was not guesswork.",
       outcome:
-        "226% average organic click increase across the measured set of eighteen pages over six months.",
+        "226% average organic click increase across the eighteen measured pages over six months, with methodology and limits documented below.",
     },
+    blocks: [
+      {
+        type: "table",
+        heading: "How the 226% figure was measured",
+        headers: ["Detail", "Value"],
+        rows: [
+          ["Measured population", "18 written or refreshed pages"],
+          ["Engagement duration", "Six months"],
+          ["Metric", "Google Search Console organic clicks"],
+          ["Aggregation", "Average click change across the measured page set"],
+          ["Distribution", "Several high-performing pages influenced the average"],
+          ["Not claimed", "Median page growth, sitewide growth or guaranteed future results"],
+        ],
+      },
+      {
+        type: "prose",
+        heading: "Relationship to SEO Rankings Report",
+        body:
+          "The open-source reporting tool is the reusable measurement workflow. This case study is the client engagement that used that loop. Growth numbers belong here; software architecture belongs on the Rankings Report page.",
+      },
+    ],
   },
   {
     slug: "enterprise-migration-qa",
     title: "Enterprise website migration & QA",
+    headline: "Migration QA that separates clean results from remaining work",
     year: "2024–2025",
     code: "WORK / 012",
-    eyebrow: "Technical SEO · Migration risk",
+    eyebrow: "Agency engagement · Delivered",
     summary:
-      "SEO support for an enterprise migration: URL mapping, launch support, post-launch crawling and technical reporting—with QA across 224 internal URLs and documented remediations.",
+      "SEO support for an enterprise migration: URL mapping, launch support, post-launch crawling and technical reporting—with a 224-URL QA set and documented remediations.",
     overview:
-      "Migration SEO is as much about validation criteria as redirects. QA across 224 internal URLs found no 4xx or 5xx errors, redirect chains or loops, while remaining redirect, sitemap and hreflang issues were documented for remediation.",
+      "Migration SEO is validation criteria, not only redirect spreadsheets. After launch I crawled a defined internal URL set, reported what passed and documented what still needed work—so “clean” and “done” were never confused.",
     category: "professional",
     depth: "case-study",
     role: "SEO Specialist",
@@ -113,32 +159,54 @@ export const agencyEngagements: Project[] = [
     capabilities: ["technical-search", "web-engineering"],
     featured: true,
     featuredRank: 5,
-    presentation: "standard",
+    editorialRank: 5,
+    presentation: "flagship",
     engagementType: "agency",
     deliveryStatus: "delivered",
     visibility: "anonymized",
-    relatedProjectSlugs: ["macmillan-search-practice"],
+    relatedProjectSlugs: ["macmillan-search-practice", "technical-audit-methodology"],
     outcomes: [
       "QA across 224 internal URLs with no 4xx/5xx, redirect chains or loops in the measured set",
       "Documented remaining redirect, sitemap and hreflang issues for remediation",
-      "Launch support spanning mapping, implementation coordination and post-launch crawling",
+      "Launch support spanning mapping, coordination and post-launch crawling",
     ],
     caseStudy: {
       problem:
-        "Enterprise migrations concentrate SEO risk into a short launch window: broken paths, chains, loops and incomplete hreflang can erase years of equity quickly.",
+        "Enterprise migrations concentrate SEO risk into a short launch window: broken paths, chains, loops and incomplete hreflang can erase equity quickly.",
       constraints:
         "Shared agency tooling, launch schedules, multi-stakeholder ownership and the need for auditable QA evidence.",
       responsibility:
-        "URL mapping support, programmatic implementation coordination, launch support, post-launch crawling and technical reporting.",
+        "URL mapping support, implementation coordination, launch support, post-launch crawling and technical reporting.",
       alternatives:
-        "Rely on platform defaults without SEO QA; sample a handful of URLs; or treat post-launch fixes as purely reactive firefighting.",
+        "Trust platform defaults; sample a handful of URLs; or treat post-launch fixes as reactive firefighting only.",
       choice:
-        "Define validation criteria up front, crawl systematically after launch and separate clean results from remaining remediation work.",
+        "Define validation criteria up front, crawl systematically after launch and report clean results separately from remediation.",
       implementation:
-        "Mapped URLs, supported launch, crawled afterward and classified issues—reporting both the clean 224-URL QA result and outstanding redirect, sitemap and hreflang follow-ups.",
+        "Mapped priority URLs before launch, supported cutover, then crawled the agreed internal set. Issues were classified so stakeholders saw both the clean 224-URL result and the follow-ups that remained.",
       outcome:
-        "A migration QA package stakeholders could act on, with clean measured results reported separately from outstanding remediation.",
+        "A QA package stakeholders could act on—clean measured results and outstanding remediations in the same report.",
     },
+    blocks: [
+      {
+        type: "table",
+        heading: "Migration acceptance matrix (224-URL QA set)",
+        caption: "Clean results and follow-ups reported together",
+        headers: ["Validation area", "Documented observation"],
+        rows: [
+          ["Internal 4xx and 5xx responses", "None identified in the 224-URL QA set"],
+          ["Redirect chains and loops", "None identified in the QA set"],
+          ["Redirect configuration", "Additional remediation documented"],
+          ["XML sitemaps", "Follow-up issues documented"],
+          ["Hreflang", "Follow-up issues documented"],
+        ],
+      },
+      {
+        type: "prose",
+        heading: "Why the distinction matters",
+        body:
+          "A migration can pass a critical URL sample and still leave sitemap or hreflang debt. Reporting both keeps engineering focused and prevents a single clean metric from implying the entire migration is finished.",
+      },
+    ],
   },
   {
     slug: "ai-saas-content-architecture",
@@ -198,13 +266,14 @@ export const agencyEngagements: Project[] = [
   {
     slug: "editorial-workflow-automation",
     title: "Human-reviewed AI editorial automation",
+    headline: "Tripling article capacity without skipping factual review",
     year: "2024–2025",
     code: "WORK / 014",
-    eyebrow: "Applied AI · Workflow engineering",
+    eyebrow: "Agency engagement · Delivered",
     summary:
-      "Python-assisted workflow turning expert podcast material into structured, SEO-ready articles—roughly tripling production capacity while keeping human editorial oversight.",
+      "Python-assisted workflow from expert podcast material to Squarespace-ready articles—roughly 3× production capacity with humans still responsible for verification.",
     overview:
-      "For a Canadian financial-services organization, this workflow integrated transcription, structuring, AI-assisted drafting, verification and CMS preparation—producing seven accuracy-sensitive articles while roughly tripling production capacity.",
+      "For a Canadian financial-services organization, expert podcasts held publishable insight that manual article production could not keep up with. The workflow covered transcription, structuring, AI-assisted drafting, human factual review and CMS preparation for Squarespace.\\n\\nSeven accuracy-sensitive articles shipped during the engagement. Capacity for the measured workflow roughly tripled. This is applied editorial automation—not a claim about AI-search citation gains.",
     category: "professional",
     depth: "case-study",
     role: "Automation / SEO Specialist",
@@ -220,39 +289,62 @@ export const agencyEngagements: Project[] = [
     capabilities: ["applied-ai-geo", "data-automation"],
     featured: true,
     featuredRank: 6,
-    presentation: "standard",
+    editorialRank: 6,
+    presentation: "flagship",
     engagementType: "agency",
     deliveryStatus: "delivered",
     visibility: "anonymized",
     relatedProjectSlugs: [
       "macmillan-search-practice",
-      "squarespace-publishing-automation",
+      "llm-evaluation-practice",
     ],
     outcomes: [
       "Roughly 3× editorial production capacity with human review retained",
-      "Pipeline covering transcription through CMS-ready drafts",
-      "Seven accuracy-sensitive articles produced during the engagement",
+      "Pipeline from podcast audio to Squarespace CMS preparation",
+      "Seven accuracy-sensitive articles completed during the engagement",
     ],
     caseStudy: {
       problem:
-        "Expert podcast material contained valuable insights, but turning episodes into publishable SEO articles by hand could not keep pace with editorial demand.",
+        "Expert podcast material had to become publishable SEO articles faster than a fully manual process allowed—without skipping factual review in a regulated vertical.",
       constraints:
-        "Accuracy requirements in financial services, CMS conventions and the need for human judgment on factual claims.",
+        "Accuracy requirements in financial services, Squarespace publishing conventions and the need for human judgment on claims.",
       responsibility:
         "Workflow design across transcription, structuring, AI-assisted drafting, factual verification and CMS preparation.",
       alternatives:
-        "Fully manual production; fully automated publishing without review; or generic summarization tools that ignored source grounding.",
+        "Fully manual production; unattended auto-publish; or generic summarization that ignored source grounding.",
       choice:
-        "A Python-assisted pipeline that accelerated drafting while keeping verification and editorial ownership with people.",
+        "Automate preparation up to the CMS edge while keeping people responsible for factual approval.",
       implementation:
-        "Moved podcast audio through Whisper/AssemblyAI transcription, SEO structuring (including SurferSEO), OpenAI-assisted first drafts and human factual review before CMS preparation for Squarespace.",
+        "Podcast audio moved through Whisper/AssemblyAI transcription, SEO structuring (including SurferSEO), OpenAI-assisted first drafts and human factual review before Squarespace-oriented CMS preparation. Nothing published without a person accepting the claims.",
       outcome:
-        "Approximately triple production capacity for the measured workflow, with seven accuracy-sensitive articles completed during the engagement. Publishing landed on the client's Squarespace property via CMS preparation rather than a fully unattended publish loop.",
+        "Approximately triple production capacity for the measured workflow, with seven accuracy-sensitive articles completed. Publishing was a prepared handoff—not an unattended Squarespace post loop.",
     },
+    blocks: [
+      {
+        type: "steps",
+        heading: "Where automation stopped and people took over",
+        items: [
+          "Source: expert podcast audio (confidential material; not reproduced here).",
+          "Automate: transcription and structured editorial outline from the transcript.",
+          "Automate: AI-assisted first draft shaped for search intent and on-page structure.",
+          "Human: factual verification, unsupported-claim removal and voice corrections.",
+          "Automate assist: CMS preparation fields and formatting for Squarespace.",
+          "Human: final publish decision on the client CMS.",
+        ],
+      },
+      {
+        type: "prose",
+        heading: "What this does and does not prove",
+        body:
+          "The engagement proves an applied AI content-engineering workflow with measurable throughput and retained review. It does not independently prove improved visibility in AI-generated search answers.",
+      },
+    ],
   },
   {
     slug: "enterprise-content-consolidation",
     title: "Enterprise content consolidation",
+    headline: "Consolidating fragmented enterprise content architecture",
+    editorialRank: 18,
     year: "2024–2025",
     code: "WORK / 015",
     eyebrow: "Information architecture · Editorial strategy",
@@ -354,6 +446,8 @@ export const agencyEngagements: Project[] = [
   {
     slug: "multisite-technical-seo",
     title: "Multi-site technical SEO",
+    headline: "Technical SEO across large multi-site portfolios",
+    editorialRank: 16,
     year: "2024–2025",
     code: "WORK / 017",
     eyebrow: "Enterprise SEO · Portfolio scale",
@@ -560,6 +654,8 @@ export const agencyEngagements: Project[] = [
   {
     slug: "b2b-technical-editorial",
     title: "B2B technical editorial",
+    headline: "Managing a B2B technical publication",
+    editorialRank: 22,
     year: "2024–2025",
     code: "WORK / 021",
     eyebrow: "Technical writing · Editorial ownership",
