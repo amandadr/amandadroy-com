@@ -20,8 +20,8 @@ export function CvRequestCallout({
       </h2>
       <p className="mrc-cv-callout__body">
         Email{" "}
-        <a href={`mailto:${EMAIL}`}>{EMAIL}</a> and I&apos;ll share a current
-        résumé suited to the role.
+        <a href={`mailto:${EMAIL}`}>{EMAIL}</a> with the role and I&apos;ll send
+        a current résumé tailored to it.
       </p>
       <a className="button mrc-btn-secondary" href={CV_REQUEST_MAILTO}>
         Request CV by email

@@ -19,12 +19,12 @@ export default function LabPage() {
       <Hero
         eyebrow="Lab"
         headline="Prototypes, demos and research builds"
-        subtext="Astro experiments, theme research and local detection pipelines—labelled by status."
+        subtext="Astro demos, Next.js theme experiments and a local bird-feeder detection pipeline. Each one is labelled by status."
       />
       <section className="mrc-section section-light gh-outer" aria-labelledby="lab-list">
         <div className="gh-inner">
           <SectionHeader
-            heading="Current lab work"
+            heading="Experiments"
             headingId="lab-list"
             spacing="tight"
           />

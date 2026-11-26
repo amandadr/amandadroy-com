@@ -43,7 +43,7 @@ export const FOOTER_LINKS = [
 
 /** Short hero lede — longer narrative lives on About. */
 export const SITE_HERO_LEDE =
-  "I'm a technical SEO specialist and full-stack developer working at the intersection of search, software architecture, data and automation.";
+  "I'm a technical SEO specialist and full-stack developer. I diagnose search problems, build the fixes and automate the reporting that proves they worked.";
 
 export const SITE_HERO_META =
   "Based in Prince Edward Island, Canada · Available for remote opportunities";

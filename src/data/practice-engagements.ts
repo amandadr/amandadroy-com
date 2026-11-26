@@ -11,7 +11,7 @@ export const practiceEngagements: Project[] = [
     summary:
       "How technical SEO audits were structured across agency and consulting work—crawlability, rendering, indexation and performance findings carried into prioritized recommendations, IA opportunities and stakeholder reporting.",
     overview:
-      "An audit is useful when it starts a loop: investigate, prioritize, recommend, support implementation where possible and validate with measurement. Across agency and consulting engagements, crawlability, rendering, indexation and performance findings routinely fed content opportunities, information architecture and web strategy—not only bug lists.\n\nMore than fifty audits followed this pattern across diverse website architectures.",
+      "Each audit followed the same loop: investigate, prioritize, recommend, support implementation and measure. Crawl, rendering, indexation and performance findings fed content plans, information architecture and web strategy, not just bug lists.\n\nMore than fifty audits across agency and consulting work used this approach.",
     category: "professional",
     depth: "case-study",
     role: "SEO Specialist",

@@ -43,7 +43,7 @@ export default function HomePage() {
         headline="Building systems that are easier to find, use and maintain."
         subtext={`${SITE_HERO_LEDE} ${SITE_HERO_META}`}
         primaryHref="/work/"
-        primaryText="Explore selected work"
+        primaryText="View case studies"
         secondaryHref={CV_REQUEST_MAILTO}
         secondaryText="Request CV by email"
       />
@@ -95,7 +95,7 @@ export default function HomePage() {
           <SectionHeader
             heading="Selected work"
             headingId="featured-work"
-            intro="Search automation, commerce architecture, agency SEO engagements and applied AI workflows—open a project for decisions, constraints and results."
+            intro="Search tooling, commerce builds, agency SEO and applied AI. Each case study covers the problem, my role, the trade-offs and what changed."
             layout="split"
             linkHref="/work/"
             linkText="All work"
@@ -117,7 +117,7 @@ export default function HomePage() {
           <SectionHeader
             heading="Areas of practice"
             headingId="capabilities"
-            intro="How I investigate search systems, build web infrastructure, automate analysis and explore applied AI—each area links to supporting projects."
+            intro="The four disciplines I combine on most projects, with examples of each."
             width="wide"
             spacing="tight"
           />
@@ -156,7 +156,7 @@ export default function HomePage() {
           <SectionHeader
             heading="From the lab"
             headingId="lab-preview"
-            intro="Experiments, independent builds and ongoing research."
+            intro="Smaller builds where I try new tools and techniques before using them on client work."
             layout="split"
             linkHref="/lab/"
             linkText="Visit the lab"
@@ -178,9 +178,9 @@ export default function HomePage() {
       >
         <div className="gh-inner mrc-stack mrc-stack--l">
           <SectionHeader
-            heading="Let's talk about good technical work"
+            heading="Get in touch"
             headingId="home-cta"
-            intro="Email, LinkedIn or GitHub for hiring conversations. Visit mannyroy.com when you have a consulting project."
+            intro="Hiring for an SEO, web or automation role? Email is the fastest way to reach me. For consulting projects, start at mannyroy.com."
             spacing="tight"
           />
           <div className="mrc-cluster">

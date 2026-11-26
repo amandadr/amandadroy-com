@@ -9,7 +9,7 @@ import { EMAIL, LOCATION, SITE_HERO_LEDE, SOCIAL } from "@/data/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Manny Roy (Amanda Roy)—technical SEO specialist and full-stack developer in Souris, PEI. How to get in touch for professional conversation or consulting.",
+    "Manny Roy (Amanda Roy)—technical SEO specialist and full-stack developer in Souris, PEI. Background, approach and contact details.",
   alternates: { canonical: "/about/" },
 };
 
@@ -18,7 +18,7 @@ export default function AboutPage() {
     <>
       <Hero
         eyebrow="About"
-        headline="Technical SEO, software development and systems that stay useful"
+        headline="Search, software and the systems in between"
         subtext={SITE_HERO_LEDE}
       />
 
@@ -87,7 +87,7 @@ export default function AboutPage() {
           <SectionHeader
             heading="Contact"
             headingId="contact"
-            intro="Email for hiring conversations and collaborations. Use the consulting site when you have a client project."
+            intro="Email is the quickest way to reach me about roles or collaborations. Consulting projects go through mannyroy.com."
           />
           <div className="mrc-cluster">
             <a className="button mrc-btn-primary" href={`mailto:${EMAIL}`}>

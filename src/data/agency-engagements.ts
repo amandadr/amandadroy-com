@@ -204,7 +204,7 @@ export const agencyEngagements: Project[] = [
     summary:
       "Python-assisted workflow turning expert podcast material into structured, SEO-ready articles—roughly tripling production capacity while keeping human editorial oversight.",
     overview:
-      "Automation only helps when source grounding and factual review stay in the loop. For a Canadian financial-services organization, this workflow integrated transcription, structuring, AI-assisted drafting, verification and CMS preparation—producing seven accuracy-sensitive articles while roughly tripling production capacity.",
+      "For a Canadian financial-services organization, this workflow integrated transcription, structuring, AI-assisted drafting, verification and CMS preparation—producing seven accuracy-sensitive articles while roughly tripling production capacity.",
     category: "professional",
     depth: "case-study",
     role: "Automation / SEO Specialist",
@@ -259,7 +259,7 @@ export const agencyEngagements: Project[] = [
     summary:
       "Content consolidation strategy for a global entertainment-data platform—keyword, competitor and share-of-voice research turned into editorial direction, internal-linking standards and a film/TV subdomain restructuring proposal.",
     overview:
-      "Fragmented content across related properties rarely fixes itself with more publishing. For a global entertainment-data platform, keyword, competitor and share-of-voice research became editorial recommendations, internal-linking standards and a film-and-television subdomain consolidation strategy.",
+      "For a global entertainment-data platform with content split across related properties, keyword, competitor and share-of-voice research became editorial recommendations, internal-linking standards and a film-and-television subdomain consolidation strategy.",
     category: "professional",
     depth: "case-study",
     role: "SEO Specialist",
@@ -450,7 +450,7 @@ export const agencyEngagements: Project[] = [
       alternatives:
         "One-off redesign projects; fully outsourced retainers with no technical ownership; or leaving each brand on disconnected DIY stacks.",
       choice:
-        "Long-term advisory that prioritizes the next highest-leverage ops fix instead of perpetual relaunch cycles.",
+        "Fix the most useful thing next, instead of relaunching every few years.",
       implementation:
         "Supported three Nova Scotian brands concurrently—balancing SEO/local search work with platform and integration decisions as needs emerged.",
       outcome:
@@ -566,7 +566,7 @@ export const agencyEngagements: Project[] = [
     summary:
       "Managed MacMillan Search’s in-house newsletter and blog The B2B SEO—topic planning, research, technical writing, editing and recurring publication for marketing and search professionals.",
     overview:
-      "Running an agency’s own channel is a useful stress test of editorial judgment: the audience already knows the subject. Ownership covered planning, research, writing, editing and recurring publication for The B2B SEO, MacMillan Search’s newsletter and blog for marketing and search professionals.\n\nThe channel is retired following the agency engagement.",
+      "I planned, researched, wrote and edited The B2B SEO, MacMillan Search’s newsletter and blog for marketers and SEO practitioners—an audience that already knows the subject.\n\nThe channel has since been retired.",
     category: "professional",
     depth: "case-study",
     role: "Editor / writer",

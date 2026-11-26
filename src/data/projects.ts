@@ -103,7 +103,7 @@ const catalog: Project[] = [
       alternatives:
         "A full custom commerce build would have been expensive to maintain. A hosted SaaS storefront would have fought existing WordPress content operations. A theme-only refresh would not have fixed URL, events or fulfillment architecture.",
       choice:
-        "Evolve WordPress/WooCommerce with deliberate content models, custom plugins where integrations demanded it, and a migration plan that treated search and redirects as first-class work—not a launch afterthought.",
+        "Evolve WordPress/WooCommerce with deliberate content models, custom plugins where integrations demanded it, and a migration plan that handled search and redirects before launch, not after.",
       implementation:
         "Managed technical dependencies across two WordPress origins, more than forty products and three fulfillment paths. Coordinated data mapping, DNS/CDN infrastructure, payment processing, stakeholder requirements and QA through implementation and launch, including experimentation around UI/UX changes.",
       outcome:
@@ -159,7 +159,7 @@ const catalog: Project[] = [
     summary:
       "Next.js guide to Eastern Prince Edward Island: communities, places and trip planning structured for discovery. Portfolio build—the inquiry form does not send mail.",
     overview:
-      "Location-driven content is easy to flatten into undifferentiated lists. Eastward treats communities and places as first-class routes so visitors can move from region to place without marketing fiction.\n\nThe inquiry form is presentational and does not send mail—kept deliberately scoped as a frontend and content-architecture demonstration.",
+      "Location-driven content is easy to flatten into undifferentiated lists. Eastward gives communities and places their own routes, so visitors can move from region to place.\n\nIt's a frontend and content-architecture demo: the inquiry form doesn't send mail.",
     category: "independent",
     depth: "case-study",
     role: "Developer",
@@ -174,23 +174,23 @@ const catalog: Project[] = [
     outcomes: [
       "Typed geographic content model with community and place routes",
       "Contemporary App Router frontend suitable for indexable location content",
-      "Clear scope labelling on the live demonstration site",
+      "Demo scope labelled on the live site",
     ],
     caseStudy: {
       problem:
         "Eastern PEI needed a structure that helps people move from region to place. Flat list pages and brochure templates erase the geography that makes the content useful.",
       constraints:
-        "Static-friendly Next.js architecture and clear labelling that this is a demonstration, not an operating tourism business.",
+        "Static-friendly Next.js architecture, labelled as a demo rather than an operating tourism business.",
       responsibility:
         "Full public site: information architecture, TypeScript models, pages and copy that state the project’s nature.",
       alternatives:
         "A CMS-backed tourism template fought the geography. A map-first SPA complicated indexing and maintenance. A single long scroll could not support place-level discovery.",
       choice:
-        "Next.js with typed content and geographic IA so communities and places remain first-class routes.",
+        "Next.js with typed content and geographic IA so communities and places each get their own routes.",
       implementation:
         "App Router pages, TypeScript content structures and Tailwind UI. The inquiry form is presentational and does not send mail.",
       outcome:
-        "A live demonstration of contemporary frontend work and location-driven content architecture.",
+        "A live demo of modern frontend work and location-driven content architecture.",
     },
   },
   {

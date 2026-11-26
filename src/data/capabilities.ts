@@ -5,7 +5,7 @@ export const capabilities: Capability[] = [
     id: "technical-search",
     title: "Technical SEO & search architecture",
     description:
-      "I investigate how websites are crawled, rendered, indexed and discovered, translating technical findings into practical implementation priorities.",
+      "Crawling, rendering, indexation and migrations—diagnosed from crawl and Search Console data, then turned into fixes developers can schedule.",
     tools: ["GSC", "Screaming Frog", "Ahrefs", "GA4"],
     projectSlugs: [
       "marketplace-rendering-architecture",
@@ -18,7 +18,7 @@ export const capabilities: Capability[] = [
     id: "web-engineering",
     title: "Web engineering & infrastructure",
     description:
-      "I build and maintain web systems with an emphasis on reusable architecture, accessibility, performance and long-term ownership.",
+      "Next.js, WordPress and custom plugins built for accessibility, performance and a clean handoff to the people who run them.",
     tools: ["Next.js", "React", "TypeScript", "WordPress"],
     projectSlugs: [
       "good-robot-brewing",
@@ -31,7 +31,7 @@ export const capabilities: Capability[] = [
     id: "data-automation",
     title: "Data & automation",
     description:
-      "I develop repeatable workflows that turn disparate data into reliable information, reducing manual work and supporting better decisions.",
+      "Python and API workflows that replace repetitive reporting—from Search Console comparisons to public-data dashboards.",
     tools: ["Python", "SQL", "BigQuery", "GSC API"],
     projectSlugs: [
       "seo-rankings-report",
@@ -44,7 +44,7 @@ export const capabilities: Capability[] = [
     id: "applied-ai-geo",
     title: "Applied AI & GEO research",
     description:
-      "I explore how language models interact with information, drawing on evaluation, source verification and structured content to investigate emerging search behaviours.",
+      "Human-reviewed AI workflows, LLM evaluation and structured content built for visibility in AI search.",
     tools: ["LLM APIs", "Evaluation", "Entity architecture"],
     projectSlugs: [
       "editorial-workflow-automation",

@@ -42,15 +42,15 @@ export default function WorkIndexPage() {
       <Hero
         eyebrow="Work"
         headline="Search systems, commerce builds and publishing tools"
-        subtext="Professional engagements, search and publishing tools, independent builds and earlier applications—each with the problem, constraints, ownership and outcomes."
+        subtext="Agency engagements, consulting builds, open-source tools and earlier projects. Each case study covers the problem, my role, the constraints and the result."
       />
 
       <section className="mrc-section section-light gh-outer" aria-labelledby="explore-work">
         <div className="gh-inner mrc-stack mrc-stack--l">
           <SectionHeader
-            heading="Explore the work"
+            heading="Browse by discipline"
             headingId="explore-work"
-            intro={`${workCount} projects across agency, consulting, tools and independent builds. Browse by capability, then open the full directory below.`}
+            intro={`${workCount} projects. Jump to a discipline, or scroll for the full list by type.`}
             spacing="tight"
           />
           <nav className="mrc-work-filters" aria-label="Browse by capability">
@@ -132,7 +132,7 @@ export default function WorkIndexPage() {
           <SectionHeader
             heading="Lab"
             headingId="lab-note"
-            intro={`${getLabProjects().length} experiments and prototypes—useful when you want to see how I explore ideas before they become production work.`}
+            intro={`${getLabProjects().length} experiments and prototypes, each labelled by status.`}
             layout="split"
             linkHref="/lab/"
             linkText="Visit the lab"

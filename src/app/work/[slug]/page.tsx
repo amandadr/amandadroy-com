@@ -145,7 +145,7 @@ export default function ProjectPage({ params }: PageProps) {
             ) : null}
             {project.mrcUrl ? (
               <a href={project.mrcUrl} target="_blank" rel="noopener noreferrer">
-                Business case study on MRC
+                Client case study on mannyroy.com
               </a>
             ) : null}
           </div>
@@ -170,7 +170,7 @@ export default function ProjectPage({ params }: PageProps) {
 
           {project.decisionNote ? (
             <section className="mrc-case-section">
-              <h2>Decision note</h2>
+              <h2>Key decision</h2>
               <Prose text={project.decisionNote} />
             </section>
           ) : null}
