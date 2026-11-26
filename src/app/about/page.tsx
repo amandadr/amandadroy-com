@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { CvRequestCallout } from "@/components/CvRequestCallout";
 import { Hero } from "@/components/Hero";
 import { SectionHeader } from "@/components/SectionHeader";
 import { EMAIL, LOCATION, SITE_HERO_LEDE, SOCIAL } from "@/data/site";
@@ -86,7 +87,7 @@ export default function AboutPage() {
           <SectionHeader
             heading="Contact"
             headingId="contact"
-            intro="Email for hiring conversations and collaborations. Use the consulting site when you have a client project."
+            intro="Email for hiring conversations and collaborations. Use the consulting site when you have a client project. Recruiters and reps can request a current CV by email—there is no public résumé download on this site."
           />
           <div className="mrc-cluster">
             <a className="button mrc-btn-primary" href={`mailto:${EMAIL}`}>
@@ -99,6 +100,7 @@ export default function AboutPage() {
               Selected work
             </Link>
           </div>
+          <CvRequestCallout headingId="about-cv-request" compact />
         </div>
       </section>
     </>

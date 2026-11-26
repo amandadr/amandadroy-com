@@ -11,7 +11,7 @@ export const LOCATION = "Souris, Prince Edward Island, Canada";
 export const PERSON_ID = `${SITE_URL}/#person`;
 
 /** Stable sitemap / freshness date — bump when major public content changes. */
-export const SITE_CONTENT_UPDATED = "2026-03-25";
+export const SITE_CONTENT_UPDATED = "2026-11-25";
 
 export const SOCIAL = {
   github: "https://github.com/amandadr",
@@ -19,6 +19,13 @@ export const SOCIAL = {
   mrc: "https://www.mannyroy.com/",
   email: `mailto:${EMAIL}`,
 } as const;
+
+/** No public résumé PDF—recruiters request the current CV by email. */
+export const CV_REQUEST_MAILTO = `mailto:${EMAIL}?subject=${encodeURIComponent(
+  "CV request — Manny Roy portfolio",
+)}&body=${encodeURIComponent(
+  "Hi Manny,\n\nI'm interested in reviewing your CV for the following role/context:\n\n",
+)}`;
 
 export const NAV_LINKS = [
   { href: "/work/", label: "Work" },
@@ -33,8 +40,6 @@ export const FOOTER_LINKS = [
   { href: SOCIAL.mrc, label: "Manny Roy Consulting", external: true },
   { href: SOCIAL.email, label: "Email", external: true },
 ] as const;
-
-export const RESUME_PATH = "/resume/manny-roy-technical.pdf";
 
 /** Short hero lede — longer narrative lives on About. */
 export const SITE_HERO_LEDE =
@@ -62,7 +67,7 @@ export const SITE_METRICS: SiteMetric[] = [
   {
     value: "10k+",
     label: "URLs across supported multi-site portfolios",
-    href: "/work/macmillan-search-practice/",
+    href: "/work/multisite-technical-seo/",
   },
   {
     value: "~3×",

@@ -17,6 +17,14 @@ export const experience: ExperienceItem[] = [
         href: "/work/good-robot-brewing/",
       },
       {
+        text: "Ongoing advisory across **3** Atlantic Canadian brands (2+ years): SEO, local search, GBP, platforms and integrations",
+        href: "/work/multibrand-digital-operations/",
+      },
+      {
+        text: "Pictou County Partnership: investor-facing Tableau dashboard over census, housing, economic and climate data (**2026**)",
+        href: "/work/pcp-economic-dashboard/",
+      },
+      {
         text: "Organized Chaos Arts: Next.js, Sanity, Supabase and Stripe membership platform architecture in progress",
         href: "/work/organized-chaos-arts/",
       },
@@ -27,8 +35,9 @@ export const experience: ExperienceItem[] = [
     ],
     selectedWork: [
       { label: "Good Robot Brewing", href: "/work/good-robot-brewing/" },
+      { label: "Multi-brand ops", href: "/work/multibrand-digital-operations/" },
+      { label: "PCP dashboard", href: "/work/pcp-economic-dashboard/" },
       { label: "Manny Roy Consulting", href: "/work/manny-roy-consulting/" },
-      { label: "Organized Chaos Arts", href: "/work/organized-chaos-arts/" },
     ],
   },
   {
@@ -42,7 +51,7 @@ export const experience: ExperienceItem[] = [
     highlights: [
       {
         text: "**50+** technical SEO audits across diverse website architectures",
-        href: "/work/macmillan-search-practice/",
+        href: "/work/technical-audit-methodology/",
       },
       {
         text: "**226%** average organic click growth across **18** B2B SaaS pages over six months",
@@ -61,18 +70,30 @@ export const experience: ExperienceItem[] = [
         href: "/work/marketplace-rendering-architecture/",
       },
       {
-        text: "**18-page** pillar-and-cluster content framework for an AI developer-platform site",
+        text: "**18-page** pillar-and-cluster content framework for an AI customer-support platform",
         href: "/work/ai-saas-content-architecture/",
       },
       {
         text: "Human-reviewed AI editorial workflow roughly tripling production capacity",
         href: "/work/editorial-workflow-automation/",
       },
+      {
+        text: "Entertainment-data content consolidation and film/TV subdomain strategy",
+        href: "/work/enterprise-content-consolidation/",
+      },
+      {
+        text: "Webflow architecture, UI/UX and publishing for an AI software platform",
+        href: "/work/webflow-platform-optimization/",
+      },
+      {
+        text: "Owned The B2B SEO newsletter and blog for a professional search audience",
+        href: "/work/b2b-technical-editorial/",
+      },
     ],
     selectedWork: [
       { label: "MacMillan practice", href: "/work/macmillan-search-practice/" },
       { label: "B2B SaaS growth", href: "/work/b2b-saas-organic-growth/" },
-      { label: "SEO Rankings Report", href: "/work/seo-rankings-report/" },
+      { label: "Multi-site SEO", href: "/work/multisite-technical-seo/" },
       {
         label: "Editorial automation",
         href: "/work/editorial-workflow-automation/",
@@ -89,9 +110,25 @@ export const experience: ExperienceItem[] = [
     highlights: [
       {
         text: "DNS/StFX Marketing & Communications stream: **96%** completion rate",
+        href: "/work/applied-ai-microcredential/",
       },
       {
-        text: "Broader initial program: **127+** learners",
+        text: "Broader initial program: **127+** learners (~59% above target)",
+        href: "/work/applied-ai-microcredential/",
+      },
+      {
+        text: "Tourism AI training including a sold-out workshop for **32** operators and the CLEAN prompting framework",
+        href: "/work/applied-ai-tourism-training/",
+      },
+    ],
+    selectedWork: [
+      {
+        label: "AI microcredential",
+        href: "/work/applied-ai-microcredential/",
+      },
+      {
+        label: "Tourism AI training",
+        href: "/work/applied-ai-tourism-training/",
       },
     ],
   },
@@ -103,6 +140,16 @@ export const experience: ExperienceItem[] = [
     years: "2023–2025",
     summary:
       "Evaluated LLM outputs across technical, reasoning and coding tasks. Refined prompts and evaluation methodologies to assess factual accuracy, instruction adherence, reasoning reliability and unsupported claims.",
+    highlights: [
+      {
+        text: "LLM evaluation practice informing later RAG and editorial automation work",
+        href: "/work/llm-evaluation-practice/",
+      },
+    ],
+    selectedWork: [
+      { label: "LLM evaluation", href: "/work/llm-evaluation-practice/" },
+      { label: "Cloud RAG workflows", href: "/work/cloud-rag-workflows/" },
+    ],
   },
 ];
 

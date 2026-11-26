@@ -5,9 +5,10 @@ import { JsonLd } from "@/components/JsonLd";
 import { SectionHeader } from "@/components/SectionHeader";
 import { capabilities } from "@/data/capabilities";
 import { getFeaturedProjects, getLabProjects, getProject } from "@/data/projects";
+import { CvRequestCallout } from "@/components/CvRequestCallout";
 import {
+  CV_REQUEST_MAILTO,
   PERSON_ID,
-  RESUME_PATH,
   SITE_HERO_LEDE,
   SITE_HERO_META,
   SITE_METRICS,
@@ -43,8 +44,8 @@ export default function HomePage() {
         subtext={`${SITE_HERO_LEDE} ${SITE_HERO_META}`}
         primaryHref="/work/"
         primaryText="Explore selected work"
-        secondaryHref={RESUME_PATH}
-        secondaryText="View résumé"
+        secondaryHref={CV_REQUEST_MAILTO}
+        secondaryText="Request CV by email"
       />
 
       <section
@@ -179,7 +180,7 @@ export default function HomePage() {
           <SectionHeader
             heading="Let's talk about good technical work"
             headingId="home-cta"
-            intro="Email, LinkedIn or GitHub for hiring conversations. Visit mannyroy.com when you have a consulting project."
+            intro="Email, LinkedIn or GitHub for hiring conversations. Visit mannyroy.com when you have a consulting project. Recruiters and reps: request a CV by email rather than looking for a public PDF."
             spacing="tight"
           />
           <div className="mrc-cluster">
@@ -193,6 +194,7 @@ export default function HomePage() {
               GitHub
             </a>
           </div>
+          <CvRequestCallout headingId="home-cv-request" compact />
         </div>
       </section>
     </>

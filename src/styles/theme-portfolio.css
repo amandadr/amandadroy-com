@@ -18,6 +18,9 @@
   --colour-surface: var(--colour-cream);
   --colour-action: var(--colour-ink);
   --colour-eyebrow: var(--colour-maroon);
+  --colour-accent: var(--colour-maroon);
+  /* Secondary highlight — olive (kept masthead maroon rule) */
+  --colour-accent-secondary: var(--colour-olive);
   --colour-accent-soft: var(--colour-mustard);
   --colour-rule: rgb(42 38 26 / 16%);
 
@@ -182,7 +185,31 @@
 [data-theme="portfolio"] a.button.mrc-btn-secondary,
 [data-theme="portfolio"] .button.mrc-btn-secondary {
   color: var(--colour-ink);
-  border-color: var(--colour-olive);
+  border-color: var(--colour-accent-secondary);
+}
+
+[data-theme="portfolio"] a.button.mrc-btn-secondary:hover,
+[data-theme="portfolio"] .button.mrc-btn-secondary:hover {
+  border-color: var(--colour-accent-secondary);
+  background-color: color-mix(in srgb, var(--colour-olive) 12%, transparent);
+}
+
+[data-theme="portfolio"] .mrc-case-row__tag,
+[data-theme="portfolio"] .mrc-project-id {
+  color: var(--colour-accent-secondary);
+}
+
+[data-theme="portfolio"] .mrc-eyebrow {
+  color: var(--colour-accent);
+}
+
+[data-theme="portfolio"] .mrc-metric__link:hover .mrc-metric__value {
+  color: var(--colour-accent-secondary);
+}
+
+[data-theme="portfolio"] .mrc-lab-preview a:hover,
+[data-theme="portfolio"] .mrc-link-row a:hover {
+  color: var(--colour-accent-secondary);
 }
 
 /* Hero: editorial, left-aligned, compact */

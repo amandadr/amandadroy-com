@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 
 type HeroProps = {
   eyebrow?: string;
@@ -10,6 +11,33 @@ type HeroProps = {
   secondaryText?: string;
   headingId?: string;
 };
+
+function CtaLink({
+  href,
+  className,
+  children,
+}: {
+  href: string;
+  className: string;
+  children: ReactNode;
+}) {
+  const external =
+    href.startsWith("http") ||
+    href.startsWith("mailto:") ||
+    href.startsWith("tel:");
+  if (external) {
+    return (
+      <a className={className} href={href}>
+        {children}
+      </a>
+    );
+  }
+  return (
+    <Link className={className} href={href}>
+      {children}
+    </Link>
+  );
+}
 
 export function Hero({
   eyebrow,
@@ -35,13 +63,16 @@ export function Hero({
           <p className="mrc-hero-subtext">{subtext}</p>
           {primaryHref && primaryText ? (
             <div className="mrc-hero-cta mrc-cluster mrc-cluster--center">
-              <Link className="button mrc-btn-primary" href={primaryHref}>
+              <CtaLink className="button mrc-btn-primary" href={primaryHref}>
                 {primaryText}
-              </Link>
+              </CtaLink>
               {secondaryHref && secondaryText ? (
-                <Link className="button mrc-btn-secondary" href={secondaryHref}>
+                <CtaLink
+                  className="button mrc-btn-secondary"
+                  href={secondaryHref}
+                >
                   {secondaryText}
-                </Link>
+                </CtaLink>
               ) : null}
             </div>
           ) : null}

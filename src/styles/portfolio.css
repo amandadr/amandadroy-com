@@ -471,6 +471,34 @@
   border-top: var(--border-width-thick) var(--border-style) var(--mrc-olive);
 }
 
+.mrc-cv-callout {
+  margin-top: var(--space-6);
+  padding: var(--space-5);
+  border-left: 3px solid var(--colour-accent-secondary, var(--mrc-olive));
+  background: color-mix(in srgb, var(--colour-olive, #706830) 6%, transparent);
+}
+
+.mrc-cv-callout--compact {
+  margin-top: var(--space-5);
+  padding: var(--space-4);
+}
+
+.mrc-cv-callout__title {
+  margin: 0 0 var(--space-2);
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+}
+
+.mrc-cv-callout__body {
+  margin: 0 0 var(--space-4);
+  max-width: 42rem;
+  color: var(--mrc-text-muted);
+}
+
+.mrc-cv-callout__body a {
+  color: var(--mrc-link);
+}
+
 .mrc-foot-navs--portfolio {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }

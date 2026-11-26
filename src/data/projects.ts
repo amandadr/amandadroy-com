@@ -1,4 +1,5 @@
 import { agencyEngagements } from "@/data/agency-engagements";
+import { practiceEngagements } from "@/data/practice-engagements";
 import type { Project } from "@/lib/types";
 
 const catalog: Project[] = [
@@ -82,11 +83,15 @@ const catalog: Project[] = [
     featured: true,
     featuredRank: 4,
     presentation: "standard",
+    engagementType: "consulting",
+    deliveryStatus: "live",
+    visibility: "public",
+    relatedProjectSlugs: ["ux-experimentation-practice", "wordpress-venue-management"],
     mrcUrl: "https://www.mannyroy.com/",
     outcomes: [
       "SEO-driven information architecture and URL migration strategy",
       "Custom plugins and integrations across 2 WordPress origins, 40+ products and 3 fulfillment paths",
-      "Coordinated DNS/CDN, payments, data mapping and technical QA through launch",
+      "UX experimentation / A/B-oriented UI work coordinated with launch QA",
     ],
     caseStudy: {
       problem:
@@ -197,42 +202,50 @@ const catalog: Project[] = [
   {
     slug: "pcp-economic-dashboard",
     title: "Pictou County Partnership",
-    year: "2025",
+    year: "2026",
     eyebrow: "Business intelligence · Data architecture",
     summary:
-      "Economic dashboard work: data architecture, stakeholder constraints and Tableau presentation of complex public datasets.",
+      "Investor-facing Tableau dashboard translating public census, housing, economic and climate data into regional insights—with documented sourcing, update workflows and handoff for long-term ownership.",
     overview:
-      "Regional partners needed a clearer view of economic indicators drawn from uneven public data—without losing methodological honesty or creating a dashboard nobody could maintain after handoff.\n\nThe business narrative is on mannyroy.com. Here you get the analytical structure, constraints and how the deliverable was shaped for stakeholders.",
+      "Regional partners needed a clearer view of economic indicators drawn from uneven public data—without losing methodological honesty or creating a dashboard nobody could maintain after handoff.\n\nTwo analytical constraints shaped the work: outdated census inputs and building a regional aggregate that did not map cleanly to an official Statistics Canada geography. The business narrative is on mannyroy.com; this page focuses on method and ownership.",
     category: "professional",
     depth: "case-study",
     role: "Analyst / technical consultant",
     context: "Manny Roy Consulting",
     status: "Published case study on MRC",
-    technologies: ["Tableau", "Data architecture", "Public datasets"],
+    technologies: [
+      "Tableau",
+      "Census & public datasets",
+      "Data architecture",
+      "Documentation / handoff",
+    ],
     capabilities: ["data-automation"],
     featured: false,
     presentation: "standard",
+    engagementType: "consulting",
+    deliveryStatus: "delivered",
+    visibility: "public",
     mrcUrl: "https://www.mannyroy.com/case-studies/pcp-economic-dashboard/",
     outcomes: [
-      "Decision-ready Tableau dashboard over shaped public data",
-      "Documented assumptions stakeholders could interrogate",
-      "Complementary business case study on mannyroy.com",
+      "Investor-facing Tableau dashboard over shaped public data",
+      "Documented sourcing, update workflows and client handoff",
+      "Method explicit about census lag and non-standard regional aggregation",
     ],
     caseStudy: {
       problem:
         "Stakeholders needed usable views of regional economic indicators. Raw public datasets were too complex—and too uneven—to drop straight into charts.",
       constraints:
-        "Public sources with quality gaps, partnership communication needs and a deliverable that remained maintainable after handoff.",
+        "Public sources with quality gaps (including outdated census data), a regional footprint that did not match an official Statistics Canada geography, partnership communication needs and a deliverable that remained maintainable after handoff.",
       responsibility:
         "Data modelling and dashboard construction in Tableau, plus explaining constraints and method so the partnership could trust what the visuals claimed.",
       alternatives:
-        "Static PDF reports go stale. A custom web app exceeded the engagement. Spreadsheet dumps were not decision-ready.",
+        "Static PDF reports go stale. A custom web app exceeded the engagement. Spreadsheet dumps were not decision-ready. Ignoring geography mismatch would have produced false precision.",
       choice:
-        "Tableau as the presentation layer over a carefully shaped dataset and documented assumptions.",
+        "Tableau as the presentation layer over a carefully shaped dataset, with documented assumptions about sourcing, freshness and regional aggregation.",
       implementation:
-        "Structured source data, validated joins and calculations, and a dashboard narrative oriented to partnership questions rather than decorative charts.",
+        "Structured census, housing, economic and climate inputs; validated joins and calculations; documented update workflows; and oriented the dashboard narrative to partnership questions rather than decorative charts.",
       outcome:
-        "A usable economic dashboard. The business narrative is on mannyroy.com; the analytical and architectural decisions are documented here.",
+        "A usable economic dashboard with ownership built for the client. Business storytelling lives on mannyroy.com; analytical decisions are documented here.",
     },
   },
   {
@@ -395,6 +408,11 @@ const catalog: Project[] = [
       "enterprise-migration-qa",
       "ai-saas-content-architecture",
       "editorial-workflow-automation",
+      "enterprise-content-consolidation",
+      "webflow-platform-optimization",
+      "multisite-technical-seo",
+      "b2b-technical-editorial",
+      "technical-audit-methodology",
       "seo-rankings-report",
     ],
     outcomes: [
@@ -613,7 +631,11 @@ const catalog: Project[] = [
   },
 ];
 
-export const projects: Project[] = [...agencyEngagements, ...catalog];
+export const projects: Project[] = [
+  ...agencyEngagements,
+  ...practiceEngagements,
+  ...catalog,
+];
 
 export const categoryLabels: Record<Project["category"], string> = {
   professional: "Professional work",

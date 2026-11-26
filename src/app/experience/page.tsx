@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { CvRequestCallout } from "@/components/CvRequestCallout";
 import { Hero } from "@/components/Hero";
 import { HighlightText } from "@/components/HighlightText";
 import { SectionHeader } from "@/components/SectionHeader";
 import { education, experience } from "@/data/experience";
-import { RESUME_PATH } from "@/data/site";
+import { CV_REQUEST_MAILTO } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Experience",
   description:
-    "Career history, education, and a downloadable technical résumé for Manny Roy—agency SEO, consulting, applied AI training and development.",
+    "Career history and education for Manny Roy—agency SEO, consulting, applied AI training and development. Request a current CV by email.",
   alternates: { canonical: "/experience/" },
 };
 
@@ -19,9 +20,9 @@ export default function ExperiencePage() {
       <Hero
         eyebrow="Experience"
         headline="Professional experience & education"
-        subtext="Roles and outcomes across MacMillan Search, Manny Roy Consulting and professional AI training. Download the résumé when you need it for an application."
-        primaryHref={RESUME_PATH}
-        primaryText="Download résumé"
+        subtext="Roles and outcomes across MacMillan Search, Manny Roy Consulting and professional AI training. For applications, email me for the current CV—there is no public résumé PDF on this site."
+        primaryHref={CV_REQUEST_MAILTO}
+        primaryText="Request CV by email"
         secondaryHref="/work/"
         secondaryText="Selected work"
       />
@@ -124,6 +125,12 @@ export default function ExperiencePage() {
               <p>{item.summary}</p>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="mrc-section section-surface gh-outer" aria-label="CV request">
+        <div className="gh-inner">
+          <CvRequestCallout headingId="experience-cv-request" />
         </div>
       </section>
     </>
