@@ -446,9 +446,28 @@
   color: var(--mrc-ink);
 }
 
+.mrc-experience-item ul {
+  margin: var(--space-4) 0 0;
+  padding-left: 1.15rem;
+}
+
+.mrc-experience-item li {
+  margin-bottom: var(--space-2);
+  color: var(--mrc-text);
+}
+
+/* Highlight rows are bullets first; link affordance on hover/focus only */
 .mrc-experience-item li a {
+  color: inherit !important;
+  text-decoration: none;
+}
+
+.mrc-experience-item li a:hover,
+.mrc-experience-item li a:focus-visible {
+  color: var(--colour-accent-secondary, var(--mrc-olive)) !important;
   text-decoration: underline;
-  text-underline-offset: 0.12em;
+  text-underline-offset: 0.14em;
+  text-decoration-thickness: 1px;
 }
 
 .mrc-link-row {
@@ -460,6 +479,14 @@
 
 .mrc-link-row a {
   font-weight: 600;
+  text-decoration: none;
+  color: var(--colour-accent-secondary, var(--mrc-olive)) !important;
+}
+
+.mrc-link-row a:hover,
+.mrc-link-row a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 0.14em;
 }
 
 .mrc-prose {
