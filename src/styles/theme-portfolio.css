@@ -118,18 +118,29 @@
 
 [data-theme="portfolio"] .mrc-head .gh-head-logo,
 [data-theme="portfolio"] .mrc-head .gh-head-logo .mrc-logo-serif,
-[data-theme="portfolio"] .mrc-head .gh-head-menu a {
+[data-theme="portfolio"] .mrc-head .gh-head-logo .mrc-logo-sans {
   color: var(--colour-ink);
+}
+
+/* Olive nav on paper masthead — beat first-paint surface (cream) link colour */
+[data-theme="portfolio"] .mrc-head .gh-head-menu a,
+[data-theme="portfolio"] .mrc-head .nav a,
+[data-theme="portfolio"] #gh-head.mrc-head .gh-head-menu .nav > li > a {
+  color: var(--colour-olive) !important;
 }
 
 [data-theme="portfolio"] .mrc-head .gh-head-menu a:hover,
-[data-theme="portfolio"] .mrc-head .gh-head-menu a[aria-current="page"] {
-  color: var(--colour-maroon);
+[data-theme="portfolio"] .mrc-head .nav a:hover,
+[data-theme="portfolio"] .mrc-head .gh-head-menu a[aria-current="page"],
+[data-theme="portfolio"] .mrc-head .nav a[aria-current="page"],
+[data-theme="portfolio"] #gh-head.mrc-head .gh-head-menu .nav > li > a:hover,
+[data-theme="portfolio"] #gh-head.mrc-head .gh-head-menu .nav > li > a[aria-current="page"] {
+  color: var(--colour-maroon) !important;
 }
 
 [data-theme="portfolio"] .mrc-head .gh-burger {
-  color: var(--colour-ink);
-  border-color: var(--colour-ink);
+  color: var(--colour-olive);
+  border-color: var(--colour-olive);
 }
 
 /* Open mobile sheet stays paper/ink (overrides olive/white chrome in header.css) */
@@ -143,7 +154,7 @@
 
   [data-theme="portfolio"] #gh-head.mrc-head .gh-burger::before,
   [data-theme="portfolio"] #gh-head.mrc-head .gh-burger::after {
-    background-color: var(--colour-ink);
+    background-color: var(--colour-olive);
   }
 
   [data-theme="portfolio"] body.is-head-open #gh-head.mrc-head .gh-head-logo,
@@ -151,15 +162,18 @@
   [data-theme="portfolio"] body.is-head-open #gh-head.mrc-head .gh-head-logo .mrc-logo-sans,
   [data-theme="portfolio"] #gh-head.mrc-head.is-head-open .gh-head-logo,
   [data-theme="portfolio"] #gh-head.mrc-head.is-head-open .gh-head-logo .mrc-logo-serif,
-  [data-theme="portfolio"] #gh-head.mrc-head.is-head-open .gh-head-logo .mrc-logo-sans,
+  [data-theme="portfolio"] #gh-head.mrc-head.is-head-open .gh-head-logo .mrc-logo-sans {
+    color: var(--colour-ink) !important;
+  }
+
   [data-theme="portfolio"] body.is-head-open #gh-head.mrc-head .gh-head-menu .nav > li > a,
   [data-theme="portfolio"] #gh-head.mrc-head.is-head-open .gh-head-menu .nav > li > a {
-    color: var(--colour-ink) !important;
+    color: var(--colour-olive) !important;
   }
 
   [data-theme="portfolio"] body.is-head-open #gh-head.mrc-head .gh-head-menu .nav a[href*="/contact/"],
   [data-theme="portfolio"] #gh-head.mrc-head.is-head-open .gh-head-menu .nav a[href*="/contact/"] {
-    color: var(--colour-ink) !important;
+    color: var(--colour-olive) !important;
     border-color: var(--colour-maroon);
   }
 }
