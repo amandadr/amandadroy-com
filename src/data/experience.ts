@@ -15,22 +15,27 @@ export const experience: ExperienceItem[] = [
       {
         text: "Good Robot Brewing: SEO-driven IA, URL migration, custom plugins, DNS/CDN and multi-path fulfillment across **40+** products",
         href: "/work/good-robot-brewing/",
+        linkText: "Good Robot Brewing",
       },
       {
         text: "Ongoing advisory across **3** Atlantic Canadian brands (2+ years): SEO, local search, GBP, platforms and integrations",
         href: "/work/multibrand-digital-operations/",
+        linkText: "Atlantic Canadian brands",
       },
       {
         text: "Pictou County Partnership: investor-facing Tableau dashboard over census, housing, economic and climate data (**2026**)",
         href: "/work/pcp-economic-dashboard/",
+        linkText: "Pictou County Partnership",
       },
       {
         text: "Organized Chaos Arts: Next.js, Sanity, Supabase and Stripe membership platform architecture in progress",
         href: "/work/organized-chaos-arts/",
+        linkText: "Organized Chaos Arts",
       },
       {
         text: "mannyroy.com: structured knowledge base with **13** topic collections and **200+** glossary entries for SEO/GEO research",
         href: "/work/manny-roy-consulting/",
+        linkText: "mannyroy.com",
       },
     ],
     selectedWork: [
@@ -52,42 +57,52 @@ export const experience: ExperienceItem[] = [
       {
         text: "**50+** technical SEO audits across diverse website architectures",
         href: "/work/technical-audit-methodology/",
+        linkText: "technical SEO audits",
       },
       {
         text: "**226%** average organic click growth across **18** B2B SaaS pages over six months",
         href: "/work/b2b-saas-organic-growth/",
+        linkText: "organic click growth",
       },
       {
         text: "Configurable Python GSC reporting tool for page- and query-level comparisons",
         href: "/work/seo-rankings-report/",
+        linkText: "GSC reporting tool",
       },
       {
         text: "Migration QA across **224** internal URLs with no 4xx/5xx, redirect chains or loops",
         href: "/work/enterprise-migration-qa/",
+        linkText: "Migration QA",
       },
       {
         text: "JavaScript SEO recommendations for a React secondhand marketplace evaluating Next.js",
         href: "/work/marketplace-rendering-architecture/",
+        linkText: "JavaScript SEO",
       },
       {
         text: "**18-page** pillar-and-cluster content framework for an AI customer-support platform",
         href: "/work/ai-saas-content-architecture/",
+        linkText: "pillar-and-cluster content framework",
       },
       {
         text: "Human-reviewed AI editorial workflow roughly tripling production capacity",
         href: "/work/editorial-workflow-automation/",
+        linkText: "AI editorial workflow",
       },
       {
         text: "Entertainment-data content consolidation and film/TV subdomain strategy",
         href: "/work/enterprise-content-consolidation/",
+        linkText: "content consolidation",
       },
       {
         text: "Webflow architecture, UI/UX and publishing for an AI software platform",
         href: "/work/webflow-platform-optimization/",
+        linkText: "Webflow architecture",
       },
       {
         text: "Owned The B2B SEO newsletter and blog for a professional search audience",
         href: "/work/b2b-technical-editorial/",
+        linkText: "The B2B SEO",
       },
     ],
     selectedWork: [
@@ -111,14 +126,17 @@ export const experience: ExperienceItem[] = [
       {
         text: "DNS/StFX Marketing & Communications stream: **96%** completion rate",
         href: "/work/applied-ai-microcredential/",
+        linkText: "Marketing & Communications stream",
       },
       {
         text: "Broader initial program: **127+** learners (~59% above target)",
         href: "/work/applied-ai-microcredential/",
+        linkText: "initial program",
       },
       {
         text: "Tourism AI training including a sold-out workshop for **32** operators and the CLEAN prompting framework",
         href: "/work/applied-ai-tourism-training/",
+        linkText: "Tourism AI training",
       },
     ],
     selectedWork: [
@@ -144,6 +162,7 @@ export const experience: ExperienceItem[] = [
       {
         text: "LLM evaluation practice informing later editorial automation and curriculum work",
         href: "/work/llm-evaluation-practice/",
+        linkText: "LLM evaluation practice",
       },
     ],
     selectedWork: [

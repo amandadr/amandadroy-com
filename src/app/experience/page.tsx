@@ -69,6 +69,7 @@ export default function ExperiencePage() {
                       <HighlightText
                         text={highlight.text}
                         href={highlight.href}
+                        linkText={highlight.linkText}
                       />
                     </li>
                   ))}

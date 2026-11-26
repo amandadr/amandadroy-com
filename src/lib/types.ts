@@ -89,7 +89,10 @@ export type Project = {
 export type ExperienceHighlight = {
   /** Supports `**metric**` markers rendered as <strong>. */
   text: string;
+  /** Project URL; only `linkText` is hyperlinked, not the whole bullet. */
   href?: string;
+  /** Phrase inside `text` (without `**`) wrapped as the link. */
+  linkText?: string;
 };
 
 export type ExperienceItem = {

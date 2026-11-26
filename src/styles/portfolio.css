@@ -456,18 +456,17 @@
   color: var(--mrc-text);
 }
 
-/* Highlight rows are bullets first; link affordance on hover/focus only */
+/* Semantic keyword links inside otherwise plain bullets */
 .mrc-experience-item li a {
-  color: inherit !important;
-  text-decoration: none;
-}
-
-.mrc-experience-item li a:hover,
-.mrc-experience-item li a:focus-visible {
   color: var(--colour-accent-secondary, var(--mrc-olive)) !important;
   text-decoration: underline;
   text-underline-offset: 0.14em;
   text-decoration-thickness: 1px;
+}
+
+.mrc-experience-item li a:hover,
+.mrc-experience-item li a:focus-visible {
+  color: var(--colour-accent, var(--mrc-maroon)) !important;
 }
 
 .mrc-link-row {
