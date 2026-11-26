@@ -22,6 +22,6 @@ Resolved from your Nov 2025 decisions: keep exact metrics; no live résumé PDF 
 - Exact metrics retained
 - CV request callouts (home, Experience, About); no public résumé PDF featured
 - P1 pages: content consolidation, Webflow optimization, multi-site SEO, multi-brand ops, AI microcredential, tourism AI training, B2B editorial
-- P2 practice notes: audit methodology, paid/organic attribution, LLM evaluation, cloud RAG, Squarespace publishing edge, UX experimentation
+- P2 practice notes: audit methodology, paid/organic attribution, LLM evaluation, Squarespace publishing edge, UX experimentation
 - Enrichments: editorial stack, AI SaaS research tools, PCP 2026 + census/geography constraints, Experience links
 - Olive as secondary highlight colour (tags, secondary buttons, metric hover, callout rule)

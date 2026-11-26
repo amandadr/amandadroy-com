@@ -19,7 +19,7 @@ export default function LabPage() {
       <Hero
         eyebrow="Lab"
         headline="Prototypes, demos and research builds"
-        subtext="Astro experiments, theme research, RAG workflows and local detection pipelines—labelled by status."
+        subtext="Astro experiments, theme research and local detection pipelines—labelled by status."
       />
       <section className="mrc-section section-light gh-outer" aria-labelledby="lab-list">
         <div className="gh-inner">

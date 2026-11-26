@@ -142,13 +142,12 @@ export const experience: ExperienceItem[] = [
       "Evaluated LLM outputs across technical, reasoning and coding tasks. Refined prompts and evaluation methodologies to assess factual accuracy, instruction adherence, reasoning reliability and unsupported claims.",
     highlights: [
       {
-        text: "LLM evaluation practice informing later RAG and editorial automation work",
+        text: "LLM evaluation practice informing later editorial automation and curriculum work",
         href: "/work/llm-evaluation-practice/",
       },
     ],
     selectedWork: [
       { label: "LLM evaluation", href: "/work/llm-evaluation-practice/" },
-      { label: "Cloud RAG workflows", href: "/work/cloud-rag-workflows/" },
     ],
   },
 ];

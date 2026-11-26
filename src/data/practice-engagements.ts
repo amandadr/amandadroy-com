@@ -121,7 +121,7 @@ export const practiceEngagements: Project[] = [
     summary:
       "Evaluated LLM outputs for reasoning, factual accuracy, instruction adherence and response quality—refining prompts and evaluation approaches for complex coding tasks at Data Annotation Tech.",
     overview:
-      "Fluent model answers can still fail on reasoning, factuality or instruction adherence. At Data Annotation Tech (2023–2025), I evaluated LLM outputs against those criteria—including complex coding tasks—and refined prompts and evaluation approaches when responses missed the mark.\n\nThat judgment carried into later curriculum work, human-reviewed editorial automation and retrieval-assisted workflows.",
+      "Fluent model answers can still fail on reasoning, factuality or instruction adherence. At Data Annotation Tech (2023–2025), I evaluated LLM outputs against those criteria—including complex coding tasks—and refined prompts and evaluation approaches when responses missed the mark.\n\nThat judgment carried into later curriculum work and human-reviewed editorial automation.",
     category: "professional",
     depth: "case-study",
     role: "Machine Learning Developer",
@@ -140,14 +140,13 @@ export const practiceEngagements: Project[] = [
     deliveryStatus: "delivered",
     visibility: "public",
     relatedProjectSlugs: [
-      "cloud-rag-workflows",
       "editorial-workflow-automation",
       "applied-ai-microcredential",
     ],
     outcomes: [
       "Multi-year LLM output evaluation across reasoning and coding tasks",
       "Prompt and evaluation-approach refinement for accuracy-sensitive judgments",
-      "Foundation for later human-reviewed AI workflows and retrieval quality instincts",
+      "Foundation for later human-reviewed AI workflows",
     ],
     caseStudy: {
       problem:
@@ -164,61 +163,6 @@ export const practiceEngagements: Project[] = [
         "Reviewed model responses for reasoning reliability, factual accuracy, instruction adherence and overall quality while iterating prompts and rubrics.",
       outcome:
         "Stronger instincts for when AI assistance is trustworthy—later applied in curriculum design and editorial automation with human review.",
-    },
-  },
-  {
-    slug: "cloud-rag-workflows",
-    title: "Cloud RAG workflows",
-    year: "2024–2025",
-    code: "WORK / 025",
-    eyebrow: "Retrieval · Source quality · Automation",
-    summary:
-      "Cloud-based RAG tools and AI-assisted workflows where automation handled repetitive work—emphasizing structure and source quality as the difference between useful retrieval and fluent noise.",
-    overview:
-      "After evaluating LLM outputs for accuracy and reasoning, I built cloud-based RAG tools and AI-assisted workflows so automation could handle repetitive research steps without inventing answers.\n\nThe practical lesson is structural: retrieval only helps when source material is well organized and quality is visible. Python and APIs made routine evaluation and preparation repeatable.",
-    category: "lab",
-    depth: "case-study",
-    role: "Developer",
-    context: "Independent / applied AI practice",
-    status: "Prototype / practice",
-    technologies: [
-      "RAG",
-      "LLM APIs",
-      "Python",
-      "Source grounding",
-      "Workflow automation",
-    ],
-    capabilities: ["applied-ai-geo", "data-automation"],
-    featured: false,
-    presentation: "compact",
-    engagementType: "independent",
-    deliveryStatus: "prototype",
-    visibility: "public",
-    lab: true,
-    relatedProjectSlugs: [
-      "llm-evaluation-practice",
-      "editorial-workflow-automation",
-    ],
-    outcomes: [
-      "Cloud RAG tooling for repetitive research and automation workflows",
-      "Emphasis on document structure and source quality",
-      "Connected evaluation judgment to retrieval design",
-    ],
-    caseStudy: {
-      problem:
-        "LLM assistants without retrieval invent confidently; retrieval without structure still returns the wrong passages.",
-      constraints:
-        "Evolving tooling and the need to keep source grounding inspectable.",
-      responsibility:
-        "Build cloud-based RAG tools and AI-assisted workflows that keep source grounding visible while automating repetitive steps.",
-      alternatives:
-        "Prompt-only assistants; black-box vendor RAG with no evaluation loop; or manual research with no automation.",
-      choice:
-        "Prefer workflows where retrieval inputs are inspectable and evaluation criteria from prior LLM QA still apply.",
-      implementation:
-        "Used Python/API-centered automation around retrieval-assisted tasks, informed by earlier output-evaluation practice.",
-      outcome:
-        "Working RAG-assisted workflows where structure and source quality stayed first-class, not afterthoughts.",
     },
   },
   {
