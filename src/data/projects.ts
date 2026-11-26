@@ -465,7 +465,7 @@ const catalog: Project[] = [
     summary:
       "Technical SEO, automation and organic growth across B2B SaaS, marketplace, AI and enterprise accounts—including audits, migrations and content architecture.",
     overview:
-      "At MacMillan Search I was promoted from Automation Engineer to SEO Specialist. The work combined technical audits, search performance analysis, client collaboration and internal tooling across accounts that ranged from thousands to tens of thousands of URLs.\n\nAlongside delivery, I contributed to tracking and revenue-attribution conversations—reading paid and organic acquisition together in GA4, Search Console and BI-style reporting so SEO priorities reflected what the measurement stack could actually support.",
+      "At MacMillan Search I was promoted from Automation Engineer to SEO Specialist. The work combined technical audits, search performance analysis, client collaboration and internal tooling across accounts that ranged from thousands to tens of thousands of URLs.\n\nAlongside delivery, I contributed to tracking and revenue-attribution conversations—reading paid and organic acquisition together in GA4, Search Console and BI-style reporting so SEO priorities reflected what the measurement stack could actually support.\n\nContent architecture, Webflow implementation, enterprise consolidation strategy and The B2B SEO editorial channel were part of the same tenure. Flagship outcomes have their own pages; those supporting workstreams are summarized below.",
     category: "professional",
     depth: "case-study",
     role: "SEO Specialist (promoted from Automation Engineer)",
@@ -481,6 +481,8 @@ const catalog: Project[] = [
       "Screaming Frog",
       "Next.js recommendations",
       "Content architecture",
+      "Webflow",
+      "Technical writing",
     ],
     capabilities: ["technical-search", "data-automation", "applied-ai-geo"],
     engagementType: "agency",
@@ -490,17 +492,14 @@ const catalog: Project[] = [
       "marketplace-rendering-architecture",
       "b2b-saas-organic-growth",
       "enterprise-migration-qa",
-      "ai-saas-content-architecture",
       "editorial-workflow-automation",
-      "enterprise-content-consolidation",
-      "webflow-platform-optimization",
-      "b2b-technical-editorial",
       "technical-audit-methodology",
       "seo-rankings-report",
     ],
     outcomes: [
       "50+ technical SEO audits with prioritized implementation recommendations",
       "Delivery across concurrent accounts including multi-site portfolios at thousand- to tens-of-thousands URL scale",
+      "Content architecture, Webflow CMS delivery, consolidation strategy and in-house B2B editorial ownership",
       "Promotion from Automation Engineer into SEO Specialist delivery",
       "Reusable internal tooling and QA processes across diverse architectures",
     ],
@@ -525,7 +524,41 @@ const catalog: Project[] = [
         type: "prose",
         heading: "Working at portfolio scale",
         body:
-          "Several accounts were multi-site or multi-location properties where the interesting risk lived in shared templates, faceted paths and incomplete internal linking—not in any single URL. The useful response was the same loop documented in the audit methodology: investigate at crawl scale, prioritize what engineering can actually schedule, and report what still needs work separately from what already passed.\\n\\nI am not publishing a separate multi-site case study without account-specific examples or measured outcomes. The scale claim belongs here as context for the agency practice; the method belongs on Technical audit methodology; concrete investigations live on Marketplace rendering and Enterprise migration QA.",
+          "Several accounts were multi-site or multi-location properties where the interesting risk lived in shared templates, faceted paths and incomplete internal linking—not in any single URL. The useful response was the same loop documented in the audit methodology: investigate at crawl scale, prioritize what engineering can actually schedule, and report what still needs work separately from what already passed.\\n\\nConcrete investigations with stronger evidence live on Marketplace rendering and Enterprise migration QA. Organic growth measurement lives on B2B SaaS organic growth and SEO Rankings Report. Editorial automation with a clear throughput metric lives on Human-reviewed AI editorial automation.",
+      },
+      {
+        type: "table",
+        heading: "Content, CMS and editorial work folded into this practice",
+        caption: "Former standalone pages redirected here—kept as workstreams, not separate case studies",
+        headers: ["Workstream", "What I delivered", "Status"],
+        rows: [
+          [
+            "AI SaaS content architecture",
+            "18-page pillar-and-cluster framework tying search intent and product capabilities to a publishing roadmap (DataForSEO, Sitebulb, PageSpeed)",
+            "Recommendation",
+          ],
+          [
+            "Entertainment-data consolidation",
+            "Keyword, competitor and share-of-voice research turned into editorial direction, internal-linking standards and a film/TV subdomain proposal",
+            "Recommendation",
+          ],
+          [
+            "Webflow platform work",
+            "SEO-driven architecture and UI/UX improvements implemented inside Webflow and its custom theme for an AI software marketing site",
+            "Delivered",
+          ],
+          [
+            "The B2B SEO",
+            "Owned topic planning, research, writing and editing for MacMillan Search’s in-house newsletter and blog for marketers and SEO practitioners",
+            "Retired with the engagement",
+          ],
+        ],
+      },
+      {
+        type: "prose",
+        heading: "Why these are not separate case studies",
+        body:
+          "Each workstream was real client or agency delivery. None yet has the artifacts, measurement detail or decision narrative that the flagship MacMillan pages carry. Until that evidence exists, they sit here as part of the practice—so the portfolio does not invent depth by multiplying thin pages.",
       },
     ],
   },

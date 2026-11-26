@@ -75,7 +75,7 @@ export const experience: ExperienceItem[] = [
       },
       {
         text: "**18-page** pillar-and-cluster content framework for an AI customer-support platform",
-        href: "/work/ai-saas-content-architecture/",
+        href: "/work/macmillan-search-practice/",
         linkText: "pillar-and-cluster content framework",
       },
       {
@@ -85,17 +85,17 @@ export const experience: ExperienceItem[] = [
       },
       {
         text: "Entertainment-data content consolidation and film/TV subdomain strategy",
-        href: "/work/enterprise-content-consolidation/",
+        href: "/work/macmillan-search-practice/",
         linkText: "content consolidation",
       },
       {
         text: "Webflow architecture, UI/UX and publishing for an AI software platform",
-        href: "/work/webflow-platform-optimization/",
+        href: "/work/macmillan-search-practice/",
         linkText: "Webflow architecture",
       },
       {
         text: "Owned The B2B SEO newsletter and blog for a professional search audience",
-        href: "/work/b2b-technical-editorial/",
+        href: "/work/macmillan-search-practice/",
         linkText: "The B2B SEO",
       },
     ],

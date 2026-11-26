@@ -48,7 +48,7 @@ export const capabilities: Capability[] = [
     tools: ["LLM APIs", "Evaluation", "Entity architecture"],
     projectSlugs: [
       "editorial-workflow-automation",
-      "ai-saas-content-architecture",
+      "macmillan-search-practice",
       "manny-roy-consulting",
       "rfp-finder",
     ],

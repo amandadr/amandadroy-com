@@ -7,6 +7,10 @@ export const PROJECT_REDIRECTS: Record<string, string> = {
   "ux-experimentation-practice": "good-robot-brewing",
   "paid-organic-attribution": "macmillan-search-practice",
   "multisite-technical-seo": "macmillan-search-practice",
+  "ai-saas-content-architecture": "macmillan-search-practice",
+  "enterprise-content-consolidation": "macmillan-search-practice",
+  "webflow-platform-optimization": "macmillan-search-practice",
+  "b2b-technical-editorial": "macmillan-search-practice",
 };
 
 export function getRedirectTarget(slug: string): string | undefined {

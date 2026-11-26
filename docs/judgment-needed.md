@@ -12,10 +12,9 @@ Resolved from your Nov 2025 decisions: keep exact metrics; no live résumé PDF 
 6. **Analytics** — Plausible/GA (especially CV-request mailto clicks / case engagement), or stay dark?
 7. **Writing samples** — B2B technical editorial page marks The B2B SEO as retired. Attach authorized samples later?
 8. **Per-project `updatedAt`** — Sitemap uses `SITE_CONTENT_UPDATED` + year end-dates. Prefer explicit dates?
-9. **Thin supporting pages** — Webflow, enterprise content consolidation, B2B editorial and similar still read as expanded résumé entries. Demote further, merge, or add artifacts?
-
 ## Shipped recently
 
+- Merged AI SaaS architecture, enterprise consolidation, Webflow and B2B editorial into MacMillan Search practice
 - Portfolio reframed as personal-brand / shared design language (Ghost consultancy + static Next.js portfolio)
 - Multi-site SEO page removed; scale context folded into MacMillan practice + audit methodology; old URL redirects
 - Single Work directory with filters; merged Squarespace / UX / paid-organic; Experience profile + print CSS
