@@ -50,7 +50,7 @@ export const SITE_HERO_META =
 
 /** Longer professional summary for About and metadata-adjacent uses. */
 export const SITE_INTRO =
-  "Technical SEO specialist and full-stack developer with 3+ years of agency and consulting experience across B2B SaaS, e-commerce, marketplaces and enterprise sites—including multi-site portfolios spanning thousands to tens of thousands of URLs. I combine technical SEO with hands-on development, Python automation and applied AI to investigate architectural issues, identify scalable opportunities and build repeatable analytical workflows.";
+  "Technical SEO specialist and full-stack developer with 3+ years of agency and consulting experience across B2B SaaS, e-commerce, marketplaces and enterprise sites—including concurrent multi-site portfolios at large URL scale. I combine technical SEO with hands-on development, Python automation and applied AI to investigate architectural issues, identify scalable opportunities and build repeatable analytical workflows.";
 
 /** Verified against the current technical résumé PDF. */
 export const SITE_METRICS: SiteMetric[] = [
@@ -67,7 +67,7 @@ export const SITE_METRICS: SiteMetric[] = [
   {
     value: "10k+",
     label: "URLs across supported multi-site portfolios",
-    href: "/work/multisite-technical-seo/",
+    href: "/work/macmillan-search-practice/",
   },
   {
     value: "~3×",

@@ -12,14 +12,11 @@ Resolved from your Nov 2025 decisions: keep exact metrics; no live résumé PDF 
 6. **Analytics** — Plausible/GA (especially CV-request mailto clicks / case engagement), or stay dark?
 7. **Writing samples** — B2B technical editorial page marks The B2B SEO as retired. Attach authorized samples later?
 8. **Per-project `updatedAt`** — Sitemap uses `SITE_CONTENT_UPDATED` + year end-dates. Prefer explicit dates?
-9. **Agency practice hub** — Multi-site SEO remains its own page; audit methodology is the methodology article. Prefer merging multi-site into MacMillan practice next?
+9. **Thin supporting pages** — Webflow, enterprise content consolidation, B2B editorial and similar still read as expanded résumé entries. Demote further, merge, or add artifacts?
 
-## Shipped from keep-working pass
+## Shipped recently
 
-- Single Work directory with discipline filters; summaries always visible
-- Merged Squarespace → editorial automation; UX experimentation → Good Robot; paid/organic → MacMillan practice (redirect pages for old URLs)
-- Removed redundant Experience `selectedWork` link rows; added professional profile + print CSS
-- Case study headlines, breadcrumbs, simplified article header, content blocks (tables/steps)
-- Deepened signature case studies: SEO Rankings Report, B2B SaaS growth, marketplace rendering, migration QA, editorial automation, Good Robot, PCP, MRC
-- Editorial ordering on the Work index
-- Olive secondary highlight; CV email callouts; P1/P2 pages from prior pass
+- Portfolio reframed as personal-brand / shared design language (Ghost consultancy + static Next.js portfolio)
+- Multi-site SEO page removed; scale context folded into MacMillan practice + audit methodology; old URL redirects
+- Single Work directory with filters; merged Squarespace / UX / paid-organic; Experience profile + print CSS
+- Deepened signature case studies; headlines, breadcrumbs, content blocks; olive secondary highlight

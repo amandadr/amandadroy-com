@@ -319,7 +319,7 @@ const catalog: Project[] = [
     summary:
       "mannyroy.com as a technical project: custom Ghost theme, structured knowledge base and ongoing SEO/GEO research.",
     overview:
-      "The consulting site is also a working environment for SEO and AI-search research. It holds services, case studies and a structured knowledge base spanning 13 technical topic collections and 200+ glossary entries—exploring semantic content organization, entity relationships, internal linking and organic discoverability.\n\nA Next.js rebuild exists as later architecture; the live stack remains the custom Ghost theme.",
+      "The consulting site is also a working environment for SEO and AI-search research. It holds services, case studies and a structured knowledge base spanning 13 technical topic collections and 200+ glossary entries—exploring semantic content organization, entity relationships, internal linking and organic discoverability.\n\nIt shares a design language with this portfolio but does a different job: reassure clients and publish research, not archive hiring evidence. The sibling-site decisions are documented in the portfolio case study. The live stack remains the custom Ghost theme; a Next.js rebuild stays optional until the editorial system needs it.",
     category: "professional",
     depth: "case-study",
     role: "Designer / developer / publisher",
@@ -360,7 +360,7 @@ const catalog: Project[] = [
         "A live consulting site that doubles as a content and SEO laboratory—with a public theme repository and a knowledge base large enough to test entity and internal-linking hypotheses in production.",
     },
     headline: "A consulting site that is also a design system and research lab",
-    editorialRank: 8,
+    editorialRank: 9,
     relatedProjectSlugs: ["this-portfolio"],
     blocks: [
       {
@@ -494,13 +494,13 @@ const catalog: Project[] = [
       "editorial-workflow-automation",
       "enterprise-content-consolidation",
       "webflow-platform-optimization",
-      "multisite-technical-seo",
       "b2b-technical-editorial",
       "technical-audit-methodology",
       "seo-rankings-report",
     ],
     outcomes: [
       "50+ technical SEO audits with prioritized implementation recommendations",
+      "Delivery across concurrent accounts including multi-site portfolios at thousand- to tens-of-thousands URL scale",
       "Promotion from Automation Engineer into SEO Specialist delivery",
       "Reusable internal tooling and QA processes across diverse architectures",
     ],
@@ -516,10 +516,18 @@ const catalog: Project[] = [
       choice:
         "Pair rigorous audit practice with maintainable automation and clear implementation roadmaps—so findings become work developers can schedule.",
       implementation:
-        "Audits covering crawlability, rendering, indexation and performance; Python reporting against GSC; migration URL mapping and post-launch crawling; and content frameworks that connect search intent to site architecture.",
+        "Audits covering crawlability, rendering, indexation and performance; Python reporting against GSC; migration URL mapping and post-launch crawling; and content frameworks that connect search intent to site architecture. Concurrent enterprise and multi-location portfolios meant template-level findings mattered more than page-by-page edits—crawl budgets, shared components and stakeholder reporting had to work at thousand- to tens-of-thousands URL scale.",
       outcome:
         "Prioritized recommendations across diverse architectures, measurable SaaS organic growth, clean migration QA evidence and reusable tooling.",
     },
+    blocks: [
+      {
+        type: "prose",
+        heading: "Working at portfolio scale",
+        body:
+          "Several accounts were multi-site or multi-location properties where the interesting risk lived in shared templates, faceted paths and incomplete internal linking—not in any single URL. The useful response was the same loop documented in the audit methodology: investigate at crawl scale, prioritize what engineering can actually schedule, and report what still needs work separately from what already passed.\\n\\nI am not publishing a separate multi-site case study without account-specific examples or measured outcomes. The scale claim belongs here as context for the agency practice; the method belongs on Technical audit methodology; concrete investigations live on Marketplace rendering and Enterprise migration QA.",
+      },
+    ],
   },
   {
     slug: "woo-trexity",
@@ -562,23 +570,110 @@ const catalog: Project[] = [
   {
     slug: "this-portfolio",
     title: "This portfolio",
-    headline: "Building a shared design language across Ghost and Next.js",
-    editorialRank: 9,
+    headline: "Building a personal brand through shared design language",
+    editorialRank: 8,
     year: "2026",
+    code: "BUILD / 001",
+    eyebrow: "Independent build · Design systems",
     summary:
-      "Statically generated Next.js site with shareable case studies, structured project metadata and technical SEO acceptance criteria built into the build.",
+      "amandadroy.com and mannyroy.com share a design language and diverge on purpose: one site is evidence for hiring conversations; the other is a consultancy built for client trust—and both stay maintainable on stacks chosen for how each site needs to change.",
     overview:
-      "Statically exported Next.js site with unique project URLs, structured metadata and case-study pages that stay readable as plain HTML. Design tokens stay shared with consulting work; the sitemap stays focused on technical projects.",
+      "I run two public sites under one personal brand. mannyroy.com is the consultancy: services, case studies and a structured knowledge base for people deciding whether to hire me for a project. amandadroy.com is the practitioner portfolio: decisions, constraints and outcomes for people deciding whether to hire me onto a team.\\n\\nThey should feel designed by the same person. They should not feel like the same website with different copy.",
     category: "independent",
-    depth: "project",
-    role: "Developer",
-    context: "Personal technical portfolio",
-    status: "Live rebuild",
-    technologies: ["Next.js", "TypeScript", "Static export", "IBM Plex"],
+    depth: "case-study",
+    role: "Designer / developer",
+    context: "Personal brand · portfolio + consultancy",
+    status: "Live",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Static export",
+      "GitHub Pages",
+      "CUBE CSS",
+      "IBM Plex",
+      "Ghost (MRC)",
+    ],
     capabilities: ["web-engineering", "technical-search"],
+    featured: false,
+    presentation: "flagship",
+    engagementType: "independent",
+    deliveryStatus: "live",
+    visibility: "public",
+    relatedProjectSlugs: ["manny-roy-consulting"],
     liveUrl: "https://amandadroy.com/",
-    decisionNote:
-      "Static export and unique project URLs keep case studies indexable and easy to share; the design system stays shared with consulting work.",
+    repository: "https://github.com/amandadr/amandadroy-com",
+    outcomes: [
+      "Sibling sites with shared foundations and distinct art direction",
+      "Static Next.js + GitHub Pages portfolio for fast deploys and plain-HTML case studies",
+      "Typed project catalogue with content validation in the build",
+    ],
+    caseStudy: {
+      problem:
+        "One personal brand needed two trustworthy public faces: a consultancy that reassures business stakeholders, and a portfolio that lets technical hiring managers inspect real work. Reusing one theme wholesale would blur those jobs; inventing two unrelated brands would waste equity already earned on mannyroy.com.",
+      constraints:
+        "Existing MRC palette, typography and CUBE-informed layout primitives; different audiences and conversion goals; limited time to maintain two stacks; portfolio content that must stay easy to update as case studies deepen.",
+      responsibility:
+        "Define how the sites relate, what they share, what they deliberately change, and which stack each site should run on—including implementing this Next.js portfolio.",
+      alternatives:
+        "One site for everything (recruiters and clients fight for homepage attention). Two unrelated visual systems (brand equity resets). Hosting the portfolio on a long-lived Node server or a visual CMS (more moving parts than the publishing cadence needs).",
+      choice:
+        "Treat the sites as sibling identities: share primitives and standards; change colour dominance, information density and narrative structure. Run the portfolio as a statically exported Next.js app on GitHub Pages so updates are a git push and every case study is plain, cacheable HTML.",
+      implementation:
+        "Ported the shared DNA—cream/paper/ink/olive/maroon, IBM Plex, spacing scale, stack/cluster/split primitives, accessibility and reduced-motion rules—into a portfolio theme that uses a paper masthead, stronger ink typography and olive as a secondary accent instead of MRC’s warmer marketing rhythm. Project content lives in typed TypeScript modules validated at build time. `next export`-style static output deploys with gh-pages; trailing-slash URLs and unique `/work/[slug]/` paths keep case studies shareable and indexable.",
+      outcome:
+        "Two sites that read as one maker. Recruiters can stay on amandadroy.com; consulting inquiries route to mannyroy.com without either experience apologizing for the other.",
+    },
+    blocks: [
+      {
+        type: "table",
+        heading: "How the two sites are organized to work together",
+        headers: ["Dimension", "mannyroy.com", "amandadroy.com"],
+        rows: [
+          ["Job", "Can I trust you with our business problem?", "How do you think, build and contribute?"],
+          ["Audience", "Owners, marketers, operators", "Hiring managers, engineers, technical peers"],
+          ["Proof", "Services, client outcomes, knowledge base", "Case studies, metrics, source links, lab work"],
+          ["Emotional goal", "Confidence and reassurance", "Respect and intellectual curiosity"],
+          ["Reading mode", "Guided discovery", "Self-directed exploration"],
+          ["Primary conversion", "Consulting inquiry", "Interview or professional conversation"],
+          ["Stack", "Ghost + custom theme (editorial CMS)", "Static Next.js on GitHub Pages"],
+        ],
+      },
+      {
+        type: "table",
+        heading: "Shared design DNA vs deliberate divergence",
+        headers: ["Share", "Change"],
+        rows: [
+          ["Colour primitives (cream, paper, ink, olive, maroon, mustard)", "Which colours dominate and where they appear"],
+          ["IBM Plex Serif / Sans / Mono", "Typographic hierarchy and density"],
+          ["Spacing scale and CUBE layout primitives", "Page templates and section rhythm"],
+          ["Accessibility, semantic HTML, 72ch prose, reduced motion", "Information scent, navigation and CTAs"],
+          ["Voice: clear, specific, low-jargon", "Tone: approachable consultancy vs precise practitioner"],
+        ],
+      },
+      {
+        type: "prose",
+        heading: "Why static Next.js on GitHub Pages",
+        body:
+          "This portfolio changes when I deepen a case study or fix copy—not when a visitor logs in. A statically exported Next.js app matches that cadence: TypeScript and React for structure during development, plain HTML/CSS/JS in `out/` for production.\\n\\nGitHub Pages keeps hosting close to the repository. `npm run deploy` builds, validates content and publishes the `out/` directory to the `gh-pages` branch. There is no application server to patch, no cold start and no runtime database for pages that are already known at build time. Performance stays a property of the files and the CDN edge, which is the right default for a résumé-adjacent site that should load cleanly on a recruiter’s phone between meetings.\\n\\nStatic export also forces honesty in the information architecture. Every project needs a stable URL, a summary and enough substance to justify a page—because there is no soft 404 behind a client router. Content validation in the build fails the deploy if a featured case study is missing required sections.",
+      },
+      {
+        type: "prose",
+        heading: "Why Ghost stays on the consultancy",
+        body:
+          "mannyroy.com publishes glossary entries, topic collections and services on a schedule that benefits from a real CMS. Ghost fits that editorial loop. The portfolio does not need authors, drafts or membership—it needs a typed catalogue of work I control in git. Keeping those jobs on different stacks avoids forcing either site into the other’s publishing model.\\n\\nA Next.js rebuild of MRC remains an option later. Shipping it before the content system was proven would have slowed the research publishing the consultancy is for.",
+      },
+      {
+        type: "steps",
+        heading: "What “shared design language” means in practice here",
+        items: [
+          "Same foundations: tokens, type families, spacing, layout primitives, a11y rules.",
+          "Different art direction: MRC warms the canvas; the portfolio stays paper-and-ink with olive accents.",
+          "Different IA: MRC guides toward services and inquiries; this site indexes evidence by discipline.",
+          "Clear handoff: consulting CTAs point to mannyroy.com; hiring CTAs stay on email, LinkedIn and case studies.",
+          "Same maintenance ethic: documented tokens, compositional CSS, no one-off mystery layouts.",
+        ],
+      },
+    ],
   },
   {
     slug: "hyrule-merchant",

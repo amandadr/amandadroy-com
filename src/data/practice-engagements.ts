@@ -38,7 +38,6 @@ export const practiceEngagements: Project[] = [
     visibility: "public",
     relatedProjectSlugs: [
       "macmillan-search-practice",
-      "multisite-technical-seo",
       "enterprise-migration-qa",
     ],
     outcomes: [

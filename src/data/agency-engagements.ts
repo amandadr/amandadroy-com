@@ -444,63 +444,6 @@ export const agencyEngagements: Project[] = [
     },
   },
   {
-    slug: "multisite-technical-seo",
-    title: "Multi-site technical SEO",
-    headline: "Technical SEO across large multi-site portfolios",
-    editorialRank: 16,
-    year: "2024–2025",
-    code: "WORK / 017",
-    eyebrow: "Enterprise SEO · Portfolio scale",
-    summary:
-      "Technical SEO across enterprise and multi-location service portfolios spanning thousands to tens of thousands of URLs—audits, performance analysis, prioritized recommendations and stakeholder reporting.",
-    overview:
-      "Large portfolios do not get page-by-page attention equally. Across concurrent enterprise and multi-location accounts, technical auditing, performance analysis, prioritized recommendations and stakeholder reporting covered websites and multi-site portfolios spanning thousands to tens of thousands of URLs.",
-    category: "professional",
-    depth: "case-study",
-    role: "SEO Specialist",
-    context: "Agency practice · Anonymized accounts",
-    status: "Ongoing during tenure",
-    technologies: [
-      "Technical audits",
-      "Screaming Frog",
-      "Sitebulb",
-      "GSC",
-      "Stakeholder reporting",
-    ],
-    capabilities: ["technical-search", "data-automation"],
-    featured: false,
-    presentation: "standard",
-    engagementType: "agency",
-    deliveryStatus: "delivered",
-    visibility: "anonymized",
-    relatedProjectSlugs: [
-      "macmillan-search-practice",
-      "technical-audit-methodology",
-      "enterprise-migration-qa",
-    ],
-    outcomes: [
-      "Technical SEO support across multi-site portfolios at thousand- to tens-of-thousands URL scale",
-      "Audit findings translated into prioritized implementation recommendations",
-      "Recurring stakeholder reporting across concurrent enterprise and multi-location accounts",
-    ],
-    caseStudy: {
-      problem:
-        "Enterprise and multi-location portfolios concentrate crawl, indexation and template risk across large URL inventories that cannot all be optimized manually.",
-      constraints:
-        "Concurrent accounts, shared tooling and limited engineering bandwidth.",
-      responsibility:
-        "Contribute to technical auditing, performance analysis, prioritized recommendations and stakeholder reporting across large portfolios.",
-      alternatives:
-        "Sample a handful of URLs and hope; drown stakeholders in unprioritized crawl exports; or treat every property as a greenfield rebuild.",
-      choice:
-        "Audit-first delivery that carries crawlability, rendering, indexation and performance findings into ranked implementation work.",
-      implementation:
-        "Moved between Screaming Frog/Sitebulb crawls, GSC and analytics reviews, recommendation writing and client communication across B2B SaaS, AI, data, insurance and multi-location service accounts.",
-      outcome:
-        "Portfolio-scale technical SEO delivery with prioritized recommendations stakeholders could schedule across large URL inventories.",
-    },
-  },
-  {
     slug: "multibrand-digital-operations",
     title: "Multi-brand digital operations",
     year: "2024–Present",
